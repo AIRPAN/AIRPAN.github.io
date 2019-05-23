@@ -45,17 +45,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Linux]]></title>
-    <url>%2F2019%2F05%2F01%2FLinux%2F01%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Prometheus]]></title>
     <url>%2F2019%2F05%2F01%2FPrometheus%2F01.pro%2F</url>
     <content type="text"></content>
@@ -108,6 +97,17 @@
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux 系统运维]]></title>
+    <url>%2F2018%2F12%2F12%2FLinux%2F01.Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4%2F</url>
+    <content type="text"><![CDATA[Linux 系统运维系统状态监控系统状态 w uptime vmstatvmstat 1vmstat 1 10vmstat各指标含义：r ：表示运行和等待cpu时间片的进程数，如果长期大于服务器cpu的个数，则说明cpu不够用了；b ：表示等待资源的进程数，比如等待I/O, 内存等，这列的值如果长时间大于1，则需要关注一下了si ：由交换区进入内存的数量；so ：由内存进入交换区的数量；bi ：从块设备读取数据的量（读磁盘）；bo： 从块设备写入数据的量（写磁盘）；wa ：表示I/O等待所占用cpu时间百分比. top用于动态监控进程所占系统资源，每隔3秒变一次。RES 这一项为进程所占内存大小，而 %MEM 为使用内存百分比。在 top状态下，按 “shift + m”, 可以按照内存使用大小排序。按数字 ‘1’ 可以列出各颗cpu的使用状态。top -bn1 它表示非动态打印系统资源使用情况，可以用在shell脚本中 sar没有这个命令，使用yum install -y sysstat网卡流量 sar -n DEV, sar -n DEV 1 10sar -n DEV -f /var/log/sa/sa24查看历史负载 sar -q查看磁盘读写 sar -b PM free查看系统内存使用情况free以k为单位显示 -m以M为单位 -g以G为单位mem(total):内存总数;mem(used):已经分配的内存;mem(free):未分配的内存;mem(buffers):系统分配但未被使用的buffers；mem(cached)系统分配但未被使用的cachebuffers/cache(used):实际使用的buffers与cache 总量，也是实际使用的内存；buffers/cache(free):未被使用的buffers与cache和未被分配的内存之和，这就是系统当前实际可用内存buffers是即将要被写入磁盘的，cache是被从磁盘中读出来的 ps 查看系统进程ps aux / ps -elfPID ：进程的id，这个id很有用，在linux中内核管理进程就得靠pid来识别和管理某一个程，比如我想终止某一个进程，则用 ‘kill 进程的pid’ 有时并不能杀掉，则需要加一个-9选项了 kill -9 进程pidSTAT ：表示进程的状态，进程状态分为以下几种D 不能中断的进程（通常为IO）R 正在运行中的进程S 已经中断的进程，系统中大部分进程都是这个状态T 已经停止或者暂停的进程，如果我们正在运行一个命令，比如说 sleep 10 如果我们按一下ctrl -z 让他暂停，那么我们用ps查看就会显示T这个状态X 已经死掉的进程（这个从来不会出现）Z 僵尸进程，杀不掉，打不死的垃圾进程，占系统一小点资源，不过没有关系。如果太多，就有问题了。&lt; 高优先级进程N 低优先级进程L 在内存中被锁了内存分页s 主进程l 多线程进程 在前台的进程 网络管理网络状态 netstat 查看网络状况netstat -lnp 查看当前系统开启的端口以及socketnetstat -an 查看当前系统所有的连接 curlcurl -xip:port www.baidu.com # -x可以指定ip和端口，省略写hosts，方便实用curl -Iv http://www.qq.com # -I 可以把访问的内容略掉，只显示状态码,-v可以显示详细过程curl -u user:password http://123.com # -u可以指定用户名和密码curl http://study.lishiming.net/index.html -O #可以下载，还可以使用 -o 自定义名字 curl -o index2.htmlhttp://study.lishiming.net/index.html nc -z -w2 www.baidu.com 1-1024 # -w2 表示 2s超时 port 这里可以只写一个端口，也可以写一个范围。 使用nc扫描端口时，必须要加 -z 否则不显示结果。另外，如果想把不开放的端口也显示出来，可以加一个 -v tcpdump 系统自带抓包工具tcpdump -nn -i eth0 tcp and host 192.168.0.1 and port 80tcpdump -nn -vs0 tcp and port not 22 -c 100 -w 1.capwireshark 在linux下也可以安装 yum install -y wireshark抓包分析http请求：tshark -n -t a -R http.request -T fields -e “frame.time” -e “ip.src” -e “http.host” -e “http.request.method” -e “http.request.uri” Selinux、Iptables Selinux配置文件 /etc/selinux/config三种形式：enforcing, permissive, disabled SELINUX=disabledsetenforce 0/1getenforce netfilter – iptablesiptables -nvL 查看规则iptables -F 清除当前的规则iptables -Z 计数器清零service iptables save 保存规则 保存的规则文件为：/etc/sysconfig/iptablesservice iptables stop 可以暂停防火墙，但是重启后它会读取/etc/sysconfig/iptables 从而启动防火墙，另外即使我们停止防火墙，但一旦我们添加任何一条规则，它也会开启iptables -t 指定表名，默认不加-t则是filter表filter 这个表主要用于过滤包的，是系统预设的表,内建三个链INPUT、OUTPUT以及FORWARD。INPUT作用于进入本机的包；OUTPUT作用于本机送出的包；FORWARD作用于那些跟本机无关的包。nat 主要用处是网络地址转换，也有三个链。PREROUTING 链的作用是在包刚刚到达防火墙时改变它的目的地址，如果需要的话。OUTPUT链改变本地产生的包的目的地址。POSTROUTING链在包就要离开防火墙之前改变其源地址。mangle 这个表主要是用于给数据包打标记，然后根据标记去操作哪些包。这个表几乎不怎么用。 iptables规则相关：查看规则 iptables -t nat -nvL清除规则 iptables -t nat -F增加/删除规则 iptables -A/-D INPUT -s 10.72.11.12 -p tcp –sport 1234 -d 10.72.137.159 –dport 80 -j DROP插入规则 iptables -I INPUT -s 1.1.1.1 -j DROP/ACCEPT/REJECTiptables -nvL –line-numbers 查看规则带有id号iptables -D INPUT 1 根据规则的id号删除对应规则iptables -P INPUT DROP 用来设定默认规则，默认是ACCEPT ，一旦设定为DROP后，只能使用 iptables -P ACCEPT 才能恢复成原始状态，而不能使用-F参数示例：针对filter表，预设策略INPUT链DROP，其他两个链ACCEPT，然后针对192.168.0.0/24开通22端口，对所有网段开放80端口，对所有网段开放21端口。 脚本如下：#! /bin/bashipt=”/sbin/iptables”$ipt -F; $ipt -P INPUT DROP;$ipt -P OUTPUT ACCEPT; $ipt -P FORWARD ACCEPT;$ipt -A INPUT -s 192.168.0.0/24 -p tcp –dport 22 -j ACCEPT$ipt -A INPUT -p tcp –dport 80 -j ACCEPT$ipt -A INPUT -p tcp –dport 21 -j ACCEPTicmp的包有常见的应用,本机ping通外网，外网ping不通本机 iptables -I INPUT -p icmp –icmp-type 8 -j DROP nat表应用：路由器就是使用iptables的nat原理实现假设您的机器上有两块网卡eth0和eth1，其中eth0的IP为192.168.10.11，eth1的IP为172.16.10.11 。eth0连接了intnet 但eth1没有连接，现在有另一台机器(172.16.10.12)和eth1是互通的，那么如何设置也能够让连接eth1的这台机器能够连接intnet?echo “1” &gt; /proc/sys/net/ipv4/ip_forwardiptables -t nat -A POSTROUTING -s 172.16.10.0/24 -o eth0 -j MASQUERADE iptables规则备份与恢复：service iptables save 这样会保存到/etc/sysconfig/iptablesiptables-save &gt; myipt.rule 可以把防火墙规则保存到指定文件中iptables-restore &lt; myipt.rule 这样可以恢复指定的规则 计划任务 Linux系统任务计划/etc/crontab cron的主配置文件，可以定义PATH12345678910cron格式如下：# .----------------分钟 (0 - 59)# | .------------- 小时 (0 - 23)# | | .---------- 日 (1 - 31)# | | | .------- 月 (1 - 12)# | | | | .---- 周 (0 - 6) (周日=0 or 7) # | | | | |# * * * * * user-name command to be executedcron 也是一个服务，所以需要先启动服务才能生效：service crond start; service crond status Linux 系统管理 Linux系统服务管理工具ntsysv 类似图形界面管理工具，如果没有该命令使用 yum install -y ntsysv 安装常用服务：crond, iptables, network, sshd, syslog, irqbalance, sendmail, microcode_ctlchkconfig –listchkconfig –add/del servicenamechkconfig –level [345] servicename on/off Linux系统日志/var/log/messages核心系统日志文件每周归档一个日志 messages-20130901/etc/logrotate.confmessages由syslogd这个守护进程产生的，如果停掉这个服务则系统不会产生/var/log/messages/var/log/wtmp 查看用户登录历史 last/var/log/btmp lastb 查看无效登录历史/var/log/maillog/var/log/securedmesg/var/log/dmesg exec与xargsexec 和find同时使用查找当前目录创建时间大于10天的文件并删除 ：find . -mtime +10 -exec rm -rf {} \;批量更改文件名: find ./ -exec mv {} {}_bak \;xargs 用在管道符号后面find . -mtime +10 |xargs rm -rfls -d ./ |xargs -n1 -i{} mv {} {}_bakxargs 可以把多行变成一行 cat 1.txt|xargs screen 工具介绍screen相当于一个虚拟终端，它不会因为网络中断而退出，每次登录都可以进入那个screen使用方法：直接输入screen命令screen -ls 查看已经开启的screenCtrl +a 再按d退出该screen会话，只是退出，并没有结束。结束的话输入Ctrl +d 或者输入exit退出后还想再次登录某个screen会话，使用sreen -r screenid 若只有一个screen 直接screen -rscreen -S aming ； 登录的话 screen -r aming]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
 </search>

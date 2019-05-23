@@ -129,18 +129,18 @@
 
 
 
-  <meta name="description" content="Waiting....">
+  <meta name="description" content="Linux 系统运维系统状态监控系统状态 w  uptime vmstatvmstat  1vmstat 1 10vmstat各指标含义：r ：表示运行和等待cpu时间片的进程数，如果长期大于服务器cpu的个数，则说明cpu不够用了；b ：表示等待资源的进程数，比如等待I/O, 内存等，这列的值如果长时间大于1，则需要关注一下了si ：由交换区进入内存的数量；so ：由内存进入交换区的数量；bi">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux">
-<meta property="og:url" content="http://yoursite.com/2019/05/01/Linux/01/index.html">
+<meta property="og:title" content="Linux 系统运维">
+<meta property="og:url" content="http://yoursite.com/2018/12/12/Linux/01.Linux系统运维/index.html">
 <meta property="og:site_name" content="AIR PAN">
-<meta property="og:description" content="Waiting....">
+<meta property="og:description" content="Linux 系统运维系统状态监控系统状态 w  uptime vmstatvmstat  1vmstat 1 10vmstat各指标含义：r ：表示运行和等待cpu时间片的进程数，如果长期大于服务器cpu的个数，则说明cpu不够用了；b ：表示等待资源的进程数，比如等待I/O, 内存等，这列的值如果长时间大于1，则需要关注一下了si ：由交换区进入内存的数量；so ：由内存进入交换区的数量；bi">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-23T09:18:39.443Z">
+<meta property="og:updated_time" content="2019-05-23T15:16:24.159Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux">
-<meta name="twitter:description" content="Waiting....">
+<meta name="twitter:title" content="Linux 系统运维">
+<meta name="twitter:description" content="Linux 系统运维系统状态监控系统状态 w  uptime vmstatvmstat  1vmstat 1 10vmstat各指标含义：r ：表示运行和等待cpu时间片的进程数，如果长期大于服务器cpu的个数，则说明cpu不够用了；b ：表示等待资源的进程数，比如等待I/O, 内存等，这列的值如果长时间大于1，则需要关注一下了si ：由交换区进入内存的数量；so ：由内存进入交换区的数量；bi">
 
 
 
@@ -150,7 +150,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/01/Linux/01/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/12/Linux/01.Linux系统运维/">
 
 
 
@@ -160,7 +160,7 @@
   };
 </script>
 
-  <title>Linux | AIR PAN</title>
+  <title>Linux 系统运维 | AIR PAN</title>
   
 
 
@@ -427,7 +427,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/01/Linux/01/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/Linux/01.Linux系统运维/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Air Pan">
@@ -444,7 +444,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux
+          <h1 class="post-title" itemprop="name headline">Linux 系统运维
 
               
             
@@ -470,7 +470,7 @@
                 
               
 
-              <time title="Created: 2019-05-01 18:11:07" itemprop="dateCreated datePublished" datetime="2019-05-01T18:11:07+08:00">2019-05-01</time>
+              <time title="Created: 2018-12-12 18:11:07" itemprop="dateCreated datePublished" datetime="2018-12-12T18:11:07+08:00">2018-12-12</time>
             
 
             
@@ -487,7 +487,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-23 17:18:39" itemprop="dateModified" datetime="2019-05-23T17:18:39+08:00">2019-05-23</time>
+                <time title="Modified: 2019-05-23 23:16:24" itemprop="dateModified" datetime="2019-05-23T23:16:24+08:00">2019-05-23</time>
               
             
           </span>
@@ -546,7 +546,62 @@
       
 
       
-        
+        <h1 id="Linux-系统运维"><a href="#Linux-系统运维" class="headerlink" title="Linux 系统运维"></a>Linux 系统运维</h1><h2 id="系统状态"><a href="#系统状态" class="headerlink" title="系统状态"></a>系统状态</h2><h3 id="监控系统状态"><a href="#监控系统状态" class="headerlink" title="监控系统状态"></a>监控系统状态</h3><ul>
+<li>w </li>
+<li>uptime</li>
+<li><p>vmstat<br>vmstat  1<br>vmstat 1 10<br>vmstat各指标含义：<br>r ：表示运行和等待cpu时间片的进程数，如果长期大于服务器cpu的个数，则说明cpu不够用了；<br>b ：表示等待资源的进程数，比如等待I/O, 内存等，这列的值如果长时间大于1，则需要关注一下了<br>si ：由交换区进入内存的数量；<br>so ：由内存进入交换区的数量；<br>bi ：从块设备读取数据的量（读磁盘）；<br>bo： 从块设备写入数据的量（写磁盘）；<br>wa ：表示I/O等待所占用cpu时间百分比.</p>
+</li>
+<li><p>top<br>用于动态监控进程所占系统资源，每隔3秒变一次。<br>RES 这一项为进程所占内存大小，而 %MEM 为使用内存百分比。在 top状态下，按 “shift + m”, 可以按照内存使用大小排序。按数字 ‘1’ 可以列出各颗cpu的使用状态。<br>top -bn1 它表示非动态打印系统资源使用情况，可以用在shell脚本中 </p>
+</li>
+<li><p>sar<br>没有这个命令，使用yum install -y sysstat<br>网卡流量 sar -n DEV, sar -n DEV 1 10<br>sar -n DEV -f /var/log/sa/sa24<br>查看历史负载  sar -q<br>查看磁盘读写  sar -b</p>
+</li>
+</ul>
+<h3 id="PM"><a href="#PM" class="headerlink" title="PM"></a>PM</h3><ul>
+<li><p>free查看系统内存使用情况<br>free以k为单位显示 -m以M为单位  -g以G为单位<br>mem(total):内存总数;<br>mem(used):已经分配的内存;<br>mem(free):未分配的内存;<br>mem(buffers):系统分配但未被使用的buffers；<br>mem(cached)系统分配但未被使用的cache<br>buffers/cache(used):实际使用的buffers与cache 总量，也是实际使用的内存；<br>buffers/cache(free):未被使用的buffers与cache和未被分配的内存之和，这就是系统当前实际可用内存<br>buffers是即将要被写入磁盘的，cache是被从磁盘中读出来的 </p>
+</li>
+<li><p>ps 查看系统进程<br>ps aux / ps -elf<br>PID ：进程的id，这个id很有用，在linux中内核管理进程就得靠pid来识别和管理某一个程，比如我想终止某一个进程，则用 ‘kill  进程的pid’ 有时并不能杀掉，则需要加一个-9选项了 kill  -9  进程pid<br>STAT ：表示进程的状态，进程状态分为以下几种<br>D 不能中断的进程（通常为IO）<br>R 正在运行中的进程<br>S 已经中断的进程，系统中大部分进程都是这个状态<br>T 已经停止或者暂停的进程，如果我们正在运行一个命令，比如说 sleep 10 如果我们按一下ctrl -z 让他暂停，那么我们用ps查看就会显示T这个状态<br>X 已经死掉的进程（这个从来不会出现）<br>Z 僵尸进程，杀不掉，打不死的垃圾进程，占系统一小点资源，不过没有关系。如果太多，就有问题了。<br>&lt; 高优先级进程<br>N 低优先级进程<br>L 在内存中被锁了内存分页<br>s 主进程<br>l 多线程进程</p>
+</li>
+</ul>
+<ul>
+<li>在前台的进程</li>
+</ul>
+<h2 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h2><h3 id="网络状态"><a href="#网络状态" class="headerlink" title="网络状态"></a>网络状态</h3><ul>
+<li><p>netstat 查看网络状况<br>netstat -lnp  查看当前系统开启的端口以及socket<br>netstat -an  查看当前系统所有的连接</p>
+</li>
+<li><p>curl<br>curl -xip:port <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>  # -x可以指定ip和端口，省略写hosts，方便实用<br>curl -Iv <a href="http://www.qq.com" target="_blank" rel="noopener">http://www.qq.com</a> # -I 可以把访问的内容略掉，只显示状态码,-v可以显示详细过程<br>curl  -u user:password  <a href="http://123.com" target="_blank" rel="noopener">http://123.com</a> # -u可以指定用户名和密码<br>curl  <a href="http://study.lishiming.net/index.html" target="_blank" rel="noopener">http://study.lishiming.net/index.html</a> -O #可以下载，还可以使用 -o 自定义名字 curl -o index2.html<a href="http://study.lishiming.net/index.html" target="_blank" rel="noopener">http://study.lishiming.net/index.html</a></p>
+</li>
+<li><p>nc -z -w2 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 1-1024  # -w2 表示 2s超时  port 这里可以只写一个端口，也可以写一个范围。 使用nc扫描端口时，必须要加 -z 否则不显示结果。另外，如果想把不开放的端口也显示出来，可以加一个 -v </p>
+</li>
+<li><p>tcpdump 系统自带抓包工具<br>tcpdump -nn -i eth0 tcp and host 192.168.0.1 and port 80<br>tcpdump -nn -vs0 tcp and port not 22 -c 100 -w 1.cap<br>wireshark 在linux下也可以安装 yum install -y wireshark<br>抓包分析http请求：tshark -n -t a -R http.request -T fields -e “frame.time” -e “ip.src” -e “http.host” -e “http.request.method” -e “http.request.uri”</p>
+</li>
+</ul>
+<h1 id="Selinux、Iptables"><a href="#Selinux、Iptables" class="headerlink" title="Selinux、Iptables"></a>Selinux、Iptables</h1><ul>
+<li><p>Selinux<br>配置文件 /etc/selinux/config<br>三种形式：enforcing, permissive, disabled SELINUX=disabled<br>setenforce 0/1<br>getenforce </p>
+</li>
+<li><p>netfilter –  iptables<br>iptables -nvL 查看规则<br>iptables -F 清除当前的规则<br>iptables -Z 计数器清零<br>service iptables save 保存规则 保存的规则文件为：/etc/sysconfig/iptables<br>service iptables stop  可以暂停防火墙，但是重启后它会读取/etc/sysconfig/iptables 从而启动防火墙，另外即使我们停止防火墙，但一旦我们添加任何一条规则，它也会开启<br>iptables -t  指定表名，默认不加-t则是filter表<br>filter 这个表主要用于过滤包的，是系统预设的表,内建三个链INPUT、OUTPUT以及FORWARD。INPUT作用于进入本机的包；OUTPUT作用于本机送出的包；FORWARD作用于那些跟本机无关的包。<br>nat 主要用处是网络地址转换，也有三个链。PREROUTING 链的作用是在包刚刚到达防火墙时改变它的目的地址，如果需要的话。OUTPUT链改变本地产生的包的目的地址。POSTROUTING链在包就要离开防火墙之前改变其源地址。<br>mangle 这个表主要是用于给数据包打标记，然后根据标记去操作哪些包。这个表几乎不怎么用。 </p>
+</li>
+<li><p>iptables规则相关：<br>查看规则 iptables -t nat -nvL<br>清除规则 iptables -t nat -F<br>增加/删除规则  iptables -A/-D INPUT -s 10.72.11.12 -p tcp –sport 1234 -d 10.72.137.159 –dport 80 -j DROP<br>插入规则 iptables -I INPUT -s 1.1.1.1 -j DROP/ACCEPT/REJECT<br>iptables -nvL –line-numbers  查看规则带有id号<br>iptables -D INPUT 1 根据规则的id号删除对应规则<br>iptables -P INPUT DROP  用来设定默认规则，默认是ACCEPT ，一旦设定为DROP后，只能使用 iptables -P ACCEPT 才能恢复成原始状态，而不能使用-F参数<br>示例：<br>针对filter表，预设策略INPUT链DROP，其他两个链ACCEPT，然后针对192.168.0.0/24开通22端口，对所有网段开放80端口，对所有网段开放21端口。 脚本如下：<br>#! /bin/bash<br>ipt=”/sbin/iptables”<br>$ipt -F; $ipt -P INPUT DROP;<br>$ipt -P OUTPUT ACCEPT; $ipt -P FORWARD ACCEPT;<br>$ipt -A INPUT -s 192.168.0.0/24 -p tcp –dport 22 -j ACCEPT<br>$ipt -A INPUT -p tcp –dport 80 -j ACCEPT<br>$ipt -A INPUT -p tcp –dport 21 -j ACCEPT<br>icmp的包有常见的应用,本机ping通外网，外网ping不通本机 iptables -I INPUT -p icmp –icmp-type 8 -j DROP </p>
+</li>
+<li><p>nat表应用：<br>路由器就是使用iptables的nat原理实现<br>假设您的机器上有两块网卡eth0和eth1，其中eth0的IP为192.168.10.11，eth1的IP为172.16.10.11 。eth0连接了intnet 但eth1没有连接，现在有另一台机器(172.16.10.12)和eth1是互通的，那么如何设置也能够让连接eth1的这台机器能够连接intnet?<br>echo “1” &gt; /proc/sys/net/ipv4/ip_forward<br>iptables -t nat -A POSTROUTING -s 172.16.10.0/24 -o eth0 -j MASQUERADE </p>
+</li>
+<li><p>iptables规则备份与恢复：<br>service iptables save 这样会保存到/etc/sysconfig/iptables<br>iptables-save &gt; myipt.rule 可以把防火墙规则保存到指定文件中<br>iptables-restore &lt; myipt.rule  这样可以恢复指定的规则</p>
+</li>
+</ul>
+<h3 id="计划任务"><a href="#计划任务" class="headerlink" title="计划任务"></a>计划任务</h3><ul>
+<li>Linux系统任务计划<br>/etc/crontab  cron的主配置文件，可以定义PATH<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cron格式如下：</span><br><span class="line"># .----------------分钟 (0 - 59)</span><br><span class="line"># |  .------------- 小时 (0 - 23)</span><br><span class="line"># |  |  .----------  日 (1 - 31)</span><br><span class="line"># |  |  |  .-------  月 (1 - 12)</span><br><span class="line"># |  |  |  |  .----   周 (0 - 6) (周日=0 or 7) </span><br><span class="line"># |  |  |  |  |</span><br><span class="line"># * *  * *  * user-name command to be executed</span><br><span class="line"></span><br><span class="line">cron 也是一个服务，所以需要先启动服务才能生效：service crond start; service crond status</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Linux-系统管理"><a href="#Linux-系统管理" class="headerlink" title="Linux 系统管理"></a>Linux 系统管理</h2><ul>
+<li><p>Linux系统服务管理<br>工具ntsysv 类似图形界面管理工具，如果没有该命令使用 yum install -y ntsysv 安装<br>常用服务：crond, iptables, network, sshd, syslog, irqbalance, sendmail, microcode_ctl<br>chkconfig –list<br>chkconfig –add/del servicename<br>chkconfig –level [345] servicename on/off</p>
+</li>
+<li><p>Linux系统日志<br>/var/log/messages核心系统日志文件<br>每周归档一个日志 messages-20130901<br>/etc/logrotate.conf<br>messages由syslogd这个守护进程产生的，如果停掉这个服务则系统不会产生/var/log/messages<br>/var/log/wtmp  查看用户登录历史 last<br>/var/log/btmp  lastb 查看无效登录历史<br>/var/log/maillog<br>/var/log/secure<br>dmesg<br>/var/log/dmesg</p>
+</li>
+<li><p>exec与xargs<br>exec 和find同时使用<br>查找当前目录创建时间大于10天的文件并删除 ：find . -mtime +10 -exec rm -rf {} \;<br>批量更改文件名: find ./<em> -exec mv {} {}_bak \;<br>xargs 用在管道符号后面<br>find . -mtime +10 |xargs rm -rf<br>ls -d ./</em> |xargs -n1 -i{} mv {} {}_bak<br>xargs 可以把多行变成一行  cat 1.txt|xargs</p>
+</li>
+<li><p>screen 工具介绍<br>screen相当于一个虚拟终端，它不会因为网络中断而退出，每次登录都可以进入那个screen<br>使用方法：直接输入screen命令<br>screen -ls  查看已经开启的screen<br>Ctrl +a 再按d退出该screen会话，只是退出，并没有结束。结束的话输入Ctrl +d 或者输入exit<br>退出后还想再次登录某个screen会话，使用sreen -r screenid 若只有一个screen 直接screen -r<br>screen -S aming ； 登录的话 screen -r aming</p>
+</li>
+</ul>
+
       
     </div>
 
@@ -597,18 +652,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/01/Prometheus/01.pro/" rel="next" title="Prometheus">
-                <i class="fa fa-chevron-left"></i> Prometheus
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/10/Python/03.High-level/01.Python的模块和包/" rel="prev" title="Python 的模块和包">
-                Python 的模块和包 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/25/Python/01.Basic-level/01.Python的语法基础/" rel="prev" title="Python 的语法基础">
+                Python 的语法基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -653,8 +704,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -827,6 +887,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-系统运维"><span class="nav-number">1.</span> <span class="nav-text">Linux 系统运维</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统状态"><span class="nav-number">1.1.</span> <span class="nav-text">系统状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#监控系统状态"><span class="nav-number">1.1.1.</span> <span class="nav-text">监控系统状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PM"><span class="nav-number">1.1.2.</span> <span class="nav-text">PM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络管理"><span class="nav-number">1.2.</span> <span class="nav-text">网络管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络状态"><span class="nav-number">1.2.1.</span> <span class="nav-text">网络状态</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Selinux、Iptables"><span class="nav-number">2.</span> <span class="nav-text">Selinux、Iptables</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计划任务"><span class="nav-number">2.0.1.</span> <span class="nav-text">计划任务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-系统管理"><span class="nav-number">2.1.</span> <span class="nav-text">Linux 系统管理</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

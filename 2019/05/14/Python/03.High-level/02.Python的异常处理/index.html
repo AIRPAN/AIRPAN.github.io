@@ -129,17 +129,18 @@
 
 
 
-  <meta name="description" content="Waiting....">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="异常 异常的分类 异常处理 异常手动抛出 自定义异常  异常的分类AssertError 断言语句（assert）失败 AttributeError 尝试访问未知的对象属性 EOFError 用户输入文件末尾标志EOF（Ctrl+d） FloatingPointError 浮点计算错误 GeneratorExit generator.close()方法被调用的时候 ImportError 导入模块">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 的异常处理">
+<meta property="og:url" content="http://yoursite.com/2019/05/14/Python/03.High-level/02.Python的异常处理/index.html">
 <meta property="og:site_name" content="AIR PAN">
-<meta property="og:description" content="Waiting....">
+<meta property="og:description" content="异常 异常的分类 异常处理 异常手动抛出 自定义异常  异常的分类AssertError 断言语句（assert）失败 AttributeError 尝试访问未知的对象属性 EOFError 用户输入文件末尾标志EOF（Ctrl+d） FloatingPointError 浮点计算错误 GeneratorExit generator.close()方法被调用的时候 ImportError 导入模块">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T04:44:16.943Z">
+<meta property="og:updated_time" content="2019-05-23T06:19:16.041Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="Waiting....">
+<meta name="twitter:title" content="Python 的异常处理">
+<meta name="twitter:description" content="异常 异常的分类 异常处理 异常手动抛出 自定义异常  异常的分类AssertError 断言语句（assert）失败 AttributeError 尝试访问未知的对象属性 EOFError 用户输入文件末尾标志EOF（Ctrl+d） FloatingPointError 浮点计算错误 GeneratorExit generator.close()方法被调用的时候 ImportError 导入模块">
 
 
 
@@ -147,7 +148,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/categories/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/14/Python/03.High-level/02.Python的异常处理/">
 
 
 
@@ -157,7 +158,7 @@
   };
 </script>
 
-  <title>categories | AIR PAN</title>
+  <title>Python 的异常处理 | AIR PAN</title>
   
 
 
@@ -299,7 +300,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -404,97 +405,327 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/Python/03.High-level/02.Python的异常处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Air Pan">
+      <meta itemprop="description" content="Waiting....">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AIR PAN">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">categories
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
+          <h1 class="post-title" itemprop="name headline">Python 的异常处理
+
               
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-              3 categories in total
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-14 18:11:07" itemprop="dateCreated datePublished" datetime="2019-05-14T18:11:07+08:00">2019-05-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-23 14:19:16" itemprop="dateModified" datetime="2019-05-23T14:19:16+08:00">2019-05-23</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><ul>
+<li>异常的分类</li>
+<li>异常处理</li>
+<li>异常手动抛出</li>
+<li>自定义异常</li>
+</ul>
+<h2 id="异常的分类"><a href="#异常的分类" class="headerlink" title="异常的分类"></a>异常的分类</h2><pre><code>AssertError 断言语句（assert）失败
+AttributeError 尝试访问未知的对象属性
+EOFError 用户输入文件末尾标志EOF（Ctrl+d）
+FloatingPointError 浮点计算错误
+GeneratorExit generator.close()方法被调用的时候
+ImportError 导入模块失败的时候
+IndexError 索引超出序列的范围
+KeyError 字典中查找一个不存在的关键字
+KeyboardInterrupt 用户输入中断键（Ctrl+c）
+MemoryError 内存溢出（可通过删除对象释放内存）
+NameError 尝试访问一个不存在的变量
+NotImplementedError 尚未实现的方法
+OSError 操作系统产生的异常（例如打开一个不存在的文件）
+OverflowError 数值运算超出最大限制
+ReferenceError 弱引用（weak reference）试图访问一个已经被垃圾回收机制回收了的对象
+RuntimeError 一般的运行时错误
+StopIteration 迭代器没有更多的值
+SyntaxError Python的语法错误
+IndentationError 缩进错误
+TabError Tab和空格混合使用
+SystemError Python编译器系统错误
+SystemExit Python编译器进程被关闭
+TypeError 不同类型间的无效操作
+UnboundLocalError 访问一个未初始化的本地变量（NameError的子类）
+UnicodeError Unicode相关的错误（ValueError的子类）
+UnicodeEncodeError Unicode编码时的错误（UnicodeError的子类）
+UnicodeDecodeError Unicode解码时的错误（UnicodeError的子类）
+UnicodeTranslateError Unicode转换时的错误（UnicodeError的子类）
+ValueError 传入无效的参数
+ZeroDivisionError 除数为零
+</code></pre><h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><ul>
+<li>不能保证程序永远正确运行</li>
+<li>但是，必须保证程序在最坏的情况下得到的问题被妥善处理</li>
+<li><p>python的异常处理模块全部语法为：</p>
+<pre><code>try:
+    尝试实现某个操作，
+    如果没出现异常，任务就可以完成
+    如果出现异常，将异常从当前代码块扔出去尝试解决异常
+
+except 异常类型1:
+    解决方案1：用于尝试在此处处理异常解决问题
+
+except 异常类型2：
+    解决方案2：用于尝试在此处处理异常解决问题
+
+except (异常类型1,异常类型2...)
+    解决方案：针对多个异常使用相同的处理方式
+
+excpet:
+    解决方案：所有异常的解决方案
+
+else:
+    如果没有出现任何异常，将会执行此处代码
+
+finally:
+    管你有没有异常都要执行的代码
+</code></pre></li>
+</ul>
+<ul>
+<li>流程</li>
+</ul>
+<ol>
+<li>执行try下面的语句</li>
+<li>如果出现异常，则在except语句里查找对应异常病进行处理</li>
+<li>如果没有出现异常，则执行else语句内容</li>
+<li>最后，不管是否出现异常，都要执行finally语句</li>
+</ol>
+<ul>
+<li>除except(最少一个)以外，else和finally可选<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># 简单异常案例1</span><br><span class="line">try:</span><br><span class="line">    num = int(input(&quot;Plz input your number:&quot;))</span><br><span class="line">    rst = 100/num</span><br><span class="line">    print(&quot;计算结果是： &#123;0&#125;&quot;.format(rst))</span><br><span class="line">except:</span><br><span class="line">    print(&quot;你特娘的输入的啥玩意儿&quot;)</span><br><span class="line">    # exit是退出程序的意思</span><br><span class="line">    exit()</span><br><span class="line">  </span><br><span class="line">Plz input your number:0</span><br><span class="line">你特娘的输入的啥玩意儿  </span><br><span class="line">```    </span><br><span class="line">```   </span><br><span class="line"># 简单异常案例2</span><br><span class="line"># 给出提示信息</span><br><span class="line">try:</span><br><span class="line">    num = int(input(&quot;Plz input your number:&quot;))</span><br><span class="line">    rst = 100/num</span><br><span class="line">    print(&quot;计算结果是： &#123;0&#125;&quot;.format(rst))</span><br><span class="line"># 捕获异常后，把异常实例化，出息信息会在实例里</span><br><span class="line"># 注意以下写法</span><br><span class="line"># 以下语句是捕获ZeroDivisionError异常并实例化实例e</span><br><span class="line">except ZeroDivisionError as e:</span><br><span class="line">    print(&quot;你特娘的输入的啥玩意儿&quot;)</span><br><span class="line">    print(e)</span><br><span class="line">    # exit是退出程序的意思</span><br><span class="line">    exit()</span><br><span class="line">    </span><br><span class="line">Plz input your number:0</span><br><span class="line">你特娘的输入的啥玩意儿</span><br><span class="line">division by zero</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"># 简单异常案例3</span><br><span class="line"># 给出提示信息</span><br><span class="line">try:</span><br><span class="line">    num = int(input(&quot;Plz input your number:&quot;))</span><br><span class="line">    rst = 100/num</span><br><span class="line">    print(&quot;计算结果是： &#123;0&#125;&quot;.format(rst))</span><br><span class="line"></span><br><span class="line"># 如果是多种error的情况</span><br><span class="line"># 需要把越具体的错误，越往前放</span><br><span class="line"># 在异常类继承关系中，越是子类的异常，越要往前放，</span><br><span class="line"># 越是父亲类的异常，越要往后放</span><br><span class="line"></span><br><span class="line"># 在处理异常的时候，一旦拦截到某一个异常，则不在继续往下查看，直接进行下一个</span><br><span class="line"># 代码，即有finally则执行finally语句块，否则就执行下一个大的语句</span><br><span class="line">except ZeroDivisionError as e:</span><br><span class="line">    print(&quot;你特娘的输入的啥玩意儿&quot;)</span><br><span class="line">    print(e)</span><br><span class="line">    # exit是退出程序的意思</span><br><span class="line">    exit()</span><br><span class="line">except NameError as e:</span><br><span class="line">    print(&quot;名字起错了&quot;)</span><br><span class="line">    print(e)</span><br><span class="line"></span><br><span class="line">except AttributeError as e:</span><br><span class="line">    print(&quot;好像属性有问题&quot;)</span><br><span class="line">    print(e)</span><br><span class="line">    exit()</span><br><span class="line">    </span><br><span class="line"># 所有异常都是继承自Exception</span><br><span class="line"># 如果写上下面这句话，任何异常都会拦截住</span><br><span class="line"># 而且，下面这句话一定是最后一个exception</span><br><span class="line">except Exception as e:</span><br><span class="line">    print(&quot;我也不知道就出错了&quot;)</span><br><span class="line">    print(e)</span><br><span class="line">    </span><br><span class="line">except ValueError as e:</span><br><span class="line">    print(&quot;NO&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;)</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">Plz input your number:rerer</span><br><span class="line">我也不知道就出错了</span><br><span class="line">invalid literal for int() with base 10: &apos;rerer&apos;  </span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">## 用户手动引发异常</span><br><span class="line">- 当某些情况，用户希望自己引发一个异常的时候，可以使用</span><br><span class="line">- raise 关键字来引发异常</span><br></pre></td></tr></table></figure>
+<h1 id="raise案例-1"><a href="#raise案例-1" class="headerlink" title="raise案例-1"></a>raise案例-1</h1><p>try:</p>
+<pre><code># 手动引发一个异常
+#　注意语法：　raise　errorclassname
+raise ValueError
+print(&quot;还没完呀&quot;)
+</code></pre><p>except NameError as e:<br>    print(“NameError”)<br>except ValueError as e:<br>    print(“ValueError”)<br>except Exception as e:<br>    print(“有异常”)<br>finally:<br>    print(“我肯定会被执行的”)</p>
+<p>ValueError<br>我肯定会被执行的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h1 id="raise案例-2"><a href="#raise案例-2" class="headerlink" title="raise案例-2"></a>raise案例-2</h1><h1 id="自己定义异常"><a href="#自己定义异常" class="headerlink" title="自己定义异常"></a>自己定义异常</h1><h1 id="需要注意：-自定义异常必须是系统异常的子类"><a href="#需要注意：-自定义异常必须是系统异常的子类" class="headerlink" title="需要注意：　自定义异常必须是系统异常的子类"></a>需要注意：　自定义异常必须是系统异常的子类</h1><p>class DanaValueError(ValueError):<br>    pass</p>
+<p>try:</p>
+<pre><code># 手动引发一个异常
+#　注意语法：　raise　errorclassname
+raise DanaValueError
+print(&quot;还没完呀&quot;)
+</code></pre><p>except NameError as e:<br>    print(“NameError”)<br>except ValueError as e:<br>    print(“ValueError”)<br>except Exception as e:<br>    print(“有异常”)<br>finally:<br>    print(“我肯定会被执行的”)</p>
+<p>ValueError<br>我肯定会被执行的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"># else语句案例</span><br><span class="line">try:</span><br><span class="line">    num = int(input(&quot;Plz input your number:&quot;))</span><br><span class="line">    rst = 100/num</span><br><span class="line">    print(&quot;计算结果是： &#123;0&#125;&quot;.format(rst))</span><br><span class="line">except Exception as e:</span><br><span class="line">    print(&quot;Exception&quot;)</span><br><span class="line">    </span><br><span class="line">else:</span><br><span class="line">    print(&quot;No Exception&quot;)</span><br><span class="line">finally:</span><br><span class="line">    print(&quot;反正我会被执行&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Plz input your number:ghhj</span><br><span class="line">Exception</span><br><span class="line">反正我会被执行</span><br></pre></td></tr></table></figure></p>
+<h2 id="关于自定义异常"><a href="#关于自定义异常" class="headerlink" title="关于自定义异常"></a>关于自定义异常</h2><ul>
+<li>只要是raise异常，则推荐自定义异常</li>
+<li>在自定义异常的时候，一般包含以下内容：<ul>
+<li>自定义发生异常的异常代码</li>
+<li>自定义发生异常后的问题提示</li>
+<li>自定义发生异常的行数</li>
+</ul>
+</li>
+<li>最终的目的是，一旦发生异常，方便程序员快速定位错误现场</li>
+</ul>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/10/Python/03.High-level/01.Python的模块和包/" rel="next" title="Python 的模块和包">
+                <i class="fa fa-chevron-left"></i> Python 的模块和包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/20/Python/03.High-level/03.Pyhton的常用模块/" rel="prev" title="Python 的常用模块">
+                Python 的常用模块 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -523,8 +754,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -682,6 +922,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#异常"><span class="nav-number">1.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常的分类"><span class="nav-number">1.1.</span> <span class="nav-text">异常的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">1.2.</span> <span class="nav-text">异常处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#raise案例-1"><span class="nav-number">2.</span> <span class="nav-text">raise案例-1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#raise案例-2"><span class="nav-number">3.</span> <span class="nav-text">raise案例-2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自己定义异常"><span class="nav-number">4.</span> <span class="nav-text">自己定义异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需要注意：-自定义异常必须是系统异常的子类"><span class="nav-number">5.</span> <span class="nav-text">需要注意：　自定义异常必须是系统异常的子类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于自定义异常"><span class="nav-number">5.1.</span> <span class="nav-text">关于自定义异常</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

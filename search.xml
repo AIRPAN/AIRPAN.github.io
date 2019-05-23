@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F05%2F22%2Ftest%2Fv2%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[MySQL 语法「一」]]></title>
+    <url>%2F2019%2F05%2F21%2FMySQL%2F01.MySQL%2F</url>
+    <content type="text"><![CDATA[MySQL 语法 MySQL 管理 MySQL 用户、授权 MySQL 库 MySQL 表 MySQL 管理启动和关闭 不是通过RPM包安装的MySQL启动： /usr/bin/mysqld_safe &amp;关闭： mysqladmin -uroot shutdown -p MySQL 连接 -D 指定将要登录的具体的数据库mysql -uroot -D test -p123456 本地连接mysql，-S 指定套接字位置mysql -u root -p -S /var/lib/mysql/mysql.sock 远程连接mysql，-P 指定mysql服务对应的端口mysql -u root -p 123456 -h 192.168.1.1 -P 3306 连接数据库的同时执行对应命令，并返回结果，不进入mysql 提示符mysql -uroot -p123456 -e ‘use mysql; select user,host,passwd from user;’mysql -uroot -p123456 -e ‘create database if not exists testdb;show databases;’ Help help create help create databases help contents help ‘Data Types’ mysql的属性、状态、变量 mysql&gt; status 系统变量：配置了mysql的运行环境属性 全局变量：global variables ,作用域为整个mysql服务器show global variables；版本相关： show global variables like ‘%version%’ ;字符集相关： show global variables where variable_name like ‘character%’;日志是否关闭： show global variables where variable_name like ‘%log%’ and value=’off’; 会话变量：session variables，作用域为当前会话show session variables;show variables; 查看单个全局系统变量或者会话系统变量：select @@[global | session].system_var_name;select @@global.pid_file;select @@session.warning_count; 状态变量：mysql运行中的状态信息，不能设置。查询mysql运行中信息和状态：状态变量也分为全局级别与会话级别show status;show global status;show session status;show status where variable_name like ‘Uptime%’; 在写储存过程中，调用系统变量的值：@@GLOBAL.var_name@@SESSION.var_name@@var_name 表示优先从会话级别获取变量值 修改变量值/设定变量值:① 运行时修改：是否立即生效取决于修改的变量的类型，set 命令，运行时修改变量运行时修改global级别的变量：对修改之前建立的会话没有影响，仅对修改后新建立的会话有效运行时修改session级别的变量：仅对当前会话有效，且立即生效② 配置文件修改：重启后生效。例：③ set @@session.autocommit=0;设置系统变量语法总结：set global.var_name = value;set @@global.var_name = value;set session.var_name = value;set @@session.var_name = value;set var_name = value; 不指定级别表示默认为设置会话级别的变量。 MySQL 用户MySQL 用户管理 mysql 的用户格式： usernmae@hosthost: 主机名 或者 IP ，mysql 认为主机名 和 IP地址属于不同的主机。通配符： ： 表示任意单个字符%： 表示任意长度的任意字符root@’10.1.%.%’ root用户可以通过10.1这个网段远程登录 查询用户use mysqlselect user,host,passwd from user; 创建用户① create user ‘zabbix_proxy‘@’localhost’ identified by ‘zabbix_asp_2017’;② 直接在mysql库的user 表中插入一条记录。（设置了严格的sql-mode 后无法使用）insert into mysql.user(user,host,passwd) values(‘pan’,’192.168.%.%’,passwd(‘123456’));③ 在授权数据库的同时，如果对应的用户不存在，那么mysql会自动创建对应的用户。grant all on pan.*to pan@127.0.0.1 identfied by ‘123456’; 删除用户① delete 语句删除mysql.user 表中的用户对应的记录，有相关信息残留。delete from mysql.user where user=’pan’ and host=’127.0.0.1’;② drop user pan@127.0.0.1 用户与用户对应的所有权限将被删除。 重命名用户：rename user oldname to newname; MySQL 密码管理 更改用户名密码，官方推荐使用alterALTER USER test@’%’ IDENTIFIED BY ‘123456’; update mysql.user set authentication_string=password(“新密码”) where User=”test” and Host=”localhost”;flush privileges; 忘记root密码① vi /etc/my.cnf，在[mysqld]中添加skip-grant-tables② 重启mysql : systemctl restart mysqld.service③ mysql -uroot -p④ use mysql;⑤ 修改root密码：update user set authentication_string=password(‘123456’) where user=’root’;flush privileges;⑥ 删除第1部增加的配置信息skip-grant-tables⑦ 重启mysql ： systemctl restart mysqld.service 授权管理 授权命令：GRANT ALL privileges on db.tbl to ‘username‘@’host’ identified by ‘passwd’;db 数据库名 tbl 表名 可以使用通配。示例：给本地用户授权某个数据库的所有权限grant all privileges on pandb. to pan@localhost identified by ‘123456’;grant all on pandb.* to pan@localhost identified by ‘123456’; privileges 关键字可省 给远程用户授权grant all privileges on panthink.* to pan@’192.168.%.%’ identified by ‘123456’;flush privileges; 授权用户某个数据库的某个权限，比如，只授权用户对于某个数据grant select privileges on panthink.* to pan@’192.168.%.%‘； 授权某个数据库多个权限：grant insert,delete,update,select on panthink.* to pan@’192.168.%.%’; 授权给多个用户：grant select on mydb.* to pan@locakhost,pan2@localhost; 对某张表的某个字段授权：grant select(name,age) on pan.students to pan@localhost; 授权test函数，用function关键字指明被操作的对象是函数：grant execute on fuction panthink.test to pan@’192.168.%.%’; 强制用户使用ssl建立会话grant useage on . to ‘zabbix‘@’222.222.222.222’ require ssl;取消ssl 连接限制grant useage on . to ‘zabbix‘@’222.222.222.222’ require none; 赋予用户授权的权限授权zabbix用户db01 的 select权限，同时zabbix 用户也能将此权限授予给其他用户grant select on db01.* to ‘zabbix‘@’192.168.%.%’ with grant option; 查看授权：从用户： show grants for 用户名；从数据库：select * from mysql.db where db=”要查看的数据库“； 删除授权：revoke ‘要删除的权限’ on db.tb from user@host;删除zabbix@192.168.1.1 用户对于word数据库的所有权限:revoke all on word.* from zabbix@192.168.1.1; 库管理 创建数据库create database if not exists testdb charaacter set utf16; 查看数据库show databases;show create database testdb;查看可用的字符集的命令show character set;查看排序方式的命令show collation； 修改数据库alter database testdb character set utf 8;修改数据库的字符集，并设置为默认字符集，数据库中的表都会继承此字符集。alter database testdb default character set utf8; 删除数据库drop database if exists testdb; 数据库导出mysqldump -u user_name -p database_name &gt; 导出的文件名 导出一个数据库结构（不包含数据）mysqldump -u user_name -p -d –add-drop-table database_name &gt; outfile_name.sql 带语言参数导出mysqldump -uroot -p –default-character-set=latin1 –set-charset=gbk –skip-opt database_name &gt; outfile_name.sql 表管理 查看表的状态show table status where name like ‘%tt%’;desc table_name;查看某张表创建时对应的sql 语句show create table table_name;复制表，但字段的约束和表的索引会丢失。create table testtb2 select * from students;完全的复制表结构create table testdb3 like students; 修改表：重命名表alter table test1 rename as test2;为表添加字段alter table ttt add cloumn age int;alter table ttt add age int; // 省略cloumn 默认为操作列。添加字段设定相应的约束：alter table ttt add age int not null default 0;alter table ttt add cloumn age int not null default 0;添加字段，指定字段在表中的位置：alter table ttt add id int first;alter table hosts add categoryof varchar(200) DEFAULT NULL after templateid;删除字段：alter table ttt drop stuname;重命名字段：alter table tsettb4 change name name1 char(20);修改字段类型：alter table testtb change age age char(20);alter table testtb modify age int; // modify 不能修改字段名称。 导出单个数据表结构和数据mysqldump -u user_name -p database_name table_name &gt; outfile_name.sql 导出单个数据表结构（不包含数据）mysqldump -h localhost -uroot -p123456 -d database table &gt; dump.sql]]></content>
       <categories>
-        <category>mysql</category>
+        <category>MySQL</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F05%2F22%2Ftest%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -53,6 +42,39 @@
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux]]></title>
+    <url>%2F2019%2F05%2F01%2FLinux%2F01%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Prometheus]]></title>
+    <url>%2F2019%2F05%2F01%2FPrometheus%2F01.pro%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Prometheus</category>
+      </categories>
+      <tags>
+        <tag>Prometheus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Zabbix 的面向对象]]></title>
+    <url>%2F2019%2F05%2F01%2FZabbix%2F01%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Zabbix</category>
+      </categories>
+      <tags>
+        <tag>Zabbix</tag>
       </tags>
   </entry>
   <entry>

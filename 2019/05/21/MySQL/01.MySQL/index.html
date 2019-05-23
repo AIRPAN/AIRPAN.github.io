@@ -129,26 +129,28 @@
 
 
 
-  <meta name="description" content="博客语法测试">
-<meta name="keywords" content="python">
+  <meta name="description" content="MySQL 语法 MySQL 管理 MySQL 用户、授权 MySQL 库 MySQL 表  MySQL 管理启动和关闭 不是通过RPM包安装的MySQL启动：    /usr/bin/mysqld_safe &amp;amp;关闭：    mysqladmin -uroot shutdown -p  MySQL 连接 -D 指定将要登录的具体的数据库mysql -uroot -D test -p1234">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/05/22/test/hello-world/index.html">
+<meta property="og:title" content="MySQL 语法「一」">
+<meta property="og:url" content="http://yoursite.com/2019/05/21/MySQL/01.MySQL/index.html">
 <meta property="og:site_name" content="AIR PAN">
-<meta property="og:description" content="博客语法测试">
+<meta property="og:description" content="MySQL 语法 MySQL 管理 MySQL 用户、授权 MySQL 库 MySQL 表  MySQL 管理启动和关闭 不是通过RPM包安装的MySQL启动：    /usr/bin/mysqld_safe &amp;amp;关闭：    mysqladmin -uroot shutdown -p  MySQL 连接 -D 指定将要登录的具体的数据库mysql -uroot -D test -p1234">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T04:40:56.957Z">
+<meta property="og:updated_time" content="2019-05-23T12:51:52.688Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="博客语法测试">
+<meta name="twitter:title" content="MySQL 语法「一」">
+<meta name="twitter:description" content="MySQL 语法 MySQL 管理 MySQL 用户、授权 MySQL 库 MySQL 表  MySQL 管理启动和关闭 不是通过RPM包安装的MySQL启动：    /usr/bin/mysqld_safe &amp;amp;关闭：    mysqladmin -uroot shutdown -p  MySQL 连接 -D 指定将要登录的具体的数据库mysql -uroot -D test -p1234">
 
 
+
+  <link rel="alternate" href="/atom.xml" title="AIR PAN" type="application/atom+xml">
 
 
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/22/test/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/21/MySQL/01.MySQL/">
 
 
 
@@ -158,7 +160,7 @@
   };
 </script>
 
-  <title>Hello World | AIR PAN</title>
+  <title>MySQL 语法「一」 | AIR PAN</title>
   
 
 
@@ -425,7 +427,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/test/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/MySQL/01.MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Air Pan">
@@ -442,7 +444,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">MySQL 语法「一」
 
               
             
@@ -468,9 +470,25 @@
                 
               
 
-              <time title="Created: 2019-05-22 12:40:56" itemprop="dateCreated datePublished" datetime="2019-05-22T12:40:56+08:00">2019-05-22</time>
+              <time title="Created: 2019-05-21 18:11:07" itemprop="dateCreated datePublished" datetime="2019-05-21T18:11:07+08:00">2019-05-21</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-23 20:51:52" itemprop="dateModified" datetime="2019-05-23T20:51:52+08:00">2019-05-23</time>
+              
             
           </span>
 
@@ -486,7 +504,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
 
                 
                 
@@ -514,8 +532,6 @@
           
 
           
-            <div class="post-description">博客语法测试</div>
-          
 
         </div>
       </header>
@@ -530,15 +546,119 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="MySQL-语法"><a href="#MySQL-语法" class="headerlink" title="MySQL 语法"></a>MySQL 语法</h1><ul>
+<li>MySQL 管理</li>
+<li>MySQL 用户、授权</li>
+<li>MySQL 库</li>
+<li>MySQL 表</li>
+</ul>
+<h2 id="MySQL-管理"><a href="#MySQL-管理" class="headerlink" title="MySQL 管理"></a>MySQL 管理</h2><h3 id="启动和关闭"><a href="#启动和关闭" class="headerlink" title="启动和关闭"></a>启动和关闭</h3><ul>
+<li>不是通过RPM包安装的MySQL<br>启动：    /usr/bin/mysqld_safe &amp;<br>关闭：    mysqladmin -uroot shutdown -p</li>
+</ul>
+<h3 id="MySQL-连接"><a href="#MySQL-连接" class="headerlink" title="MySQL 连接"></a>MySQL 连接</h3><ul>
+<li><p>-D 指定将要登录的具体的数据库<br>mysql -uroot -D test -p123456  </p>
+</li>
+<li><p>本地连接mysql，-S  指定套接字位置<br>mysql -u root -p -S /var/lib/mysql/mysql.sock</p>
+</li>
+<li><p>远程连接mysql，-P 指定mysql服务对应的端口<br>mysql -u root -p 123456 -h 192.168.1.1 -P 3306</p>
+</li>
+<li><p>连接数据库的同时执行对应命令，并返回结果，不进入mysql 提示符<br>mysql -uroot -p123456 -e  ‘use mysql; select user,host,passwd from user;’<br>mysql -uroot -p123456 -e ‘create database if not exists testdb;show databases;’</p>
+</li>
+</ul>
+<h3 id="Help"><a href="#Help" class="headerlink" title="Help"></a>Help</h3><ul>
+<li>help create </li>
+<li>help create databases</li>
+<li>help contents</li>
+<li>help ‘Data Types’</li>
+</ul>
+<h3 id="mysql的属性、状态、变量"><a href="#mysql的属性、状态、变量" class="headerlink" title="mysql的属性、状态、变量"></a>mysql的属性、状态、变量</h3><ul>
+<li>mysql&gt; status</li>
+<li><p>系统变量：配置了mysql的运行环境属性</p>
+</li>
+<li><p>全局变量：global variables ,作用域为整个mysql服务器<br>show  global variables；<br>版本相关：    show global variables  like ‘%version%’ ;<br>字符集相关：    show global variables where variable_name like ‘character%’;<br>日志是否关闭：    show global variables where variable_name like ‘%log%’ and value=’off’;</p>
+</li>
+<li><p>会话变量：session variables，作用域为当前会话<br>show session variables;<br>show variables; </p>
+</li>
+<li><p>查看单个全局系统变量或者会话系统变量：<br>select @@[global | session].system_var_name;<br>select @@global.pid_file;<br>select @@session.warning_count;</p>
+</li>
+<li><p>状态变量：mysql运行中的状态信息，不能设置。<br>查询mysql运行中信息和状态：状态变量也分为全局级别与会话级别<br>show  status;<br>show global status;<br>show session status;<br>show status where variable_name like ‘Uptime%’;</p>
+</li>
+<li><p>在写储存过程中，调用系统变量的值：<br>@@GLOBAL.var_name<br>@@SESSION.var_name<br>@@var_name 表示优先从会话级别获取变量值</p>
+</li>
+<li><p>修改变量值/设定变量值:<br>① 运行时修改：是否立即生效取决于修改的变量的类型，set 命令，运行时修改变量<br>运行时修改global级别的变量：对修改之前建立的会话没有影响，仅对修改后新建立的会话有效<br>运行时修改session级别的变量：仅对当前会话有效，且立即生效<br>② 配置文件修改：重启后生效。<br>例：<br>③ set @@session.autocommit=0;<br>设置系统变量语法总结：<br>set global.var_name = value;<br>set @@global.var_name = value;<br>set session.var_name = value;<br>set @@session.var_name = value;<br>set var_name = value; 不指定级别表示默认为设置会话级别的变量。</p>
+</li>
+</ul>
+<h2 id="MySQL-用户"><a href="#MySQL-用户" class="headerlink" title="MySQL 用户"></a>MySQL 用户</h2><h3 id="MySQL-用户管理"><a href="#MySQL-用户管理" class="headerlink" title="MySQL 用户管理"></a>MySQL 用户管理</h3><ul>
+<li>mysql 的用户格式：    usernmae@host<br>host: 主机名 或者 IP ，mysql 认为主机名 和 IP地址属于不同的主机。<br>通配符：</li>
+<li><p>： 表示任意单个字符<br>%： 表示任意长度的任意字符<br>root@’10.1.%.%’    root用户可以通过10.1这个网段远程登录</p>
+</li>
+<li><p>查询用户<br>use mysql<br>select user,host,passwd from user;</p>
+</li>
+<li><p>创建用户<br>① create user ‘zabbix_proxy‘@’localhost’ identified by ‘zabbix_asp_2017’;<br>② 直接在mysql库的user 表中插入一条记录。（设置了严格的sql-mode  后无法使用）<br>insert  into mysql.user(user,host,passwd) values(‘pan’,’192.168.%.%’,passwd(‘123456’));<br>③ 在授权数据库的同时，如果对应的用户不存在，那么mysql会自动创建对应的用户。<br>grant all on pan.*to <a href="mailto:pan@127.0.0.1" target="_blank" rel="noopener">pan@127.0.0.1</a> identfied by ‘123456’;</p>
+</li>
+<li><p>删除用户<br>① delete 语句删除mysql.user 表中的用户对应的记录，有相关信息残留。<br>delete from mysql.user where user=’pan’ and host=’127.0.0.1’;<br>② drop user <a href="mailto:pan@127.0.0.1" target="_blank" rel="noopener">pan@127.0.0.1</a>     用户与用户对应的所有权限将被删除。</p>
+</li>
+<li><p>重命名用户：<br>rename user oldname to newname;</p>
+</li>
+</ul>
+<h3 id="MySQL-密码管理"><a href="#MySQL-密码管理" class="headerlink" title="MySQL 密码管理"></a>MySQL 密码管理</h3><ul>
+<li><p>更改用户名密码，官方推荐使用alter<br>ALTER USER test@’%’ IDENTIFIED BY ‘123456’;</p>
+</li>
+<li><p>update mysql.user set authentication_string=password(“新密码”) where User=”test” and Host=”localhost”;<br>flush privileges;</p>
+</li>
+<li><p>忘记root密码<br>① vi /etc/my.cnf，在[mysqld]中添加<br>skip-grant-tables<br>② 重启mysql : systemctl restart mysqld.service<br>③ mysql -uroot -p<br>④ use mysql;<br>⑤ 修改root密码：<br>update user set authentication_string=password(‘123456’) where user=’root’;<br>flush privileges;<br>⑥ 删除第1部增加的配置信息<br>skip-grant-tables<br>⑦ 重启mysql ： systemctl restart mysqld.service</p>
+</li>
+</ul>
+<h2 id="授权管理"><a href="#授权管理" class="headerlink" title="授权管理"></a>授权管理</h2><ul>
+<li><p>授权命令：<br>GRANT ALL privileges on db.tbl to ‘username‘@’host’ identified by ‘passwd’;<br>db 数据库名  tbl 表名    可以使用<em>通配。<br>示例：给本地用户授权某个数据库的所有权限<br>grant all privileges on pandb.</em> to pan@localhost identified by ‘123456’;<br>grant all on pandb.* to pan@localhost identified by ‘123456’;            privileges 关键字可省</p>
+</li>
+<li><p>给远程用户授权<br>grant all privileges on panthink.* to pan@’192.168.%.%’ identified by ‘123456’;<br>flush privileges;</p>
+</li>
+<li><p>授权用户某个数据库的某个权限，比如，只授权用户对于某个数据<br>grant select privileges on panthink.* to pan@’192.168.%.%‘；</p>
+</li>
+<li><p>授权某个数据库多个权限：<br>grant insert,delete,update,select on panthink.* to pan@’192.168.%.%’;</p>
+</li>
+<li><p>授权给多个用户：<br>grant select on mydb.* to pan@locakhost,pan2@localhost;</p>
+</li>
+<li><p>对某张表的某个字段授权：<br>grant select(name,age) on pan.students to pan@localhost;</p>
+</li>
+<li><p>授权test函数，用function关键字指明被操作的对象是函数：<br>grant execute on fuction panthink.test to pan@’192.168.%.%’;</p>
+</li>
+<li><p>强制用户使用ssl建立会话<br>grant useage on <em>.</em>  to ‘zabbix‘@’222.222.222.222’ require ssl;<br>取消ssl 连接限制<br>grant useage on <em>.</em>  to ‘zabbix‘@’222.222.222.222’ require none;</p>
+</li>
+<li><p>赋予用户授权的权限<br>授权zabbix用户db01 的 select权限，同时zabbix 用户也能将此权限授予给其他用户<br>grant select on db01.*  to ‘zabbix‘@’192.168.%.%’  with grant option;</p>
+</li>
+<li><p>查看授权：<br>从用户：    show grants for 用户名；<br>从数据库：select * from mysql.db where db=”要查看的数据库“；</p>
+</li>
+<li><p>删除授权：<br>revoke ‘要删除的权限’ on db.tb from user@host;<br>删除<a href="mailto:zabbix@192.168.1.1" target="_blank" rel="noopener">zabbix@192.168.1.1</a> 用户对于word数据库的所有权限:<br>revoke all on word.* from <a href="mailto:zabbix@192.168.1.1" target="_blank" rel="noopener">zabbix@192.168.1.1</a>;</p>
+</li>
+</ul>
+<h2 id="库管理"><a href="#库管理" class="headerlink" title="库管理"></a>库管理</h2><ul>
+<li><p>创建数据库<br>create database if not exists testdb charaacter set utf16;</p>
+</li>
+<li><p>查看数据库<br>show databases;<br>show create database testdb;<br>查看可用的字符集的命令<br>show character set;<br>查看排序方式的命令<br>show collation；</p>
+</li>
+<li><p>修改数据库<br>alter database testdb character set utf 8;<br>修改数据库的字符集，并设置为默认字符集，数据库中的表都会继承此字符集。<br>alter database testdb default character set utf8; </p>
+</li>
+<li><p>删除数据库<br>drop database if exists testdb;</p>
+</li>
+<li><p>数据库导出<br>mysqldump -u user_name -p database_name &gt; 导出的文件名</p>
+</li>
+<li><p>导出一个数据库结构（不包含数据）<br>mysqldump -u user_name -p -d –add-drop-table database_name &gt; outfile_name.sql</p>
+</li>
+<li><p>带语言参数导出<br>mysqldump -uroot -p –default-character-set=latin1 –set-charset=gbk –skip-opt database_name &gt; outfile_name.sql</p>
+</li>
+</ul>
+<h2 id="表管理"><a href="#表管理" class="headerlink" title="表管理"></a>表管理</h2><ul>
+<li><p>查看表的状态<br>show table status where name like ‘%tt%’;<br>desc table_name;<br>查看某张表创建时对应的sql 语句<br>show create table table_name;<br>复制表，但字段的约束和表的索引会丢失。<br>create table testtb2 select * from students;<br>完全的复制表结构<br>create table testdb3 like students;                    </p>
+</li>
+<li><p>修改表：<br>重命名表<br>alter table test1 rename as test2;<br>为表添加字段<br>alter  table ttt add cloumn age int;<br>alter table ttt add age int;        //  省略cloumn 默认为操作列。<br>添加字段设定相应的约束：<br>alter table ttt add age int not null default 0;<br>alter table ttt add cloumn age int not null default 0;<br>添加字段，指定字段在表中的位置：<br>alter table ttt add id int first;<br>alter table hosts add  categoryof varchar(200)  DEFAULT NULL after templateid;<br>删除字段：<br>alter table ttt drop stuname;<br>重命名字段：<br>alter table tsettb4 change name name1 char(20);<br>修改字段类型：<br>alter table testtb change age age char(20);<br>alter table testtb modify age int;    // modify 不能修改字段名称。</p>
+</li>
+<li><p>导出单个数据表结构和数据<br>mysqldump -u user_name -p database_name table_name &gt; outfile_name.sql</p>
+</li>
+<li><p>导出单个数据表结构（不包含数据）<br>mysqldump -h localhost -uroot -p123456  -d database table &gt; dump.sql</p>
+</li>
+</ul>
 
       
     </div>
@@ -577,7 +697,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
           
         </div>
       
@@ -599,10 +719,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/22/test/v2/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -673,7 +789,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -696,7 +812,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -719,7 +839,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -727,6 +851,13 @@
             </nav>
           
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -825,7 +956,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-语法"><span class="nav-number">1.</span> <span class="nav-text">MySQL 语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-管理"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL 管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动和关闭"><span class="nav-number">1.1.1.</span> <span class="nav-text">启动和关闭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-连接"><span class="nav-number">1.1.2.</span> <span class="nav-text">MySQL 连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Help"><span class="nav-number">1.1.3.</span> <span class="nav-text">Help</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql的属性、状态、变量"><span class="nav-number">1.1.4.</span> <span class="nav-text">mysql的属性、状态、变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-用户"><span class="nav-number">1.2.</span> <span class="nav-text">MySQL 用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-用户管理"><span class="nav-number">1.2.1.</span> <span class="nav-text">MySQL 用户管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-密码管理"><span class="nav-number">1.2.2.</span> <span class="nav-text">MySQL 密码管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#授权管理"><span class="nav-number">1.3.</span> <span class="nav-text">授权管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#库管理"><span class="nav-number">1.4.</span> <span class="nav-text">库管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表管理"><span class="nav-number">1.5.</span> <span class="nav-text">表管理</span></a></li></ol></li></ol></div>
             
 
           </div>

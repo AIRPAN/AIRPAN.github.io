@@ -129,18 +129,18 @@
 
 
 
-  <meta name="description" content="OOP-Python面向对象 Python的面向对象 OO 类的基本实现 类和对象的成员分析 self   面向对象编程 基础 公有私有 继承 多态、Mixin 类的相关函数、类的成员描述符、类的内置属性 魔法函数 类和对象的三种方法 抽象类 自定义类    Python的面向对象面向对象概述（ObjectOriented，OO） OOP思想接触到任意一个任务，首先想到的是任务这个世界的构成，是由">
+  <meta name="description" content="「面向对象」「面向对象编程」">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 的面向对象">
 <meta property="og:url" content="http://yoursite.com/2019/05/01/Python/02.Oop/01.Python的面向对象/index.html">
 <meta property="og:site_name" content="AIR PAN">
-<meta property="og:description" content="OOP-Python面向对象 Python的面向对象 OO 类的基本实现 类和对象的成员分析 self   面向对象编程 基础 公有私有 继承 多态、Mixin 类的相关函数、类的成员描述符、类的内置属性 魔法函数 类和对象的三种方法 抽象类 自定义类    Python的面向对象面向对象概述（ObjectOriented，OO） OOP思想接触到任意一个任务，首先想到的是任务这个世界的构成，是由">
+<meta property="og:description" content="「面向对象」「面向对象编程」">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-23T06:08:13.899Z">
+<meta property="og:updated_time" content="2019-05-24T08:07:25.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 的面向对象">
-<meta name="twitter:description" content="OOP-Python面向对象 Python的面向对象 OO 类的基本实现 类和对象的成员分析 self   面向对象编程 基础 公有私有 继承 多态、Mixin 类的相关函数、类的成员描述符、类的内置属性 魔法函数 类和对象的三种方法 抽象类 自定义类    Python的面向对象面向对象概述（ObjectOriented，OO） OOP思想接触到任意一个任务，首先想到的是任务这个世界的构成，是由">
+<meta name="twitter:description" content="「面向对象」「面向对象编程」">
 
 
 
@@ -487,7 +487,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-23 14:08:13" itemprop="dateModified" datetime="2019-05-23T14:08:13+08:00">2019-05-23</time>
+                <time title="Modified: 2019-05-24 16:07:25" itemprop="dateModified" datetime="2019-05-24T16:07:25+08:00">2019-05-24</time>
               
             
           </span>
@@ -532,6 +532,8 @@
           
 
           
+            <div class="post-description">「面向对象」「面向对象编程」</div>
+          
 
         </div>
       </header>
@@ -546,28 +548,11 @@
       
 
       
-        <h1 id="OOP-Python面向对象"><a href="#OOP-Python面向对象" class="headerlink" title="OOP-Python面向对象"></a>OOP-Python面向对象</h1><ul>
-<li>Python的面向对象<ul>
-<li>OO</li>
-<li>类的基本实现</li>
-<li>类和对象的成员分析</li>
-<li>self</li>
-</ul>
-</li>
-<li>面向对象编程<ul>
-<li>基础</li>
-<li>公有私有</li>
-<li>继承</li>
-<li>多态、Mixin</li>
-<li>类的相关函数、类的成员描述符、类的内置属性</li>
-<li>魔法函数</li>
-<li>类和对象的三种方法</li>
-<li>抽象类</li>
-<li>自定义类</li>
-</ul>
-</li>
-</ul>
-<h1 id="Python的面向对象"><a href="#Python的面向对象" class="headerlink" title="Python的面向对象"></a>Python的面向对象</h1><h2 id="面向对象概述（ObjectOriented，OO）"><a href="#面向对象概述（ObjectOriented，OO）" class="headerlink" title="面向对象概述（ObjectOriented，OO）"></a>面向对象概述（ObjectOriented，OO）</h2><ul>
+        <h1 id="Python的面向对象"><a href="#Python的面向对象" class="headerlink" title="Python的面向对象"></a>Python的面向对象</h1><pre><code>- OO
+- 类的基本实现
+- 类和对象的成员分析
+- self
+</code></pre><h2 id="面向对象概述（ObjectOriented，OO）"><a href="#面向对象概述（ObjectOriented，OO）" class="headerlink" title="面向对象概述（ObjectOriented，OO）"></a>面向对象概述（ObjectOriented，OO）</h2><ul>
 <li><p>OOP思想<br>接触到任意一个任务，首先想到的是任务这个世界的构成，是由模型构成的<br>OO:面向对象<br>OOA：面向对象的分析<br>OOD：面向对象的设计<br>OOI：xxx的实现<br>OOP：xxx的编程<br>OOA-&gt;OOD-&gt;OOI: 面向对象的实现过程</p>
 </li>
 <li><p>类和对象的概念<br>类：抽象名词，代表一个集合，共性的事物<br>对象：具象的事物，单个个体<br>类跟对象的关系<br>一个具象，代表一类事物的某一个个体<br>一个是抽象，代表的是一大类事物</p>
@@ -605,7 +590,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">案例:</span><br><span class="line"></span><br><span class="line">class A():</span><br><span class="line">    name = &quot;kobe&quot;</span><br><span class="line">    number = 24</span><br><span class="line">    </span><br><span class="line"># A 称为类实例    </span><br><span class="line">print (&quot;A&quot;,A.name,id(A.name))</span><br><span class="line">print (&quot;A&quot;,A.number,id(A.number))</span><br><span class="line">print(&quot;*&quot; * 20)</span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line">print (&quot;a&quot;,a.name,id(a.name))</span><br><span class="line">print (&quot;a&quot;,a.number,id(a.number))</span><br><span class="line"></span><br><span class="line">## 查看所有的属性</span><br><span class="line">print (&quot;A&quot;,A.__dict__)</span><br><span class="line">print (&quot;a&quot;,a.__dict__)  #&#123;&#125;   </span><br><span class="line">print(&quot;*&quot; * 20)</span><br><span class="line"></span><br><span class="line">#赋值</span><br><span class="line">a.name  =  &quot;Owen&quot;</span><br><span class="line">a.number = 11</span><br><span class="line"></span><br><span class="line">print (&quot;a&quot;,a.name,id(a.name))</span><br><span class="line">print (&quot;a&quot;,a.number,id(a.number))</span><br><span class="line">print (&quot;a&quot;,a.__dict__)</span><br><span class="line"></span><br><span class="line">#通过对象对类中成员重新赋值或者通过对象添加成员时，对应成员会保存在对象中，而不会修改类成员</span><br><span class="line"></span><br><span class="line">A kobe 140589649254976</span><br><span class="line">A 24 9306720</span><br><span class="line">********************</span><br><span class="line">a kobe 140589649254976</span><br><span class="line">a 24 9306720</span><br><span class="line">A &#123;&apos;__module__&apos;: &apos;__main__&apos;, &apos;name&apos;: &apos;kobe&apos;, &apos;number&apos;: 24, &apos;__dict__&apos;: &lt;attribute &apos;__dict__&apos; of &apos;A&apos; objects&gt;, &apos;__weakref__&apos;: &lt;attribute &apos;__weakref__&apos; of &apos;A&apos; objects&gt;, &apos;__doc__&apos;: None&#125;</span><br><span class="line">a &#123;&#125;</span><br><span class="line">********************</span><br><span class="line">a Owen 140589649496696</span><br><span class="line">a 11 9306304</span><br><span class="line">a &#123;&apos;name&apos;: &apos;Owen&apos;, &apos;number&apos;: 11&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="关于self"><a href="#关于self" class="headerlink" title="关于self"></a>关于self</h2><ul>
+<h2 id="self"><a href="#self" class="headerlink" title="self"></a>self</h2><ul>
 <li>self在对象的方法中表示当前对象本身，如果通过对象调用一个方法，那么该对象会自动传入到当前方法的第一个参数中 </li>
 <li><p>self并不是关键字，只是一个用于接受对象的普通参数，理论上可以用任何一个普通变量名代替</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">案例:</span><br><span class="line">class Student():</span><br><span class="line">    name = &quot;dana&quot;</span><br><span class="line">    age = 18</span><br><span class="line">    </span><br><span class="line">    # 注意say的写法，参数有一个self</span><br><span class="line">    def say(self):</span><br><span class="line">        self.age = 200</span><br><span class="line">        print(&quot;My age is &#123;0&#125;&quot;.format(self.age))</span><br><span class="line">    # 任何一个普通变量名代替self    </span><br><span class="line">    def sayAgain(s):</span><br><span class="line">        print(&quot;My age is &#123;0&#125;&quot;.format(s.age))</span><br><span class="line">          </span><br><span class="line">yueyue = Student()</span><br><span class="line">yueyue.say()</span><br><span class="line">yueyue.sayAgain()</span><br><span class="line"></span><br><span class="line">My age is 200</span><br><span class="line">My age is 200</span><br></pre></td></tr></table></figure>
@@ -619,7 +604,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"># 案例:</span><br><span class="line">class A():</span><br><span class="line">    name = &quot; liuying&quot;</span><br><span class="line">    age = 18</span><br><span class="line">    </span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.name = &quot;aaaa&quot;</span><br><span class="line">        self.age = 200</span><br><span class="line">        </span><br><span class="line">    def say(self):</span><br><span class="line">        print(self.name)</span><br><span class="line">        print(self.age)</span><br><span class="line">        </span><br><span class="line">class B():</span><br><span class="line">    name = &quot;bbbb&quot;</span><br><span class="line">    age = 90</span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line"># 此时，系统会默认把对象a作为第一个参数传入函数</span><br><span class="line">a.say()</span><br><span class="line">   </span><br><span class="line">A.say()    #错误，类实例不会自动传入第一个参数，需要手动传入一个</span><br><span class="line"># 此时，self被a替换</span><br><span class="line">A.say(a)</span><br><span class="line"># 同样可以把A作为参数传入</span><br><span class="line">A.say(A)</span><br><span class="line"></span><br><span class="line"># 此时，传入的是类实例B，因为B具有name和age属性，所以不会报错</span><br><span class="line">A.say(B)</span><br><span class="line"></span><br><span class="line"># 以上代码，利用了鸭子模型</span><br><span class="line"></span><br><span class="line">aaaa</span><br><span class="line">200</span><br><span class="line">aaaa</span><br><span class="line">200</span><br><span class="line">liuying</span><br><span class="line">18</span><br><span class="line">bbbb</span><br><span class="line">90</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><ul>
+<h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><pre><code>- 封装
+- 继承
+- 多态、Mixin
+- 类的相关函数
+- 类的成员描述符
+- 类的内置属性
+- 魔法函数
+- 类和对象的三种方法
+- 抽象类
+- 自定义类
+</code></pre><ul>
 <li>面向对象的三大特性：封装、继承、多态</li>
 </ul>
 <h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><ul>
@@ -715,7 +710,7 @@
 <li><p><strong>bases</strong><br>获取某个类的所有父类，以元组的方式显示</p>
 </li>
 </ul>
-<h2 id="7-类的常用魔术方法"><a href="#7-类的常用魔术方法" class="headerlink" title="7 类的常用魔术方法"></a>7 类的常用魔术方法</h2><ul>
+<h2 id="类的常用魔术方法"><a href="#类的常用魔术方法" class="headerlink" title="类的常用魔术方法"></a>类的常用魔术方法</h2><ul>
 <li>魔术方法就是不需要人为调用的方法，基本是在特定的时刻自动触发</li>
 <li>魔术方法的统一的特征，方法名被前后各两个下滑线包裹</li>
 <li>操作类<br><code>__init__</code>: 构造函数<br><code>__new__</code>: 对象实例化方法，此函数较特殊，一般不需要使用<br><code>__call__</code>: 对象当函数使用的时候触发<br><code>__str__</code>: 当对象被当做字符串使用的时候调用<br><code>__repr__</code>: 返回字符串 </li>
@@ -902,7 +897,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1069,7 +1064,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OOP-Python面向对象"><span class="nav-number">1.</span> <span class="nav-text">OOP-Python面向对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python的面向对象"><span class="nav-number">2.</span> <span class="nav-text">Python的面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象概述（ObjectOriented，OO）"><span class="nav-number">2.1.</span> <span class="nav-text">面向对象概述（ObjectOriented，OO）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的基本实现"><span class="nav-number">2.2.</span> <span class="nav-text">类的基本实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和对象的成员分析"><span class="nav-number">2.3.</span> <span class="nav-text">类和对象的成员分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于self"><span class="nav-number">2.4.</span> <span class="nav-text">关于self</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象编程"><span class="nav-number">3.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#封装"><span class="nav-number">3.1.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">3.2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">3.3.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类相关函数"><span class="nav-number">3.4.</span> <span class="nav-text">类相关函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的成员描述符（属性）"><span class="nav-number">3.5.</span> <span class="nav-text">类的成员描述符（属性）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的内置属性"><span class="nav-number">3.6.</span> <span class="nav-text">类的内置属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-类的常用魔术方法"><span class="nav-number">3.7.</span> <span class="nav-text">7 类的常用魔术方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和对象的三种方法"><span class="nav-number">3.8.</span> <span class="nav-text">类和对象的三种方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类"><span class="nav-number">3.9.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义类"><span class="nav-number">3.10.</span> <span class="nav-text">自定义类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python的面向对象"><span class="nav-number">1.</span> <span class="nav-text">Python的面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象概述（ObjectOriented，OO）"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象概述（ObjectOriented，OO）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的基本实现"><span class="nav-number">1.2.</span> <span class="nav-text">类的基本实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和对象的成员分析"><span class="nav-number">1.3.</span> <span class="nav-text">类和对象的成员分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#self"><span class="nav-number">1.4.</span> <span class="nav-text">self</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象编程"><span class="nav-number">2.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#封装"><span class="nav-number">2.1.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">2.2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">2.3.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类相关函数"><span class="nav-number">2.4.</span> <span class="nav-text">类相关函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的成员描述符（属性）"><span class="nav-number">2.5.</span> <span class="nav-text">类的成员描述符（属性）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的内置属性"><span class="nav-number">2.6.</span> <span class="nav-text">类的内置属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的常用魔术方法"><span class="nav-number">2.7.</span> <span class="nav-text">类的常用魔术方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和对象的三种方法"><span class="nav-number">2.8.</span> <span class="nav-text">类和对象的三种方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类"><span class="nav-number">2.9.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义类"><span class="nav-number">2.10.</span> <span class="nav-text">自定义类</span></a></li></ol></li></ol></div>
             
 
           </div>

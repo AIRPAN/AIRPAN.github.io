@@ -129,18 +129,18 @@
 
 
 
-  <meta name="description" content="MySQL 语法 MySQL 管理 MySQL 用户、授权 MySQL 库 MySQL 表  MySQL 管理启动和关闭 不是通过RPM包安装的MySQL启动：    /usr/bin/mysqld_safe &amp;amp;关闭：    mysqladmin -uroot shutdown -p  MySQL 连接 -D 指定将要登录的具体的数据库mysql -uroot -D test -p1234">
+  <meta name="description" content="「增、删、改、查等」「查询缓存」「存储引擎」">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL 语法「一」">
-<meta property="og:url" content="http://yoursite.com/2019/05/21/MySQL/01.MySQL/index.html">
+<meta property="og:title" content="MySQL 语法「三」">
+<meta property="og:url" content="http://yoursite.com/2018/11/14/MySQL/03.MySQL/index.html">
 <meta property="og:site_name" content="AIR PAN">
-<meta property="og:description" content="MySQL 语法 MySQL 管理 MySQL 用户、授权 MySQL 库 MySQL 表  MySQL 管理启动和关闭 不是通过RPM包安装的MySQL启动：    /usr/bin/mysqld_safe &amp;amp;关闭：    mysqladmin -uroot shutdown -p  MySQL 连接 -D 指定将要登录的具体的数据库mysql -uroot -D test -p1234">
+<meta property="og:description" content="「增、删、改、查等」「查询缓存」「存储引擎」">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-23T12:51:52.688Z">
+<meta property="og:updated_time" content="2019-05-24T07:45:36.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL 语法「一」">
-<meta name="twitter:description" content="MySQL 语法 MySQL 管理 MySQL 用户、授权 MySQL 库 MySQL 表  MySQL 管理启动和关闭 不是通过RPM包安装的MySQL启动：    /usr/bin/mysqld_safe &amp;amp;关闭：    mysqladmin -uroot shutdown -p  MySQL 连接 -D 指定将要登录的具体的数据库mysql -uroot -D test -p1234">
+<meta name="twitter:title" content="MySQL 语法「三」">
+<meta name="twitter:description" content="「增、删、改、查等」「查询缓存」「存储引擎」">
 
 
 
@@ -150,7 +150,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/21/MySQL/01.MySQL/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/14/MySQL/03.MySQL/">
 
 
 
@@ -160,7 +160,7 @@
   };
 </script>
 
-  <title>MySQL 语法「一」 | AIR PAN</title>
+  <title>MySQL 语法「三」 | AIR PAN</title>
   
 
 
@@ -427,7 +427,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/MySQL/01.MySQL/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/MySQL/03.MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Air Pan">
@@ -444,7 +444,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL 语法「一」
+          <h1 class="post-title" itemprop="name headline">MySQL 语法「三」
 
               
             
@@ -470,7 +470,7 @@
                 
               
 
-              <time title="Created: 2019-05-21 18:11:07" itemprop="dateCreated datePublished" datetime="2019-05-21T18:11:07+08:00">2019-05-21</time>
+              <time title="Created: 2018-11-14 18:11:07" itemprop="dateCreated datePublished" datetime="2018-11-14T18:11:07+08:00">2018-11-14</time>
             
 
             
@@ -487,7 +487,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-23 20:51:52" itemprop="dateModified" datetime="2019-05-23T20:51:52+08:00">2019-05-23</time>
+                <time title="Modified: 2019-05-24 15:45:36" itemprop="dateModified" datetime="2019-05-24T15:45:36+08:00">2019-05-24</time>
               
             
           </span>
@@ -532,6 +532,8 @@
           
 
           
+            <div class="post-description">「增、删、改、查等」「查询缓存」「存储引擎」</div>
+          
 
         </div>
       </header>
@@ -546,117 +548,56 @@
       
 
       
-        <h1 id="MySQL-语法"><a href="#MySQL-语法" class="headerlink" title="MySQL 语法"></a>MySQL 语法</h1><ul>
-<li>MySQL 管理</li>
-<li>MySQL 用户、授权</li>
-<li>MySQL 库</li>
-<li>MySQL 表</li>
+        <h1 id="MySQL-语法「三」"><a href="#MySQL-语法「三」" class="headerlink" title="MySQL 语法「三」"></a>MySQL 语法「三」</h1><ul>
+<li>增、删、改、查等     </li>
+<li>查询缓存   </li>
+<li>存储引擎</li>
 </ul>
-<h2 id="MySQL-管理"><a href="#MySQL-管理" class="headerlink" title="MySQL 管理"></a>MySQL 管理</h2><h3 id="启动和关闭"><a href="#启动和关闭" class="headerlink" title="启动和关闭"></a>启动和关闭</h3><ul>
-<li>不是通过RPM包安装的MySQL<br>启动：    /usr/bin/mysqld_safe &amp;<br>关闭：    mysqladmin -uroot shutdown -p</li>
-</ul>
-<h3 id="MySQL-连接"><a href="#MySQL-连接" class="headerlink" title="MySQL 连接"></a>MySQL 连接</h3><ul>
-<li><p>-D 指定将要登录的具体的数据库<br>mysql -uroot -D test -p123456  </p>
+<h2 id="增、删、改、查-等"><a href="#增、删、改、查-等" class="headerlink" title="增、删、改、查 等"></a>增、删、改、查 等</h2><ul>
+<li><p>insert<br>① insert into tb1（name,age) values(‘tom’,33);<br>insert into tb1(name,age) values(‘jerry’,33),(‘naruto’，28）；<br>insert into tb1 values(4,’sasuke’,28),(5,’hinata’,25);<br>② insert into tbl set id=2,name=’test’,age=18;</p>
 </li>
-<li><p>本地连接mysql，-S  指定套接字位置<br>mysql -u root -p -S /var/lib/mysql/mysql.sock</p>
+<li><p>delete<br>delete from tb1;<br>delete from tb1 where age=22;<br>delete from tb1 where name like ‘k.*’;<br>delete from tb1 where age &gt; 30 order by age desc limit 1;</p>
 </li>
-<li><p>远程连接mysql，-P 指定mysql服务对应的端口<br>mysql -u root -p 123456 -h 192.168.1.1 -P 3306</p>
+<li><p>update<br>update tb1 set age=28;<br>update tb1 set name=’kkkk’ where id=3;<br>update tb1 set name=’xxxx’,age=22 where id=5;</p>
 </li>
-<li><p>连接数据库的同时执行对应命令，并返回结果，不进入mysql 提示符<br>mysql -uroot -p123456 -e  ‘use mysql; select user,host,passwd from user;’<br>mysql -uroot -p123456 -e ‘create database if not exists testdb;show databases;’</p>
+<li><p>select<br>① select <em> from tb1 limit 3;<br>select </em> from tb1 where age&gt;=25 and age&lt;=30;<br>select <em> from tb1 where age between 25 and 30;<br>select </em> from tb1 where age not between 25 and 30;    不在25-30区间。<br>② in 关键字指定列表：<br>select <em> from tb1 where age in(22,23,24,25);<br>③ 去重查询:distinct<br>select distinct age from sut;<br>④ 取别名：<br>select name as stuname,age from t1;<br>⑤ 分组和聚合：<br>select </em> from students froup by gender;<br>⑥ 对分组后的信息再次过滤，使用having 关键字<br>select avg(age) as aveage,gender from students froup by gender having aveage &gt; 20;<br>⑦ 多表查询：<br>select * fomr t1,t2;</p>
 </li>
 </ul>
-<h3 id="Help"><a href="#Help" class="headerlink" title="Help"></a>Help</h3><ul>
-<li>help create </li>
-<li>help create databases</li>
-<li>help contents</li>
-<li>help ‘Data Types’</li>
-</ul>
-<h3 id="mysql的属性、状态、变量"><a href="#mysql的属性、状态、变量" class="headerlink" title="mysql的属性、状态、变量"></a>mysql的属性、状态、变量</h3><ul>
-<li>mysql&gt; status</li>
-<li><p>系统变量：配置了mysql的运行环境属性</p>
+<h2 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h2><ul>
+<li><p>查看当前服务是否开启缓存<br>show variables like ‘%query_cache%’;<br>mysql&gt; show variables like ‘%query_cache%’;<br>+——————————+———+<br>| Variable_name                | Value   |<br>+——————————+———+<br>| have_query_cache             | YES     |                YES   支持缓存<br>| query_cache_limit            | 1048576 |                单挑查询缓存的最大值，默认1M。超过大小结果不会被缓存。<br>| query_cache_min_res_unit     | 4096    |        缓存存储于内存的最小单元，默认4K。<br>| query_cache_size             | 1048576 |            查询缓存的总大小<br>| query_cache_type             | OFF     |           ON、OFF、DEMAND 分别表示启用、禁用、按需缓存<br>| query_cache_wlock_invalidate | OFF     |<br>+——————————+———+<br>6 rows in set (0.00 sec)</p>
 </li>
-<li><p>全局变量：global variables ,作用域为整个mysql服务器<br>show  global variables；<br>版本相关：    show global variables  like ‘%version%’ ;<br>字符集相关：    show global variables where variable_name like ‘character%’;<br>日志是否关闭：    show global variables where variable_name like ‘%log%’ and value=’off’;</p>
+<li><p>使用：<br>① 在开启缓存（query_cache_type=ON) 指定对应的查询语句不使用缓存：<br>select sql_no_cache name from stu;<br>②在按需缓存（query_cache_type=DEMAND) 指定对应的查询语句使用缓存：<br>select sql_cache name from stu;</p>
 </li>
-<li><p>会话变量：session variables，作用域为当前会话<br>show session variables;<br>show variables; </p>
+<li><p>举例：在 my.cnf 设置查询未 按需缓存，缓存空间大小100M<br>query_cache_type=DEMAND<br>query_cache_size=100M</p>
 </li>
-<li><p>查看单个全局系统变量或者会话系统变量：<br>select @@[global | session].system_var_name;<br>select @@global.pid_file;<br>select @@session.warning_count;</p>
-</li>
-<li><p>状态变量：mysql运行中的状态信息，不能设置。<br>查询mysql运行中信息和状态：状态变量也分为全局级别与会话级别<br>show  status;<br>show global status;<br>show session status;<br>show status where variable_name like ‘Uptime%’;</p>
-</li>
-<li><p>在写储存过程中，调用系统变量的值：<br>@@GLOBAL.var_name<br>@@SESSION.var_name<br>@@var_name 表示优先从会话级别获取变量值</p>
-</li>
-<li><p>修改变量值/设定变量值:<br>① 运行时修改：是否立即生效取决于修改的变量的类型，set 命令，运行时修改变量<br>运行时修改global级别的变量：对修改之前建立的会话没有影响，仅对修改后新建立的会话有效<br>运行时修改session级别的变量：仅对当前会话有效，且立即生效<br>② 配置文件修改：重启后生效。<br>例：<br>③ set @@session.autocommit=0;<br>设置系统变量语法总结：<br>set global.var_name = value;<br>set @@global.var_name = value;<br>set session.var_name = value;<br>set @@session.var_name = value;<br>set var_name = value; 不指定级别表示默认为设置会话级别的变量。</p>
+<li><p>清除查询缓存中已经存在的缓存<br>reset query cache;</p>
 </li>
 </ul>
-<h2 id="MySQL-用户"><a href="#MySQL-用户" class="headerlink" title="MySQL 用户"></a>MySQL 用户</h2><h3 id="MySQL-用户管理"><a href="#MySQL-用户管理" class="headerlink" title="MySQL 用户管理"></a>MySQL 用户管理</h3><ul>
-<li>mysql 的用户格式：    usernmae@host<br>host: 主机名 或者 IP ，mysql 认为主机名 和 IP地址属于不同的主机。<br>通配符：</li>
-<li><p>： 表示任意单个字符<br>%： 表示任意长度的任意字符<br>root@’10.1.%.%’    root用户可以通过10.1这个网段远程登录</p>
+<h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><ul>
+<li><p>存储引擎也称为 “ 表类型”，每张表可以使用不同的存储引擎类型。<br>MYISAM: 支持级锁，不支持行级锁、不支持事务、不支持外部约束，支持全文索引，表空间文件较小<br>INNODB：支持表级锁、行级锁、事务、外检，不支持全文索引，表空间较大。<br>CSV：<br>MRG_MYISAM：<br>BLACKHOLE：<br>MEMORY：<br>PERFORMANCE_SCHEMA：<br>FEDERATED：<br>ARCHIVE：<br>FEDRATED：</p>
 </li>
-<li><p>查询用户<br>use mysql<br>select user,host,passwd from user;</p>
+<li><p>查看表类型，查看存储引擎<br>show engines;<br>show create table t1;<br>show table status \G;<br>show table status like ‘%t1%’ \G;</p>
 </li>
-<li><p>创建用户<br>① create user ‘zabbix_proxy‘@’localhost’ identified by ‘zabbix_asp_2017’;<br>② 直接在mysql库的user 表中插入一条记录。（设置了严格的sql-mode  后无法使用）<br>insert  into mysql.user(user,host,passwd) values(‘pan’,’192.168.%.%’,passwd(‘123456’));<br>③ 在授权数据库的同时，如果对应的用户不存在，那么mysql会自动创建对应的用户。<br>grant all on pan.*to <a href="mailto:pan@127.0.0.1" target="_blank" rel="noopener">pan@127.0.0.1</a> identfied by ‘123456’;</p>
+<li><p>设置存储引擎/ 表类型：<br>在创建表的时候指定： create table t1 (id int(10) default null) ENGINE=innodb;</p>
 </li>
-<li><p>删除用户<br>① delete 语句删除mysql.user 表中的用户对应的记录，有相关信息残留。<br>delete from mysql.user where user=’pan’ and host=’127.0.0.1’;<br>② drop user <a href="mailto:pan@127.0.0.1" target="_blank" rel="noopener">pan@127.0.0.1</a>     用户与用户对应的所有权限将被删除。</p>
+<li><p>修改表的存储引擎/修改默认表类型：<br>alter talbe t1 ENGINE=myisam;</p>
 </li>
-<li><p>重命名用户：<br>rename user oldname to newname;</p>
-</li>
-</ul>
-<h3 id="MySQL-密码管理"><a href="#MySQL-密码管理" class="headerlink" title="MySQL 密码管理"></a>MySQL 密码管理</h3><ul>
-<li><p>更改用户名密码，官方推荐使用alter<br>ALTER USER test@’%’ IDENTIFIED BY ‘123456’;</p>
-</li>
-<li><p>update mysql.user set authentication_string=password(“新密码”) where User=”test” and Host=”localhost”;<br>flush privileges;</p>
-</li>
-<li><p>忘记root密码<br>① vi /etc/my.cnf，在[mysqld]中添加<br>skip-grant-tables<br>② 重启mysql : systemctl restart mysqld.service<br>③ mysql -uroot -p<br>④ use mysql;<br>⑤ 修改root密码：<br>update user set authentication_string=password(‘123456’) where user=’root’;<br>flush privileges;<br>⑥ 删除第1部增加的配置信息<br>skip-grant-tables<br>⑦ 重启mysql ： systemctl restart mysqld.service</p>
+<li><p>修改默认的存储引擎<br>vim /etc/my.cnf<br>default-storage-engine=innodb<br>innodb_file_per_table=on</p>
 </li>
 </ul>
-<h2 id="授权管理"><a href="#授权管理" class="headerlink" title="授权管理"></a>授权管理</h2><ul>
-<li><p>授权命令：<br>GRANT ALL privileges on db.tbl to ‘username‘@’host’ identified by ‘passwd’;<br>db 数据库名  tbl 表名    可以使用<em>通配。<br>示例：给本地用户授权某个数据库的所有权限<br>grant all privileges on pandb.</em> to pan@localhost identified by ‘123456’;<br>grant all on pandb.* to pan@localhost identified by ‘123456’;            privileges 关键字可省</p>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><ul>
+<li><p>事务： 一组sql语句的集合。当做一个操作单元。（要么都执行成功、要么全部失败）<br>mysql 中，innodb 存储引擎是支持事务的，完全符合ACID 特性。<br>A： atomicity 原子性<br>C: consistency 一致性<br>I: isolation 隔离性<br>D: durability  持久性</p>
 </li>
-<li><p>给远程用户授权<br>grant all privileges on panthink.* to pan@’192.168.%.%’ identified by ‘123456’;<br>flush privileges;</p>
+<li><p>redo log ：mysql 会将事务中的sql 语句涉及到的所有数据操作先记录到redo log 中，然后将操作从redo log 中执行。<br>redo log ：包含 redo log buffer(重做日志缓冲）和 redo log file(重做日志文件)<br>redo log  buffer :存在于内存中<br>redo log file： 存在于磁盘上</p>
 </li>
-<li><p>授权用户某个数据库的某个权限，比如，只授权用户对于某个数据<br>grant select privileges on panthink.* to pan@’192.168.%.%‘；</p>
+<li><p>undo log : 数据被修改前的备份。</p>
 </li>
-<li><p>授权某个数据库多个权限：<br>grant insert,delete,update,select on panthink.* to pan@’192.168.%.%’;</p>
+<li><p>log group:重做日志组。有多个重做日志文件</p>
 </li>
-<li><p>授权给多个用户：<br>grant select on mydb.* to pan@locakhost,pan2@localhost;</p>
+<li><p>事务日志参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">show global variables like &apos;%innodb%log%&apos;;</span><br><span class="line">mysql&gt; show global variables like &apos;%innodb%log%&apos;;</span><br><span class="line">+----------------------------------+-----------+</span><br><span class="line">| Variable_name                    | Value     |</span><br><span class="line">+----------------------------------+-----------+</span><br><span class="line">| innodb_api_enable_binlog         | OFF       |</span><br><span class="line">| innodb_flush_log_at_timeout      | 1         |</span><br><span class="line">| innodb_flush_log_at_trx_commit   | 1         |		表示事务提交以后，是否立即将redo log 从内存耍写到redo log file  中。</span><br><span class="line">| innodb_locks_unsafe_for_binlog   | OFF       |</span><br><span class="line">| innodb_log_buffer_size           | 8388608   |</span><br><span class="line">| innodb_log_compressed_pages      | ON        |</span><br><span class="line">| innodb_log_file_size             | 50331648  |		每个redo log file 的大小。</span><br><span class="line">| innodb_log_files_in_group        | 2         |		每个重做日志组中有几个 redo log file</span><br><span class="line">| innodb_log_group_home_dir        | ./        |		重做日志组文件所在路径，默认为 /var/log/mysql 此目录中的 lib_logfile0 和 lib_logfile1 即为日志组的两个重做日志5M，也对应了innodb_log_file_size 的值。</span><br><span class="line">| innodb_mirrored_log_groups       | 1         |		一共有几组日志组</span><br><span class="line">| innodb_online_alter_log_max_size | 134217728 |</span><br><span class="line">| innodb_undo_logs                 | 128       |</span><br><span class="line">+----------------------------------+-----------+</span><br><span class="line">12 rows in set (0.03 sec)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>对某张表的某个字段授权：<br>grant select(name,age) on pan.students to pan@localhost;</p>
-</li>
-<li><p>授权test函数，用function关键字指明被操作的对象是函数：<br>grant execute on fuction panthink.test to pan@’192.168.%.%’;</p>
-</li>
-<li><p>强制用户使用ssl建立会话<br>grant useage on <em>.</em>  to ‘zabbix‘@’222.222.222.222’ require ssl;<br>取消ssl 连接限制<br>grant useage on <em>.</em>  to ‘zabbix‘@’222.222.222.222’ require none;</p>
-</li>
-<li><p>赋予用户授权的权限<br>授权zabbix用户db01 的 select权限，同时zabbix 用户也能将此权限授予给其他用户<br>grant select on db01.*  to ‘zabbix‘@’192.168.%.%’  with grant option;</p>
-</li>
-<li><p>查看授权：<br>从用户：    show grants for 用户名；<br>从数据库：select * from mysql.db where db=”要查看的数据库“；</p>
-</li>
-<li><p>删除授权：<br>revoke ‘要删除的权限’ on db.tb from user@host;<br>删除<a href="mailto:zabbix@192.168.1.1" target="_blank" rel="noopener">zabbix@192.168.1.1</a> 用户对于word数据库的所有权限:<br>revoke all on word.* from <a href="mailto:zabbix@192.168.1.1" target="_blank" rel="noopener">zabbix@192.168.1.1</a>;</p>
-</li>
-</ul>
-<h2 id="库管理"><a href="#库管理" class="headerlink" title="库管理"></a>库管理</h2><ul>
-<li><p>创建数据库<br>create database if not exists testdb charaacter set utf16;</p>
-</li>
-<li><p>查看数据库<br>show databases;<br>show create database testdb;<br>查看可用的字符集的命令<br>show character set;<br>查看排序方式的命令<br>show collation；</p>
-</li>
-<li><p>修改数据库<br>alter database testdb character set utf 8;<br>修改数据库的字符集，并设置为默认字符集，数据库中的表都会继承此字符集。<br>alter database testdb default character set utf8; </p>
-</li>
-<li><p>删除数据库<br>drop database if exists testdb;</p>
-</li>
-<li><p>数据库导出<br>mysqldump -u user_name -p database_name &gt; 导出的文件名</p>
-</li>
-<li><p>导出一个数据库结构（不包含数据）<br>mysqldump -u user_name -p -d –add-drop-table database_name &gt; outfile_name.sql</p>
-</li>
-<li><p>带语言参数导出<br>mysqldump -uroot -p –default-character-set=latin1 –set-charset=gbk –skip-opt database_name &gt; outfile_name.sql</p>
-</li>
-</ul>
-<h2 id="表管理"><a href="#表管理" class="headerlink" title="表管理"></a>表管理</h2><ul>
-<li><p>查看表的状态<br>show table status where name like ‘%tt%’;<br>desc table_name;<br>查看某张表创建时对应的sql 语句<br>show create table table_name;<br>复制表，但字段的约束和表的索引会丢失。<br>create table testtb2 select * from students;<br>完全的复制表结构<br>create table testdb3 like students;                    </p>
-</li>
-<li><p>修改表：<br>重命名表<br>alter table test1 rename as test2;<br>为表添加字段<br>alter  table ttt add cloumn age int;<br>alter table ttt add age int;        //  省略cloumn 默认为操作列。<br>添加字段设定相应的约束：<br>alter table ttt add age int not null default 0;<br>alter table ttt add cloumn age int not null default 0;<br>添加字段，指定字段在表中的位置：<br>alter table ttt add id int first;<br>alter table hosts add  categoryof varchar(200)  DEFAULT NULL after templateid;<br>删除字段：<br>alter table ttt drop stuname;<br>重命名字段：<br>alter table tsettb4 change name name1 char(20);<br>修改字段类型：<br>alter table testtb change age age char(20);<br>alter table testtb modify age int;    // modify 不能修改字段名称。</p>
-</li>
-<li><p>导出单个数据表结构和数据<br>mysqldump -u user_name -p database_name table_name &gt; outfile_name.sql</p>
-</li>
-<li><p>导出单个数据表结构（不包含数据）<br>mysqldump -h localhost -uroot -p123456  -d database table &gt; dump.sql</p>
+<li><p>事务控制语句<br>查看是否开启自动提交功能：<br>show global variables like ‘autocommit%’;<br>show session variables like ‘autocommit%’;</p>
 </li>
 </ul>
 
@@ -710,8 +651,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/20/Python/03.High-level/03.Pyhton的常用模块/" rel="next" title="Python 的常用模块">
-                <i class="fa fa-chevron-left"></i> Python 的常用模块
+              <a href="/2018/11/12/MySQL/02.MySQL/" rel="next" title="MySQL 语法「二」">
+                <i class="fa fa-chevron-left"></i> MySQL 语法「二」
               </a>
             
           </div>
@@ -719,6 +660,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/15/MySQL/04.MySQL/" rel="prev" title="MySQL 语法「四」">
+                MySQL 语法「四」 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -789,7 +734,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -956,7 +901,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-语法"><span class="nav-number">1.</span> <span class="nav-text">MySQL 语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-管理"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL 管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动和关闭"><span class="nav-number">1.1.1.</span> <span class="nav-text">启动和关闭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-连接"><span class="nav-number">1.1.2.</span> <span class="nav-text">MySQL 连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Help"><span class="nav-number">1.1.3.</span> <span class="nav-text">Help</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql的属性、状态、变量"><span class="nav-number">1.1.4.</span> <span class="nav-text">mysql的属性、状态、变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL-用户"><span class="nav-number">1.2.</span> <span class="nav-text">MySQL 用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-用户管理"><span class="nav-number">1.2.1.</span> <span class="nav-text">MySQL 用户管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-密码管理"><span class="nav-number">1.2.2.</span> <span class="nav-text">MySQL 密码管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#授权管理"><span class="nav-number">1.3.</span> <span class="nav-text">授权管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#库管理"><span class="nav-number">1.4.</span> <span class="nav-text">库管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表管理"><span class="nav-number">1.5.</span> <span class="nav-text">表管理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-语法「三」"><span class="nav-number">1.</span> <span class="nav-text">MySQL 语法「三」</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#增、删、改、查-等"><span class="nav-number">1.1.</span> <span class="nav-text">增、删、改、查 等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询缓存"><span class="nav-number">1.2.</span> <span class="nav-text">查询缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储引擎"><span class="nav-number">1.3.</span> <span class="nav-text">存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务"><span class="nav-number">1.4.</span> <span class="nav-text">事务</span></a></li></ol></li></ol></div>
             
 
           </div>

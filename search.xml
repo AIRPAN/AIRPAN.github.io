@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[WordPress个人博客搭建「一」]]></title>
     <url>%2F2019%2F05%2F25%2FWordPress%2F01.WordPress%2F</url>
-    <content type="text"><![CDATA[一步一步教你基于WordPress搭建自己的个人博客，WordPress作为成熟的CMS框架，美观，方便，插件多，更新频繁，非常适合个人博客与网站的搭建，无需太多的代码基础。 购买VPS购买云服务器为了搭建个人网站，首先肯定需要一个云服务器国内的推荐腾讯云，毕竟大公司，工单服务贼及时！还送免费的CDN加速流量 购买域名有了云服务器，还需要一个域名。国内的域名需要备案，购买的话阿里云腾讯云都可以。 搭建Apache+MySQL+PHP7环境这一部分介绍如何在Centos7 上配置Apache+MySQL+PHP7. 安装Apache yum install httpd httpd-devel 安装MySQL在CentOS7 中默认安装有MariaDB，这个是MySQL的分支，还是要在系统中安装MySQL，而且安装完成之后可以直接覆盖掉MariaDB 下载MySQL官方的 Yum Repository 并安装MySQL。[root@localhost ~]# wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm[root@localhost ~]# yum -y install mysql57-community-release-el7-10.noarch.rpm[root@localhost ~]# yum -y install mysql-community-server MySQL 设置找出初始的root用户的密码，通过如下命令可以在日志文件中找出密码：[root@localhost ~]# grep “password” /var/log/mysqld.log2019-05-19T00:42:03.830587Z 1 [Note] A temporary password is generated for root@localhost: 5&amp;vPo_Vej1GZ如下命令进入数据库：[root@localhost ~]# mysql -uroot -p输入初始密码，此时不能做任何事情，因为MySQL默认必须修改密码之后才能操作数据库：mysql&gt; ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘new password’; 安装PHP 安装php 检查当前安装的PHP包yum list installed | grep php如果有安装的PHP包，先删除他们 更新yum 源rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm ##CentOs 5.xrpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm ##CentOs 6.xrpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm ##CentOs 7.Xrpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm yum installyum install php70w.x86_64 php70w-cli.x86_64 php70w-common.x86_64 php70w-gd.x86_64 php70w-ldap.x86_64 php70w-mbstring.x86_64 php70w-mcrypt.x86_64 php70w-mysql.x86_64 php70w-pdo.x86_64 测试PHP[root@localhost ~]# cd /var/www/html/[root@localhost html]# vi info.php 1234567891011&lt;?php phpinfo();?&gt;测试：curl -I http://localhost/info.phpHTTP/1.1 200 OKDate: Sat, 25 May 2019 01:06:40 GMTServer: Apache/2.4.6 (CentOS) PHP/7.0.33X-Powered-By: PHP/7.0.33Content-Type: text/html; charset=UTF-8 基于LAMP 部署WordPress安装WordPress 下载WordPress直接通过wget命令去它官网下载最新的版本（英文）：wget http://wordpress.org/latest.tar.gz下载中文wordpress-5.0.3:wget https://cn.wordpress.org/wordpress-5.0.3-zh_CN.tar.gztar -xzvf wordpress-5.0.3-zh_CN.tar.gz 创建WordPress操作的数据库和用户 创建数据库：CREATE DATABASE wordpress; 配置权限：GRANT ALL PRIVILEGES ON wordpress.* TO wordpress@localhost IDENTIFIED BY ‘your password’;FLUSH PRIVILEGES; 配置WordPress 修改配置文件wordpress/wp-config-sample.php修改的内容包括DB_NAME，DB_USER，DB_PASSWORD以及下面的唯一key 1234define( &apos;DB_NAME&apos;, &apos;wordpress&apos; );define( &apos;DB_USER&apos;, &apos;wordpress&apos; );define( &apos;DB_PASSWORD&apos;, &apos;WordPress@1234&apos; );define( &apos;DB_HOST&apos;, &apos;localhost&apos; ); 拷贝WordPress源码至网站根目录rm -rf /var/www/htmlcp -r wordpress/* /var/www/mv wordpress html 安装WordPress访问你的ip或者是域名应该就是这样子的了：http://129.28.76.98/wp-admin/install.php 根据提示安装并登录安装WordPress -&gt; 数据库信息 -&gt; 站点、用户、邮箱 -&gt;登陆 后台管理输入“域名/wp-admin/”或“公网ip/wp-admin/”，就可以进入网站的后台管理页面了： 访问你的IP或者域名，一个初始的博客就搭建好了~：]]></content>
+    <content type="text"><![CDATA[简介一步一步教你基于WordPress搭建自己的个人博客，WordPress作为成熟的CMS框架，美观，方便，插件多，更新频繁，非常适合个人博客与网站的搭建，无需太多的代码基础。 购买VPS购买云服务器为了搭建个人网站，首先肯定需要一个云服务器国内的推荐腾讯云，毕竟大公司，工单服务贼及时！还送免费的CDN加速流量 购买域名有了云服务器，还需要一个域名。国内的域名需要备案，购买的话阿里云腾讯云都可以。 搭建Apache+MySQL+PHP7环境这一部分介绍如何在Centos7 上配置Apache+MySQL+PHP7. 安装Apache yum install httpd httpd-devel 安装MySQL在CentOS7 中默认安装有MariaDB，这个是MySQL的分支，还是要在系统中安装MySQL，而且安装完成之后可以直接覆盖掉MariaDB 下载MySQL官方的 Yum Repository 并安装MySQL。[root@localhost ~]# wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm[root@localhost ~]# yum -y install mysql57-community-release-el7-10.noarch.rpm[root@localhost ~]# yum -y install mysql-community-server MySQL 设置找出初始的root用户的密码，通过如下命令可以在日志文件中找出密码：[root@localhost ~]# grep “password” /var/log/mysqld.log2019-05-19T00:42:03.830587Z 1 [Note] A temporary password is generated for root@localhost: 5&amp;vPo_Vej1GZ如下命令进入数据库：[root@localhost ~]# mysql -uroot -p输入初始密码，此时不能做任何事情，因为MySQL默认必须修改密码之后才能操作数据库：mysql&gt; ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘new password’; 安装PHP 安装php 检查当前安装的PHP包yum list installed | grep php如果有安装的PHP包，先删除他们 更新yum 源rpm -Uvh http://mirror.webtatic.com/yum/el5/latest.rpm ##CentOs 5.xrpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm ##CentOs 6.xrpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm ##CentOs 7.Xrpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm 安装yum install php70w.x86_64 php70w-cli.x86_64 php70w-common.x86_64 php70w-gd.x86_64 php70w-ldap.x86_64 php70w-mbstring.x86_64 php70w-mcrypt.x86_64 php70w-mysql.x86_64 php70w-pdo.x86_64 测试PHP[root@localhost ~]# cd /var/www/html/[root@localhost html]# vi info.php 1234567891011&lt;?php phpinfo();?&gt;测试：curl -I http://localhost/info.phpHTTP/1.1 200 OKDate: Sat, 25 May 2019 01:06:40 GMTServer: Apache/2.4.6 (CentOS) PHP/7.0.33X-Powered-By: PHP/7.0.33Content-Type: text/html; charset=UTF-8 基于LAMP 部署WordPress安装WordPress 下载WordPress直接通过wget命令去它官网下载最新的版本（英文）：wget http://wordpress.org/latest.tar.gz下载中文wordpress-5.0.3:wget https://cn.wordpress.org/wordpress-5.0.3-zh_CN.tar.gztar -xzvf wordpress-5.0.3-zh_CN.tar.gz 创建WordPress操作的数据库和用户 创建数据库：CREATE DATABASE wordpress; 配置权限：GRANT ALL PRIVILEGES ON wordpress.* TO wordpress@localhost IDENTIFIED BY ‘your password’;FLUSH PRIVILEGES; 配置WordPress 修改配置文件wordpress/wp-config-sample.php修改的内容包括DB_NAME，DB_USER，DB_PASSWORD以及下面的唯一key 1234define( &apos;DB_NAME&apos;, &apos;wordpress&apos; );define( &apos;DB_USER&apos;, &apos;wordpress&apos; );define( &apos;DB_PASSWORD&apos;, &apos;WordPress@1234&apos; );define( &apos;DB_HOST&apos;, &apos;localhost&apos; ); 拷贝WordPress源码至网站根目录rm -rf /var/www/htmlcp -r wordpress/* /var/www/mv wordpress html 安装WordPress访问你的ip或者是域名应该就是这样子的了：http://129.28.76.98/wp-admin/install.php 根据提示安装并登录安装WordPress -&gt; 数据库信息 -&gt; 站点、用户、邮箱 -&gt;登陆 后台管理输入“域名/wp-admin/”或“公网ip/wp-admin/”，就可以进入网站的后台管理页面了： 访问你的IP或者域名，一个初始的博客就搭建好了~：]]></content>
       <categories>
         <category>博客</category>
       </categories>
@@ -45,17 +45,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Zabbix 的面向对象]]></title>
-    <url>%2F2019%2F05%2F01%2FZabbix%2F01%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Zabbix</category>
-      </categories>
-      <tags>
-        <tag>Zabbix</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Prometheus]]></title>
     <url>%2F2019%2F05%2F01%2FPrometheus%2F01.pro%2F</url>
     <content type="text"></content>
@@ -75,6 +64,17 @@
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Zabbix 的面向对象]]></title>
+    <url>%2F2019%2F05%2F01%2FZabbix%2F01%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Zabbix</category>
+      </categories>
+      <tags>
+        <tag>Zabbix</tag>
       </tags>
   </entry>
   <entry>

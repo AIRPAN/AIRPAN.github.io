@@ -105,6 +105,24 @@
   </entry>
   
   <entry>
+    <title>Prometheus</title>
+    <link href="http://yoursite.com/2019/05/01/Prometheus/01.pro/"/>
+    <id>http://yoursite.com/2019/05/01/Prometheus/01.pro/</id>
+    <published>2019-05-01T10:11:07.000Z</published>
+    <updated>2019-05-23T09:17:15.565Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Prometheus" scheme="http://yoursite.com/categories/Prometheus/"/>
+    
+    
+      <category term="Prometheus" scheme="http://yoursite.com/tags/Prometheus/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python 的面向对象</title>
     <link href="http://yoursite.com/2019/05/01/Python/02.Oop/01.Python%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2019/05/01/Python/02.Oop/01.Python的面向对象/</id>
@@ -123,24 +141,6 @@
     
     
       <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Prometheus</title>
-    <link href="http://yoursite.com/2019/05/01/Prometheus/01.pro/"/>
-    <id>http://yoursite.com/2019/05/01/Prometheus/01.pro/</id>
-    <published>2019-05-01T10:11:07.000Z</published>
-    <updated>2019-05-23T09:17:15.565Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="Prometheus" scheme="http://yoursite.com/categories/Prometheus/"/>
-    
-    
-      <category term="Prometheus" scheme="http://yoursite.com/tags/Prometheus/"/>
     
   </entry>
   
@@ -320,6 +320,28 @@
     
     
       <category term="Zabbix" scheme="http://yoursite.com/tags/Zabbix/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Hexo+Github+Coding搭建个人博客——基础篇(从菜鸟到放弃)</title>
+    <link href="http://yoursite.com/2018/09/25/Hexo/01.hexo/"/>
+    <id>http://yoursite.com/2018/09/25/Hexo/01.hexo/</id>
+    <published>2018-09-25T10:11:07.000Z</published>
+    <updated>2019-05-27T15:33:30.850Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://s2.ax1x.com/2019/05/27/VePM0P.md.png" alt="VePM0P.md.png"></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul><li><p>Hexo博客搭建的基础大致流程为:<br>安装Node.js →安装Git → 安装Hexo → 安装主题 → 本地测试运行 → 注册给github与coding并创建pages仓库 → 部署</p></li><li><p>对于使用windows的童鞋, 可参考文章末尾处的参考链接, 步骤大同小异<br>以下提到的站点配置文件指的是博客文件根目录下的 _config.yml, 主题配置文件是主题文件夹下的 _config.yml, 童鞋们不要混淆了</p></li></ul><h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>Node.js的安装有很多种方式, Hexo的官方文档 建议是用nvm 安装, 但好多人都说不行, 所以找了另外两种方式安装<br>windows的童鞋可参考安装Node.js</p><ul><li><p>方法一: 二进制包直接解压配置<br>在node.js的官网 下载二进制包来安装的, 下载过后, 解压, 设置软链接, 要不然每次都执行命令都要加上路径, 好麻烦<br>cp /home/ybd/Data/soft/application/node-v6.2.0-linux-x64/bin/node /usr/local/bin/node<br>cp /home/ybd/Data/soft/application/node-v6.2.0-linux-x64/bin/npm /usr/local/bin/npm<br>检查：<br>node -v<br>npm -v</p></li><li><p>方法二: 换源下载<br>安装 8.x 版本:<br>curl -sL <a href="https://rpm.nodesource.com/setup_8.x" target="_blank" rel="noopener">https://rpm.nodesource.com/setup_8.x</a> | sudo -E bash -<br>sudo yum install -y nodejs<br>npm 更换淘宝镜像:<br>npm config set registry <a href="https://registry.npm.taobao.org/" target="_blank" rel="noopener">https://registry.npm.taobao.org/</a></p></li><li><p>方法三: 源文件编译安装<br>在安装前, 首先需要配置安g++编译器<br>sudo yum install build-essential<br>去官网 下载源代码, 选择最后一项, Source Code<br>解压到某一目录, 然后进入此目录,依次执行以下3条命令<br>./configure<br>make<br>sudo make install<br>执行以下命令, 检测是否已经装好node.js<br>node -v</p></li><li><p>npm安装, 一条命令即可解决<br>curl <a href="http://npmjs.org/install.sh" target="_blank" rel="noopener">http://npmjs.org/install.sh</a> | sudo sh</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_2_centos ]# node -v</span><br><span class="line">v10.15.3</span><br><span class="line">[root@VM_0_2_centos ]# npm -v</span><br><span class="line">6.4.1</span><br></pre></td></tr></table></figure></li></ul><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><ul><li>linux系统下安装Git非常简单, 只需一条命令:<br>sudo yum install git<br>windows下就直接到Git官网 下载安装即可<br>然后终端执行 git –version 查看是否安装成功<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git version 1.8.3.1</span><br></pre></td></tr></table></figure></li></ul><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>什么是 Hexo？Hexo 是一个快速、简洁且高效的博客框架. Hexo 使用 Markdown（或其他渲染引擎）解析文章, 在几秒内, 即可利用靓丽的主题生成静态网页.</p><p>所有以上必备的应用程序安装完成后, 无论是在哪个操作系统, 之后的操作都一样<br>安装Hexo的非常简单, 只要一条命令, 前提是安装好Node.js与Git</p><ul><li>npm install -g hexo-cli</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      「Hexo」「Github」「Coding」
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   

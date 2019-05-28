@@ -189,6 +189,28 @@
   </entry>
   
   <entry>
+    <title>HTML 极速入门</title>
+    <link href="http://yoursite.com/2019/04/04/Html/01.Html/"/>
+    <id>http://yoursite.com/2019/04/04/Html/01.Html/</id>
+    <published>2019-04-04T10:11:07.000Z</published>
+    <updated>2019-05-28T15:31:44.781Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul><li><p>相关网站：<br><a href="http://www.w3school.com.cn" target="_blank" rel="noopener">w3school 中文网站</a></p></li><li><p>Web标准构成:<br>Web标准是由W3C及其他标准化资质制定的标准集合。包括：结构（Structure）、表现（Presentation）、行为（Behavior）<br>结构标准：用于对网页元素进行整理和分类，包括 xml、xhtml 两部分<br>样式标准：用于设置网页元素的版式、颜色、大小等外观，主要指 Css<br>行为标准：网页模型的定义及交互的编写。包括 DOM和ECMAScript两部分<br>所以，理想状态下，一个网页的源码中需要包含：.html、.css、.js</p></li><li><p>html基本骨架</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li><li><p>&lt;!DOCTYPE&gt;<br>&lt;!DOCTYPE&gt;位于文档的最前面，用于向浏览器说明当前.html文件使用的是哪种HTML或者XHTML标准规范。浏览器会按照此处指定的规范对html文件进行解析。<br>HTML5可以向下兼容，所以，现在直接指定为&lt;!DOCTYPE html&gt;即可。</p></li><li>charset（字符编码集）<br>GB2312：简体中文字符集，含6763个常用汉字<br>BIG5：繁体中文，港澳台地区使用<br>GBK：含全部中文字符，是对GB2312的扩展，支持繁体字<br>UTF-8：支持中文和英文等，是最常用的字符集</li></ul><h1 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h1><p>HTML大量使用语义化标签</p><h2 id="排版标签"><a href="#排版标签" class="headerlink" title="排版标签"></a>排版标签</h2><ul><li><p>标题标签 </p><h1></h1><br>h 即 head 的简写<br>有<h1>、<h2>、<h3>、<h4>、<h5>、<h6> 6种，从左到右字号依次变小。<br>基本格式<h1></h1><br>像<h7>这种错误的标签在展示时不起作用<p></p></h7></h6></h5></h4></h3></h2></h1></li><li><p>段落标签</p><p></p><br>p 即 paragraph 的简写<br>基本格式<p>段落内容</p><br>段落中的文本内容超出浏览器宽度之后会执行自动换行<p></p></li><li><p>水平线标签<hr><br>hr 即 horizontal  的缩写<br>其作用是在页面中插入一条水平线<br>基本格式<hr><br>这是一个自闭合标签。（普通标签成对出现；自闭合标签不需要包裹内容，自己就执行了开始和结束的操作）</p></li><li><p>容器标签 <div></div> 和 <span></span><br>div 即 division 的缩写，分割、区分的意思<br>span 即 span ，跨度、范围的意思<br>这俩本质上是一个容器，类似于 Android 中的ViewGroup<br>基本格式<div>这是div标签中的内容</div> <span>这是span标签中的内容</span></p></li></ul><h2 id="文本格式化标签"><a href="#文本格式化标签" class="headerlink" title="文本格式化标签"></a>文本格式化标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">标签    效果</span><br><span class="line"></span><br><span class="line">&lt;b&gt;&lt;/b&gt;、&lt;strong&gt;&lt;/strong&gt;   加粗，XHTML推荐使用&lt;strong&gt;</span><br><span class="line">&lt;i&gt;&lt;/i&gt;、&lt;em&gt;&lt;/em&gt;           斜体，XHTML推荐使用&lt;em&gt;</span><br><span class="line">&lt;s&gt;&lt;/s&gt;、&lt;del&gt;&lt;/del&gt;         删除线，XHTML推荐使用&lt;del&gt;</span><br><span class="line">&lt;u&gt;&lt;/u&gt;、&lt;ins&gt;&lt;/ins&gt;         下划线，XHTML推荐使用&lt;ins&gt;</span><br></pre></td></tr></table></figure><h2 id="标签的属性"><a href="#标签的属性" class="headerlink" title="标签的属性"></a>标签的属性</h2><ul><li>基本格式：&lt;标签名 属性1=”属性值1“ 属性2=”属性值2“&gt;&lt;/标签名&gt;<br>标签可以拥有多个属性<br>属性必须写在开始标签中，位于标签名后面<br>属性之间不区分顺序<br>标签名与属性、属性与属性之间使用空格隔开<br>任何属性都有默认值，省略该属性表示使用默认值</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      「HTML」
+    
+    </summary>
+    
+      <category term="HTML" scheme="http://yoursite.com/categories/HTML/"/>
+    
+    
+      <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MySQL 语法「四」</title>
     <link href="http://yoursite.com/2018/11/15/MySQL/04.MySQL/"/>
     <id>http://yoursite.com/2018/11/15/MySQL/04.MySQL/</id>

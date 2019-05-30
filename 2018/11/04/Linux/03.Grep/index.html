@@ -155,18 +155,18 @@
   </script>
 
 
-  <meta name="description" content="「日志」「备份」">
-<meta name="keywords" content="MySQL">
+  <meta name="description" content="「Grep」">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL 语法「四」">
-<meta property="og:url" content="http://yoursite.com/2018/11/15/MySQL/04.MySQL/index.html">
+<meta property="og:title" content="Linux Grep">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/Linux/03.Grep/index.html">
 <meta property="og:site_name" content="AIR PAN">
-<meta property="og:description" content="「日志」「备份」">
+<meta property="og:description" content="「Grep」">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-24T07:45:47.834Z">
+<meta property="og:updated_time" content="2019-05-30T13:09:13.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL 语法「四」">
-<meta name="twitter:description" content="「日志」「备份」">
+<meta name="twitter:title" content="Linux Grep">
+<meta name="twitter:description" content="「Grep」">
 
 
 
@@ -175,7 +175,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/15/MySQL/04.MySQL/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/04/Linux/03.Grep/">
 
 
 
@@ -196,7 +196,7 @@
     })();
 </script>
 
-  <title>MySQL 语法「四」 | AIR PAN</title>
+  <title>Linux Grep | AIR PAN</title>
   
 
 
@@ -464,7 +464,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/MySQL/04.MySQL/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/Linux/03.Grep/">
 
     <span hidden itemprop="author" itemscope itemtype="https://schema.org/Person">
       <meta itemprop="name" content="Air Pan">
@@ -481,7 +481,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">MySQL 语法「四」
+          <h2 class="post-title" itemprop="name headline">Linux Grep
 
               
             
@@ -507,7 +507,7 @@
                 
               
 
-              <time title="Created: 2018-11-15 18:11:07" itemprop="dateCreated datePublished" datetime="2018-11-15T18:11:07+08:00">2018-11-15</time>
+              <time title="Created: 2018-11-04 18:11:07" itemprop="dateCreated datePublished" datetime="2018-11-04T18:11:07+08:00">2018-11-04</time>
             
 
             
@@ -524,7 +524,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-24 15:45:47" itemprop="dateModified" datetime="2019-05-24T15:45:47+08:00">2019-05-24</time>
+                <time title="Modified: 2019-05-30 21:09:13" itemprop="dateModified" datetime="2019-05-30T21:09:13+08:00">2019-05-30</time>
               
             
           </span>
@@ -541,7 +541,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -569,7 +569,7 @@
           
 
           
-            <div class="post-description">「日志」「备份」</div>
+            <div class="post-description">「Grep」</div>
           
 
         </div>
@@ -585,50 +585,53 @@
       
 
       
-        <h1 id="MySQL-语法「四」"><a href="#MySQL-语法「四」" class="headerlink" title="MySQL 语法「四」"></a>MySQL 语法「四」</h1><ul>
-<li>日志</li>
-<li>备份  </li>
-</ul>
-<h2 id="日志分类"><a href="#日志分类" class="headerlink" title="日志分类"></a>日志分类</h2><ul>
-<li>错误日志</li>
-<li>查询日志</li>
-<li>慢查询日志</li>
-<li>二进制日志</li>
-<li>中继日志</li>
-<li>innodb 存储引擎级别的事务日志</li>
-</ul>
-<h3 id="错误日志"><a href="#错误日志" class="headerlink" title="错误日志"></a>错误日志</h3><p>mysql 执行过程中的错误信息、警告信息、event  schedule运行时产生的信息、mysql 启动和停止过程的输出信息、主从结构中，从服务器IO复制线程的启动信息。<br>常用 log_error 和 log_warning 来定义。<br>show variables like “%log_errror%”;</p>
-<p>log_warning: 标识告警信息是否一并记录到错误日志中、<br>为  0 表示不记录告警信息 、为1表示告警信息一并记录到错误日志中。<br>大于1 表示失败的连接 的信息和创建新连接时 拒绝访问类的错误信息也会被记录到错误日志。<br>show variables like “%log_warning%”;</p>
-<h3 id="查询日志"><a href="#查询日志" class="headerlink" title="查询日志"></a>查询日志</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show  variables where variable_name like &quot;%general_log%&quot; or variable_name=&quot;log_output&quot;;</span><br><span class="line">+------------------+----------------------------------+</span><br><span class="line">| Variable_name    | Value                            |</span><br><span class="line">+------------------+----------------------------------+</span><br><span class="line">| general_log      | OFF                              |</span><br><span class="line">| general_log_file | /var/lib/mysql/VM_0_2_centos.log |</span><br><span class="line">| log_output       | FILE                             |</span><br><span class="line">+------------------+----------------------------------+</span><br></pre></td></tr></table></figure>
-<p>general_log：表示查询日志是否开启。默认为OFF</p>
-<h3 id="慢查询日志"><a href="#慢查询日志" class="headerlink" title="慢查询日志"></a>慢查询日志</h3><ul>
-<li><p>show variables like “slow_query_log%”;<br>show variables where variable_name like “%slow_query%” or variable_name like “log_output”;<br>show variables like “slow_query_log%”;<br>log_slow_queries： 是否开启慢查询<br>log_output:慢查询开启后以哪种方式存放<br>FILE：表示慢查询日志存放于指定的文件中<br>TABLE：表示慢查询日志存放于mysql库的slow_log表中<br>FILE,TABLE：同时存放于指定文件和slow_log 表中<br>NONE：不记录查询日志<br>slow_query_log_file:log_output设置为FILE时，指定慢查询日志存储于哪个日志文件中。默认文件名为 “ 主机名-slow.log” ，位置为datadir参数。<br>long_query_time:认定的慢查询时间<br>log_queries_not_using_indexes:如果运行的sql语句没有使用到索引，是否也被当做慢查询记录到慢查询日志中，OFF 表示不记录，ON 表示记录。<br>set global slow_query_log=ON;<br>show variables where variable_name like “%slow_query%” or variable_name like “log_output”;<br>show variables like “slow_query_log%”;<br>set global long_query_time=3;<br>select @@global.long_query_time;<br>举例：select  sleep(5);<br>tail -fn6 /var/lib/mysql/<br>show global status like ‘%slow_queries%’;</p>
-</li>
-<li><p>mysqldumpslow 命令<br>mysql自带的对慢查询日志的统计分析工具。只能作用于慢查询日志文件，不会统计slow_log表。<br>mysqldumpslow -s t /var/lib/mysql/cos72ini-slow.log<br>mysqldumpslow -s r  /var/lib/mysql/DU-HOST-slow.log<br>c :执行计数<br>i:锁定时间<br>r:返回记录<br>t:执行时间<br>al：平均锁定时间<br>ar:平均返回记录数<br>mysqldumpslow -s r -t 2  /var/lib/mysql/DU-HOST-slow.log    -t 指明查看多少条统计信息。查看两条统计信息。</p>
-</li>
-<li><p>其他选项<br>mysqldumpslow –help</p>
-</li>
-</ul>
-<h3 id="二进制日志"><a href="#二进制日志" class="headerlink" title="二进制日志"></a>二进制日志</h3><ul>
-<li><p>binlog ：记录所有修改数据的语句、有可能改变数据库的语句—–主要用于时间点恢复（备份恢复），以及主从复制结构。</p>
-</li>
-<li><p>三种模式：<br>statement模式：记录对数据库修改的语句。<br>row模式：记录对数据库做出修改的语句所影响的数据行以及这些行的修改。<br>mixed模式：混合以上两种模式，一般语句使用statement模式，特殊函数使用row模式记录。<br>my.cnf 配置<br>binlog.format=row</p>
-</li>
-<li><p>二进制日志相关参数：<br>log_bin:控制是否开启二进制日志。只读变量，只能通过修改my.cnf，设置log_bin的值<br>sql_log_bin: 当前会话的操作是否会被记录于二进制中<br>binlog_format:二进制日志的记录方式<br>max_binlog_size:设置单个二进制日志文件的最大大小<br>sync_binlog：<br>show binary log;<br>show master logs;</p>
-</li>
-</ul>
-<ul>
-<li><p>查看二进制日志文件<br>①show binlog events in ‘二进制文件名’;<br>指定位置查看：<br>②show binlog events in ‘二进制文件名’ from 24 ;<br>limit 3 ;<br>limit 100,10;<br>③show master status;<br>查看当前使用的二进制文件，以及位置。</p>
-</li>
-<li><p>滚动二进制日志<br>flush logs;</p>
-</li>
-</ul>
-<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><ul>
-<li><p>备份相关术语：<br>全量备份：对某个时间点的数据完全的备份<br>差异备份：<br>增量备份：对上一次备份后的变化的数据的备份<br>时间点恢复<br>热备：在数据库正常运行的情况下备份<br>温备：备份期间数据库只能进行读。不能进行写操作<br>冷备：备份期间。读写均不可操作<br>物理备份：直接备份数据库对应的数据文件<br>逻辑备份：建数据从数据导出，并且将导出的数据进行存档备份  </p>
-</li>
-<li><p>常用的备份工具：<br><a href="http://www.zsythink.net/archives/1450" target="_blank" rel="noopener">mysqldump</a><br><a href="http://www.zsythink.net/archives/1455" target="_blank" rel="noopener">xtrabackup</a><br>select 语句进行部分备份<br>cp、tar命令。适于冷备。</p>
-</li>
-</ul>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>　　grep (global search regular expression(RE) and print out the line,全面搜索正则表达式并把行打印出来)是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。</p>
+<p>　　Unix的grep家族包括grep、egrep和fgrep。egrep和fgrep的命令只跟grep有很小不同。egrep是grep的扩展，支持更多的re元字符， fgrep就是fixed grep或fast grep，它们把所有的字母都看作单词，也就是说，正则表达式中的元字符表示回其自身的字面意义，不再特殊。linux使用GNU版本的grep。它功能更强，可以通过-G、-E、-F命令行选项来使用egrep和fgrep的功能。</p>
+<p>　　grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到标准输出，不影响原文件内容。grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回0，如果搜索不成功，则返回1，如果搜索的文件不存在，则返回2。我们利用这些返回值就可进行一些自动化的文本处理工作。<br>　　<br>命令格式：grep [option] pattern file</p>
+<h2 id="grep-选项"><a href="#grep-选项" class="headerlink" title="grep 选项"></a>grep 选项</h2><h3 id="grep的常用选项："><a href="#grep的常用选项：" class="headerlink" title="grep的常用选项："></a>grep的常用选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-V： 打印grep的版本号  </span><br><span class="line">-E： 解释PATTERN作为扩展正则表达式，也就相当于使用egrep。 或操作    </span><br><span class="line">-F :   解释PATTERN作为固定字符串的列表，由换行符分隔，其中任何一个都要匹配。也就相当于使用fgrep。  </span><br><span class="line">-G:   将范本样式视为普通的表示法来使用。这是默认值。加不加都是使用grep。</span><br></pre></td></tr></table></figure>
+<h3 id="匹配控制选项："><a href="#匹配控制选项：" class="headerlink" title="匹配控制选项："></a>匹配控制选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-e :  使用PATTERN作为模式。这可以用于指定多个搜索模式，或保护以连字符（ - ）开头的图案。指定字符串做为查找文件内容的样式。     </span><br><span class="line">-f :  指定规则文件，其内容含有一个或多个规则样式，让grep查找符合规则条件的文件内容，格式为每行一个规则样式。  </span><br><span class="line">-i :  搜索时候忽略大小写  </span><br><span class="line">-v:  反转匹配，选择没有被匹配到的内容。  </span><br><span class="line">-w：匹配整词，精确地单词,单词的两边必须是非字符符号(即不能是字母数字或下划线)  </span><br><span class="line">-x：仅选择与整行完全匹配的匹配项。精确匹配整行内容(包括行首行尾那些看不到的空格内容都要完全匹配)  </span><br><span class="line">-y：此参数的效果和指定“-i”参数相同。</span><br></pre></td></tr></table></figure>
+<h3 id="一般输出控制选项："><a href="#一般输出控制选项：" class="headerlink" title="一般输出控制选项："></a>一般输出控制选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-c： 抑制正常输出;而是为每个输入文件打印匹配线的计数。 </span><br><span class="line">--color [= WHEN]：让关键字高亮显示，如--color=auto  </span><br><span class="line">-L：列出文件内容不符合指定的范本样式的文件名称  </span><br><span class="line">-l : 列出文件内容符合指定的范本样式的文件名称。  </span><br><span class="line">-m num：当匹配内容的行数达到num行后,grep停止搜索,并输出停止前搜索到的匹配内容  </span><br><span class="line">-o: 只输出匹配的具体字符串,匹配行中其他内容不会输出  </span><br><span class="line">-q：安静模式,不会有任何输出内容,查找到匹配内容会返回0,未查找到匹配内容就返回非0  </span><br><span class="line">-s：不会输出查找过程中出现的任何错误消息，-q和-s选项因为与其他系统的grep有兼容问题，shell脚本应该避免使用-q和-s，并且应该将标准和错误输出重定向到/dev/null 代替。</span><br></pre></td></tr></table></figure>
+<h3 id="输出线前缀控制："><a href="#输出线前缀控制：" class="headerlink" title="输出线前缀控制："></a>输出线前缀控制：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-b：输出每一个匹配行(或匹配的字符串)时在其前附加上偏移量(从文件第一个字符到该匹配内容之间的字节数)  </span><br><span class="line">-H：在每一个匹配行之前加上文件名一起输出(针对于查找单个文件),当æ¥找多个文件时默认就会输出文件名  </span><br><span class="line">-h：禁止输出上的文件名的前缀。无论查找几个文件都不会在匹配内容前输出文件名  </span><br><span class="line">--label = LABEL：显示实际来自标准输入的输入作为来自文件LABEL的输入。这是特别在实现zgrep等工具时非常有用，例如gzip -cd foo.gz | grep --label = foo -H的东西。看到 也是-H选项。  </span><br><span class="line">-n：输出匹配内容的同时输出其所在行号。  </span><br><span class="line">-T：初始标签确保实际行内容的第一个字符位于制表位上，以便对齐标签看起来很正常。在匹配信息和其前的附加信息之间加入tab以使格式整齐。</span><br></pre></td></tr></table></figure>
+<h3 id="上下文线控制选项："><a href="#上下文线控制选项：" class="headerlink" title="上下文线控制选项："></a>上下文线控制选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-A num：匹配到搜索到的行以及该行下面的num行  </span><br><span class="line">-B num：匹配到搜索到的行以及该行上面的num行  </span><br><span class="line">-C num：匹配到搜索到的行以及上下各num行</span><br></pre></td></tr></table></figure>
+<h3 id="文件和目录选择选项："><a href="#文件和目录选择选项：" class="headerlink" title="文件和目录选择选项："></a>文件和目录选择选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-a： 处理二进制文件，就像它是文本;这相当于--binary-files = text选项。不忽略二进制的数据。    </span><br><span class="line"> --binary-files = TYPE：如果文件的前几个字节指示文件包含二进制数据，则假定该文件为类型TYPE。默认情况下，TYPE是二进制的，grep通常输出一行消息二进制文件匹配，或者如果没有匹配则没有消息。如果TYPE不匹配，grep假定二进制文件不匹配;这相当于-I选项。如果TYPE是文本，则grep处理a二进制文件，如果它是文本;这相当于-a选项。警告：grep --binary-files = text可能会输出二进制的垃圾，如果输出是一个终端和如果可能有讨厌的副作用终端驱动程序将其中的一些解释为命令。</span><br><span class="line"></span><br><span class="line">-D：如果输入文件是设备，FIFO或套接字，请使用ACTION处理。默认情况下，读取ACTION，这意味着设备被读取，就像它们是普通文件一样。如果跳过ACTION，设备为 默默地跳过。  </span><br><span class="line"></span><br><span class="line">-d:  如果输入文件是目录，请使用ACTION处理它。默认情况下，ACTION是读的，这意味着目录被读取，就像它们是普通文件一样。如果跳过ACTION，目录将静默跳过。如果ACTION是recurse，grep将递归读取每个目录下的所有文件;这是相当于-r选项。  </span><br><span class="line"></span><br><span class="line">--exclude=GLOB：跳过基本名称与GLOB匹配的文件（使用通配符匹配）。文件名glob可以使用*，？和[...]作为通配符，和\引用通配符或反斜杠字符。搜索其文件名和GLOB通配符相匹配的文件的内容来查找匹配使用方法:grep -H --exclude=c* &quot;old&quot; ./*  c*是通配文件名的通配符./* 指定需要先通配文件名的文件的范围,必须要给*,不然就匹配不出内容,(如果不给*,带上-r选项也可以匹配)  </span><br><span class="line"></span><br><span class="line">--exclude-from = FILE：在文件中编写通配方案,grep将不会到匹配方案中文件名的文件去查找匹配内容  </span><br><span class="line"></span><br><span class="line">--exclude-dir = DIR：匹配一个目录下的很多内容同时还要让一些子目录不接受匹配,就使用此选项。  </span><br><span class="line"></span><br><span class="line"> --include = GLOB：仅搜索其基本名称与GLOB匹配的文件（使用--exclude下所述的通配符匹配）。  </span><br><span class="line"></span><br><span class="line">-R ,-r :以递归方式读取每个目录下的所有文件; 这相当于-d recurse选项。</span><br></pre></td></tr></table></figure>
+<h3 id="其他选项："><a href="#其他选项：" class="headerlink" title="其他选项："></a>其他选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--line-buffered： 在输出上使用行缓冲。这可能会导致性能损失。  SCII NUL字符）而不是a终止新队。与-Z或--null选项一样，此选项可以与排序-z等命令一起使用来处理任意文件名。</span><br></pre></td></tr></table></figure>
+<h2 id="选项简述"><a href="#选项简述" class="headerlink" title="选项简述"></a>选项简述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">-a   --text   #不要忽略二进制的数据。 将 binary 文件以 text 文件的方式搜寻数据 </span><br><span class="line">-A&lt;显示行数&gt;   --after-context=&lt;显示行数&gt;   #除了显示符合范本样式的那一列之外，并显示该行之后的内容。   </span><br><span class="line">-b   --byte-offset   #在显示符合样式的那一行之前，标示出该行第一个字符的编号。   </span><br><span class="line">-B&lt;显示行数&gt;   --before-context=&lt;显示行数&gt;   #除了显示符合样式的那一行之外，并显示该行之前的内容。   </span><br><span class="line">-c    --count   #计算符合样式的行数。   </span><br><span class="line">-C&lt;显示行数&gt;    --context=&lt;显示行数&gt;或-&lt;显示行数&gt;   #除了显示符合样式的那一行之外，并显示该行之前后的内容。   </span><br><span class="line">-d &lt;动作&gt;      --directories=&lt;动作&gt;   #当指定要查找的是目录而非文件时，必须使用这项参数，否则grep指令将回报信息并停止动作。   </span><br><span class="line">-e&lt;范本样式&gt;  --regexp=&lt;范本样式&gt;   #指定字符串做为查找文件内容的样式。   </span><br><span class="line">-E      --extended-regexp   #将样式为延伸的普通表示法来使用。sic-regexp   #将样式视为普通的表示法来使用。   </span><br><span class="line">-h   --no-filename   #在显示符合样式的那一行之前，不标示该行所属的文件名称。   </span><br><span class="line">-H   --with-filename   #在显示符合样式的那一行之前，表示该行所属的文件名称。   </span><br><span class="line">-i    --ignore-case   #忽略字符大小写的差别。   </span><br><span class="line">-l    --file-with-matches   #列出文件内容符合指定的样式的文件名称。   </span><br><span class="line">-L   --files-without-match   #列出文件内容不符合指定的样式的文件名称。   </span><br><span class="line">-n   --line-number   #在显示符合样式的那一行之前，标示出该行的列数编号。   </span><br><span class="line">-q   --quiet或--silent   #不显示任何信息。   </span><br><span class="line">-r   --recursive   #此参数的效果和指定“-d recurse”参数相同。   </span><br><span class="line">-s   --no-messages   #不显示错误信息。   </span><br><span class="line">-v   --revert-match   #显示不包含匹配文本的所有行。   </span><br><span class="line">-V   --version   #显示版本信息。   </span><br><span class="line">-w   --word-regexp   #只显示全字符合的列。   </span><br><span class="line">-x    --line-regexp   #只显示全列符合的列。   </span><br><span class="line">-y   #此参数的效果和指定“-i”参数相同。</span><br><span class="line">--color=auto ：可以将找到的关键词部分加上颜色的显示</span><br></pre></td></tr></table></figure>
+<h2 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h2><pre><code>grep -i pattern files ：不区å大小写地搜索。默认情况区分大小写，
+grep -l pattern files ：只列出匹配的文件名，
+grep -L pattern files ：列出不匹配的文件名，
+grep -w pattern files ：只匹配整个单词，而不是字符串的一部分（如匹配‘magic’，而不是‘magical’），
+grep -C number pattern files ：匹配的上下文分别显示[number]行，
+grep pattern1 | pattern2 files ：显示匹配 pattern1 或 pattern2 的行，
+grep pattern1 files | grep pattern2 ：显示既匹配 pattern1 又匹配 pattern2 的行。
+
+这里还有些用于搜索的特殊符号：
+&lt; 和 &gt; 分别标注单词的开始与结尾。
+例如：
+grep man * 会匹配 ‘Batman’、‘manic’、‘man’等，
+grep \&apos;&lt;man\&apos; * 匹配‘manic’和‘man’，但不是‘Batman’，
+grep \&apos;&lt;man&gt;\&apos; 只匹配‘man’，而不是‘Batman’或‘manic’等其他的字符串。
+\&apos;^\&apos;：指匹配的字符串在行首，
+\&apos;$\&apos;：指匹配的字符串在行尾，
+如果您不习惯命令行参数，可以试试图形界面的‘grep’，如 reXgrep 。这个软件提供 AND、OR、NOT 等语法，还有漂亮的按钮 :-) 。如果您只是需要更清楚的输出，不妨试试 fungrep 。
+
+.grep 搜索字符串
+命令格式:
+grep string filename
+寻找字串的方法很多，比如说我想找所有以M开头的行.此时必须引进pattern的观念.
+说明：
+^M 以M开头的行，^表示开始的意思
+M$ 以M结尾的行，$表示结束的意思
+^[0-9] 以数字开始的行，[]内可列举字母
+^[124ab] 以1,2,4,a,或b开头的行
+^b.503 句点表示任一字母
+* 星号表示0个以上的字母(可以没有)
++ 加号表示1个以上的字母
+. 斜线可以去掉特殊意义
+&lt;eg&gt; cat passwd | grep ^b 列出大学部有申请帐号者名单
+cat passwd | grep ^s 列出交换学生申请帐号者名单
+cat passwd | grep \&apos;^b.503\&apos; 列出电机系各年级...
+grep \&apos;^.\&apos; myfile.txt 列出所有以句点开头的行
+</code></pre><p>-f&lt;规则文件&gt;  –file=&lt;规则文件&gt;   #指定规则文件，其内容含有一个或多个规则样式，让grep查找符合规则条件的文件内容，格式为每行一个规则样式。<br>-F   –fixed-reg<br>-m-map：启用mmap系统调用代替read系统调</p>
 
       
     </div>
@@ -681,7 +684,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-envira"></i> MySQL</a>
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-envira"></i> Linux</a>
           
         </div>
       
@@ -695,8 +698,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/14/MySQL/03.MySQL/" rel="next" title="MySQL 语法「三」">
-                <i class="fa fa-chevron-left"></i> MySQL 语法「三」
+              <a href="/2018/11/01/Linux/01.Linux系统运维/" rel="next" title="Linux 系统运维">
+                <i class="fa fa-chevron-left"></i> Linux 系统运维
               </a>
             
           </div>
@@ -705,8 +708,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/04/Html/01.Html/" rel="prev" title="HTML 前端课程">
-                HTML 前端课程 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/05/Linux/02.Sed/" rel="prev" title="Linux Sed">
+                Linux Sed <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -962,7 +965,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-语法「四」"><span class="nav-text">MySQL 语法「四」</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#日志分类"><span class="nav-text">日志分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误日志"><span class="nav-text">错误日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询日志"><span class="nav-text">查询日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#慢查询日志"><span class="nav-text">慢查询日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制日志"><span class="nav-text">二进制日志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份"><span class="nav-text">备份</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#grep-选项"><span class="nav-text">grep 选项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grep的常用选项："><span class="nav-text">grep的常用选项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配控制选项："><span class="nav-text">匹配控制选项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般输出控制选项："><span class="nav-text">一般输出控制选项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出线前缀控制："><span class="nav-text">输出线前缀控制：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上下文线控制选项："><span class="nav-text">上下文线控制选项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件和目录选择选项："><span class="nav-text">文件和目录选择选项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他选项："><span class="nav-text">其他选项：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选项简述"><span class="nav-text">选项简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用实例"><span class="nav-text">使用实例</span></a></li></ol></li></ol></div>
             
 
           </div>

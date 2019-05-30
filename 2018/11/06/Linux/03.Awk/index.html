@@ -155,18 +155,18 @@
   </script>
 
 
-  <meta name="description" content="「日志」「备份」">
-<meta name="keywords" content="MySQL">
+  <meta name="description" content="「Awk」">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL 语法「四」">
-<meta property="og:url" content="http://yoursite.com/2018/11/15/MySQL/04.MySQL/index.html">
+<meta property="og:title" content="Linux Awk">
+<meta property="og:url" content="http://yoursite.com/2018/11/06/Linux/03.Awk/index.html">
 <meta property="og:site_name" content="AIR PAN">
-<meta property="og:description" content="「日志」「备份」">
+<meta property="og:description" content="「Awk」">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-24T07:45:47.834Z">
+<meta property="og:updated_time" content="2019-05-30T12:51:59.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL 语法「四」">
-<meta name="twitter:description" content="「日志」「备份」">
+<meta name="twitter:title" content="Linux Awk">
+<meta name="twitter:description" content="「Awk」">
 
 
 
@@ -175,7 +175,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/15/MySQL/04.MySQL/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/06/Linux/03.Awk/">
 
 
 
@@ -196,7 +196,7 @@
     })();
 </script>
 
-  <title>MySQL 语法「四」 | AIR PAN</title>
+  <title>Linux Awk | AIR PAN</title>
   
 
 
@@ -464,7 +464,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/MySQL/04.MySQL/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/Linux/03.Awk/">
 
     <span hidden itemprop="author" itemscope itemtype="https://schema.org/Person">
       <meta itemprop="name" content="Air Pan">
@@ -481,7 +481,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">MySQL 语法「四」
+          <h2 class="post-title" itemprop="name headline">Linux Awk
 
               
             
@@ -507,7 +507,7 @@
                 
               
 
-              <time title="Created: 2018-11-15 18:11:07" itemprop="dateCreated datePublished" datetime="2018-11-15T18:11:07+08:00">2018-11-15</time>
+              <time title="Created: 2018-11-06 18:11:07" itemprop="dateCreated datePublished" datetime="2018-11-06T18:11:07+08:00">2018-11-06</time>
             
 
             
@@ -524,7 +524,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-24 15:45:47" itemprop="dateModified" datetime="2019-05-24T15:45:47+08:00">2019-05-24</time>
+                <time title="Modified: 2019-05-30 20:51:59" itemprop="dateModified" datetime="2019-05-30T20:51:59+08:00">2019-05-30</time>
               
             
           </span>
@@ -541,7 +541,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -569,7 +569,7 @@
           
 
           
-            <div class="post-description">「日志」「备份」</div>
+            <div class="post-description">「Awk」</div>
           
 
         </div>
@@ -585,50 +585,61 @@
       
 
       
-        <h1 id="MySQL-语法「四」"><a href="#MySQL-语法「四」" class="headerlink" title="MySQL 语法「四」"></a>MySQL 语法「四」</h1><ul>
-<li>日志</li>
-<li>备份  </li>
-</ul>
-<h2 id="日志分类"><a href="#日志分类" class="headerlink" title="日志分类"></a>日志分类</h2><ul>
-<li>错误日志</li>
-<li>查询日志</li>
-<li>慢查询日志</li>
-<li>二进制日志</li>
-<li>中继日志</li>
-<li>innodb 存储引擎级别的事务日志</li>
-</ul>
-<h3 id="错误日志"><a href="#错误日志" class="headerlink" title="错误日志"></a>错误日志</h3><p>mysql 执行过程中的错误信息、警告信息、event  schedule运行时产生的信息、mysql 启动和停止过程的输出信息、主从结构中，从服务器IO复制线程的启动信息。<br>常用 log_error 和 log_warning 来定义。<br>show variables like “%log_errror%”;</p>
-<p>log_warning: 标识告警信息是否一并记录到错误日志中、<br>为  0 表示不记录告警信息 、为1表示告警信息一并记录到错误日志中。<br>大于1 表示失败的连接 的信息和创建新连接时 拒绝访问类的错误信息也会被记录到错误日志。<br>show variables like “%log_warning%”;</p>
-<h3 id="查询日志"><a href="#查询日志" class="headerlink" title="查询日志"></a>查询日志</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show  variables where variable_name like &quot;%general_log%&quot; or variable_name=&quot;log_output&quot;;</span><br><span class="line">+------------------+----------------------------------+</span><br><span class="line">| Variable_name    | Value                            |</span><br><span class="line">+------------------+----------------------------------+</span><br><span class="line">| general_log      | OFF                              |</span><br><span class="line">| general_log_file | /var/lib/mysql/VM_0_2_centos.log |</span><br><span class="line">| log_output       | FILE                             |</span><br><span class="line">+------------------+----------------------------------+</span><br></pre></td></tr></table></figure>
-<p>general_log：表示查询日志是否开启。默认为OFF</p>
-<h3 id="慢查询日志"><a href="#慢查询日志" class="headerlink" title="慢查询日志"></a>慢查询日志</h3><ul>
-<li><p>show variables like “slow_query_log%”;<br>show variables where variable_name like “%slow_query%” or variable_name like “log_output”;<br>show variables like “slow_query_log%”;<br>log_slow_queries： 是否开启慢查询<br>log_output:慢查询开启后以哪种方式存放<br>FILE：表示慢查询日志存放于指定的文件中<br>TABLE：表示慢查询日志存放于mysql库的slow_log表中<br>FILE,TABLE：同时存放于指定文件和slow_log 表中<br>NONE：不记录查询日志<br>slow_query_log_file:log_output设置为FILE时，指定慢查询日志存储于哪个日志文件中。默认文件名为 “ 主机名-slow.log” ，位置为datadir参数。<br>long_query_time:认定的慢查询时间<br>log_queries_not_using_indexes:如果运行的sql语句没有使用到索引，是否也被当做慢查询记录到慢查询日志中，OFF 表示不记录，ON 表示记录。<br>set global slow_query_log=ON;<br>show variables where variable_name like “%slow_query%” or variable_name like “log_output”;<br>show variables like “slow_query_log%”;<br>set global long_query_time=3;<br>select @@global.long_query_time;<br>举例：select  sleep(5);<br>tail -fn6 /var/lib/mysql/<br>show global status like ‘%slow_queries%’;</p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>awk是linux环境下的一个命令行工具，但是由于awk强大的能力，我们可以为awk工具传递一个字符串，该字符串的内容类似一种编程语言的语法，我们可以称其为Awk语言，而awk工具本身则可以看作是Awk语言的解析器。<br>就好比python解析器与Python语言的关系。我们一般使用awk来做什么，awk又适合做什么工作呢。由于awk天生提供对文件中文本分列进行处理。<br>所以如果一个文件中的每行都被特定的分隔符(常见的是空格)隔开，我们可以将这个文件看成是由很多列的文本组成，<br>这样的文件最适合用awk进行处理，其实awk在工作中很多时候被用来处理log文件，进行一些统计工作等。</p>
+<h2 id="awk-基础"><a href="#awk-基础" class="headerlink" title="awk 基础"></a>awk 基础</h2><p>awk [options] ‘Pattern{Action}’ file  </p>
+<h3 id="BEGIN、END"><a href="#BEGIN、END" class="headerlink" title="BEGIN、END"></a>BEGIN、END</h3><p>awk ‘BEGIN{print “aaa”,”bbb”} { print $1,$2}’ test<br>awk ‘{print $1,$2} END{print “ccc”,”ddd”}’ test   </p>
+<h3 id="awk-分隔符："><a href="#awk-分隔符：" class="headerlink" title="awk 分隔符："></a>awk 分隔符：</h3><ul>
+<li><p>输入分割符：FS<br>awk -F# ‘{print $1,$2}’ test<br>awk -v FS=’#’ ‘{print $1,$2}’ test  </p>
 </li>
-<li><p>mysqldumpslow 命令<br>mysql自带的对慢查询日志的统计分析工具。只能作用于慢查询日志文件，不会统计slow_log表。<br>mysqldumpslow -s t /var/lib/mysql/cos72ini-slow.log<br>mysqldumpslow -s r  /var/lib/mysql/DU-HOST-slow.log<br>c :执行计数<br>i:锁定时间<br>r:返回记录<br>t:执行时间<br>al：平均锁定时间<br>ar:平均返回记录数<br>mysqldumpslow -s r -t 2  /var/lib/mysql/DU-HOST-slow.log    -t 指明查看多少条统计信息。查看两条统计信息。</p>
-</li>
-<li><p>其他选项<br>mysqldumpslow –help</p>
+<li><p>输出分隔符:OFS<br>awk -v OFS=”+++” ‘{print $1,$2}’ test<br>awk -v FS=”#” -v OFS=”—“ ‘{print $1,$2}’ test  </p>
 </li>
 </ul>
-<h3 id="二进制日志"><a href="#二进制日志" class="headerlink" title="二进制日志"></a>二进制日志</h3><ul>
-<li><p>binlog ：记录所有修改数据的语句、有可能改变数据库的语句—–主要用于时间点恢复（备份恢复），以及主从复制结构。</p>
+<h3 id="awk-变量："><a href="#awk-变量：" class="headerlink" title="awk  变量："></a>awk  变量：</h3><ul>
+<li><p>awk常用的内置变量：<br>FS ： 输入字段分割符<br>OFS： 输出字段分隔符<br>RS：输入换行符<br>ORS：输出换行符<br>NF：字段数量<br>NR：行号<br>FNR：各文件分别计数的行号<br>FILENAME: 当前文件名<br>ARGC：命令行参数的个数<br>ARGV：数组  </p>
 </li>
-<li><p>三种模式：<br>statement模式：记录对数据库修改的语句。<br>row模式：记录对数据库做出修改的语句所影响的数据行以及这些行的修改。<br>mixed模式：混合以上两种模式，一般语句使用statement模式，特殊函数使用row模式记录。<br>my.cnf 配置<br>binlog.format=row</p>
+<li><p>NR、FNR<br>awk ‘{print NR,$0}’ test<br>awk ‘{print FNR,$0}’ test</p>
 </li>
-<li><p>二进制日志相关参数：<br>log_bin:控制是否开启二进制日志。只读变量，只能通过修改my.cnf，设置log_bin的值<br>sql_log_bin: 当前会话的操作是否会被记录于二进制中<br>binlog_format:二进制日志的记录方式<br>max_binlog_size:设置单个二进制日志文件的最大大小<br>sync_binlog：<br>show binary log;<br>show master logs;</p>
+<li><p>内置变量RS<br>awk -v RS=” “ ‘{print NR,$0}’ test </p>
 </li>
-</ul>
-<ul>
-<li><p>查看二进制日志文件<br>①show binlog events in ‘二进制文件名’;<br>指定位置查看：<br>②show binlog events in ‘二进制文件名’ from 24 ;<br>limit 3 ;<br>limit 100,10;<br>③show master status;<br>查看当前使用的二进制文件，以及位置。</p>
+<li><p>内置变量 ORS<br>awk -v ORS=”+++” ‘{print NR,$0}’ test </p>
 </li>
-<li><p>滚动二进制日志<br>flush logs;</p>
+<li><p>内置变量FILENAME<br>awk ‘{print FILENAME,$0}’ test</p>
 </li>
-</ul>
-<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><ul>
-<li><p>备份相关术语：<br>全量备份：对某个时间点的数据完全的备份<br>差异备份：<br>增量备份：对上一次备份后的变化的数据的备份<br>时间点恢复<br>热备：在数据库正常运行的情况下备份<br>温备：备份期间数据库只能进行读。不能进行写操作<br>冷备：备份期间。读写均不可操作<br>物理备份：直接备份数据库对应的数据文件<br>逻辑备份：建数据从数据导出，并且将导出的数据进行存档备份  </p>
-</li>
-<li><p>常用的备份工具：<br><a href="http://www.zsythink.net/archives/1450" target="_blank" rel="noopener">mysqldump</a><br><a href="http://www.zsythink.net/archives/1455" target="_blank" rel="noopener">xtrabackup</a><br>select 语句进行部分备份<br>cp、tar命令。适于冷备。</p>
+<li><p>自定义变量<br>awk -v myvar=”test” ‘BEGIN{print myvar}’<br>awk ‘BEGIN{myvar=”ttt”;print myvar}‘<br>awk ’BEGIN{myvar1=”111”;myvar2=”222”;print myvar1,myvar2}’</p>
 </li>
 </ul>
+<h3 id="awk-格式化："><a href="#awk-格式化：" class="headerlink" title="awk 格式化："></a>awk 格式化：</h3><p>awk中如果输出字符的话，有两种处理方式。printf和print<br>printf：可以自定义输出的模式，另外输出内容之后不自动换行<br>print：输出内容之后自动换行<br>awk ‘{printf “第一列：%s 第二列 %s\n”,$1,$2}’ test<br>awk ‘BEGIN{printf “%s\n%s\n%s\n%s\n%s\n”,1,2,3,4,5}’<br>总结：<br>使用printf 动作输出的文本不会换行，如果需要换行，可以在对应的格式替换符 后 加入  \n  进行转义。<br>使用printf 动作时，格式中的格式替换符必须与被格式化的文本一 一 对应。  </p>
+<h3 id="awk-模式："><a href="#awk-模式：" class="headerlink" title="awk 模式："></a>awk 模式：</h3><ul>
+<li><p>正则模式：<br>awk ‘/^root/{print  $0}’ /etc/passwd<br>awk ‘/\/bin\/bash$/ {print $0}’ /etc/passwd     转义<br>使用（x，y） 这种次数匹配的正则表达式时，需要配合   –posix  或者  –re-interval 选项。<br>字母e最少连续出现两次，最多只能连续出现三次:<br>awk –posix  ‘/he(2,3)y/ {print $0}’ test<br>正则模式：<br>awk ‘/正则1/{动作}’  /some/file      </p>
+</li>
+<li><p>行范围模式：<br>awk ‘/LEE/,/KEKEK/{print $0}’ test<br>awk ‘/正则1/,/正则2/{动作}’ /some/file<br>awk ‘NR&gt;= 3 &amp;&amp; NR&lt;=6’ {print $0}’ test </p>
+</li>
+</ul>
+<h3 id="awk-动作"><a href="#awk-动作" class="headerlink" title="awk 动作"></a>awk 动作</h3><ul>
+<li><p>if…else<br>awk ‘{ if(NR==1) {print $0}} ‘ test<br>awk -F “:” ‘{if($3&lt;500){print $1,“系统用户“} else { print ￥1，”普通用户“}} ‘  /etc/passwd  </p>
+</li>
+<li><p>for…in<br>awk ‘BEGIN{for (i=1;i&lt;=6;i++){print i}}’<br>awk ‘BEGIN{for (i=0;i&lt;6;i++} {if (i==3)(continue); print i}}  </p>
+</li>
+<li><p>while<br>awk -v i=1 ‘BEGIN{ while(i&lt;=5){print i;i++} }’<br>awk ‘BEGIN(i=1;while(i&lt;=5){print i:i++}}’<br>awk ‘BEGIN{ do{print “test”;i++} while(i&lt;=5) }’  </p>
+</li>
+<li><p>exit<br>awk “BEGIN{print 1;exit;print 2;print 3}’<br>当执行了exit语句后，如果使用了end模式，将直接执行END模式中的动作，其他动作将不会再执行；如果没有使用END模式，当执行了exit语句后，将直接退出整个awk命令。  </p>
+</li>
+</ul>
+<h3 id="awk-数组-关联数组-："><a href="#awk-数组-关联数组-：" class="headerlink" title="awk 数组(关联数组)："></a>awk 数组(关联数组)：</h3><ul>
+<li><p>定义<br>下标为数字（默认转化为字符串）：<br>awk ‘BEGIN{arr[0]=”aaa”;arr[1]=”bbb”;print arr[0]}’<br>换行符  \   。<br>下标为字符串：<br>awk ‘BEGIN{arr[“earr”]=”aaa”;arr[“kk”]=”bbb”;print arr[“kk”]}’</p>
+</li>
+<li><p>delete<br>删除数组中的元素：<br>awk ‘BEGIN{arr[“laker”]=”kobe”;print arr[“laker”]; delete arr[“laker”];print arr[“laker”]}’<br>删除整个数组 ：delete  arr</p>
+</li>
+<li><p>循环<br>awk ‘BEGIN {arr[“laker”]=”kobe”;arr[“cli”]=”james”;for(i in arr） {print i,arr[i] } } ‘</p>
+</li>
+</ul>
+<h3 id="awk-函数"><a href="#awk-函数" class="headerlink" title="awk 函数"></a>awk 函数</h3><p>rand函数 、 srand函数 、int函数 ：<br>rand 函数生成随机数，需配合srand函数，否则rand 函数返回的值将一直不变。<br>awk ‘BEGIN{srand();print rand()}’<br>字符串函数：gsub  sub<br>awk ‘{gsub(“l”,”L”,$1);print $0}’ test        $1列的小写l 都替换成大写 L。</p>
+<p>length 函数： 获取指定字符串的长度<br>awk ‘{for(1=1;i&lt;=NF;i++) {print $i,length($i）}‘ test</p>
+<p>awk ‘{print $0,length()}’ test        省略参数</p>
+<p>index 函数： 获取字符位置。<br>awk ‘{print index($0,”Lee”)}’ test</p>
+<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h3><p>awk -F: ‘{usetype=$3&lt;500?”系统用户“：”普通用户”;print $1,usertype}’ /etc/passwd</p>
+<p>awk -F: ‘{$3&lt;500?a++:b++} END{print a,b}’ /etc/passwd</p>
+<p>awk ‘i=!i’ test        输出奇数行<br>awk ‘!(i=!i)’ test        输出偶数行</p>
 
       
     </div>
@@ -681,7 +692,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-envira"></i> MySQL</a>
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-envira"></i> Linux</a>
           
         </div>
       
@@ -695,8 +706,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/14/MySQL/03.MySQL/" rel="next" title="MySQL 语法「三」">
-                <i class="fa fa-chevron-left"></i> MySQL 语法「三」
+              <a href="/2018/11/05/Linux/02.Sed/" rel="next" title="Linux Sed">
+                <i class="fa fa-chevron-left"></i> Linux Sed
               </a>
             
           </div>
@@ -705,8 +716,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/04/Html/01.Html/" rel="prev" title="HTML 前端课程">
-                HTML 前端课程 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/08/MySQL/01.MySQL/" rel="prev" title="MySQL 语法「一」">
+                MySQL 语法「一」 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -962,7 +973,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-语法「四」"><span class="nav-text">MySQL 语法「四」</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#日志分类"><span class="nav-text">日志分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误日志"><span class="nav-text">错误日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询日志"><span class="nav-text">查询日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#慢查询日志"><span class="nav-text">慢查询日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制日志"><span class="nav-text">二进制日志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份"><span class="nav-text">备份</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#awk-基础"><span class="nav-text">awk 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BEGIN、END"><span class="nav-text">BEGIN、END</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk-分隔符："><span class="nav-text">awk 分隔符：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk-变量："><span class="nav-text">awk  变量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk-格式化："><span class="nav-text">awk 格式化：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk-模式："><span class="nav-text">awk 模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk-动作"><span class="nav-text">awk 动作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk-数组-关联数组-："><span class="nav-text">awk 数组(关联数组)：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk-函数"><span class="nav-text">awk 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三元运算符"><span class="nav-text">三元运算符</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

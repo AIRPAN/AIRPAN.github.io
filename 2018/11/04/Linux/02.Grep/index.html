@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+<script src="/js/src/photoswipe.min.js?v="></script>
+<script src="/js/src/photoswipe-ui-default.min.js?v="></script>
+
+  <meta charset="UTF-8">
+<meta name="google-site-verification" content="RK_KkmN-cdriQT8jq3jsDsJJxFhyIRzHA4daqKePNk8">
+<meta name="baidu-site-verification" content="bqaja5HAOz">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.lug.ustc.edu.cn/css?family=Comic Neue:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "26659b4f"
+    });
+  daovoice('update');
+  </script>
+
+
+  <meta name="description" content="「Grep」">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux Grep">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/Linux/02.Grep/index.html">
+<meta property="og:site_name" content="AIR PAN">
+<meta property="og:description" content="「Grep」">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-31T07:19:40.060Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux Grep">
+<meta name="twitter:description" content="「Grep」">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="AIR PAN" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/04/Linux/02.Grep/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入查看密码') !== ''){
+                alert('密码不正确,请询问主编大大');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+  <title>Linux Grep | AIR PAN</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/airpan" class="github-corner" aria-label="View source on GitHub"><svg width="97" height="97" viewbox="0 0 250 250" style="fill:#336633; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>    
+
+    <header id="header" class="header" itemscope itemtype="https://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AIR PAN</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">NOTE</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>Schedule</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="https://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/Linux/02.Grep/">
+
+    <span hidden itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="Air Pan">
+      <meta itemprop="description" content="Waiting....">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="AIR PAN">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Linux Grep
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-11-04 18:11:07" itemprop="dateCreated datePublished" datetime="2018-11-04T18:11:07+08:00">2018-11-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-31 15:19:40" itemprop="dateModified" datetime="2019-05-31T15:19:40+08:00">2019-05-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span><span> ℃</span>
+            </span>
+          
+
+          
+
+          
+            <div class="post-description">「Grep」</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>　　grep (global search regular expression(RE) and print out the line,全面搜索正则表达式并把行打印出来)是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。</p>
+<p>　　Unix的grep家族包括grep、egrep和fgrep。egrep和fgrep的命令只跟grep有很小不同。egrep是grep的扩展，支持更多的re元字符， fgrep就是fixed grep或fast grep，它们把所有的字母都看作单词，也就是说，正则表达式中的元字符表示回其自身的字面意义，不再特殊。linux使用GNU版本的grep。它功能更强，可以通过-G、-E、-F命令行选项来使用egrep和fgrep的功能。</p>
+<p>　　grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到标准输出，不影响原文件内容。grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回0，如果搜索不成功，则返回1，如果搜索的文件不存在，则返回2。我们利用这些返回值就可进行一些自动化的文本处理工作。<br>　　<br>命令格式：grep [option] pattern file</p>
+<h2 id="grep-选项"><a href="#grep-选项" class="headerlink" title="grep 选项"></a>grep 选项</h2><h3 id="grep的常用选项："><a href="#grep的常用选项：" class="headerlink" title="grep的常用选项："></a>grep的常用选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-V： 打印grep的版本号  </span><br><span class="line">-E： 解释PATTERN作为扩展正则表达式，也就相当于使用egrep。 或操作    </span><br><span class="line">-F :   解释PATTERN作为固定字符串的列表，由换行符分隔，其中任何一个都要匹配。也就相当于使用fgrep。  </span><br><span class="line">-G:   将范本样式视为普通的表示法来使用。这是默认值。加不加都是使用grep。</span><br></pre></td></tr></table></figure>
+<h3 id="匹配控制选项："><a href="#匹配控制选项：" class="headerlink" title="匹配控制选项："></a>匹配控制选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-e :  使用PATTERN作为模式。这可以用于指定多个搜索模式，或保护以连字符（ - ）开头的图案。指定字符串做为查找文件内容的样式。     </span><br><span class="line">-f :  指定规则文件，其内容含有一个或多个规则样式，让grep查找符合规则条件的文件内容，格式为每行一个规则样式。  </span><br><span class="line">-i :  搜索时候忽略大小写  </span><br><span class="line">-v:  反转匹配，选择没有被匹配到的内容。  </span><br><span class="line">-w：匹配整词，精确地单词,单词的两边必须是非字符符号(即不能是字母数字或下划线)  </span><br><span class="line">-x：仅选择与整行完全匹配的匹配项。精确匹配整行内容(包括行首行尾那些看不到的空格内容都要完全匹配)  </span><br><span class="line">-y：此参数的效果和指定“-i”参数相同。</span><br></pre></td></tr></table></figure>
+<h3 id="一般输出控制选项："><a href="#一般输出控制选项：" class="headerlink" title="一般输出控制选项："></a>一般输出控制选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-c： 抑制正常输出;而是为每个输入文件打印匹配线的计数。 </span><br><span class="line">--color [= WHEN]：让关键字高亮显示，如--color=auto  </span><br><span class="line">-L：列出文件内容不符合指定的范本样式的文件名称  </span><br><span class="line">-l : 列出文件内容符合指定的范本样式的文件名称。  </span><br><span class="line">-m num：当匹配内容的行数达到num行后,grep停止搜索,并输出停止前搜索到的匹配内容  </span><br><span class="line">-o: 只输出匹配的具体字符串,匹配行中其他内容不会输出  </span><br><span class="line">-q：安静模式,不会有任何输出内容,查找到匹配内容会返回0,未查找到匹配内容就返回非0  </span><br><span class="line">-s：不会输出查找过程中出现的任何错误消息，-q和-s选项因为与其他系统的grep有兼容问题，shell脚本应该避免使用-q和-s，并且应该将标准和错误输出重定向到/dev/null 代替。</span><br></pre></td></tr></table></figure>
+<h3 id="输出线前缀控制："><a href="#输出线前缀控制：" class="headerlink" title="输出线前缀控制："></a>输出线前缀控制：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-b：输出每一个匹配行(或匹配的字符串)时在其前附加上偏移量(从文件第一个字符到该匹配内容之间的字节数)  </span><br><span class="line">-H：在每一个匹配行之前加上文件名一起输出(针对于查找单个文件),当查找多个文件时默认就会输出文件名  </span><br><span class="line">-h：禁止输出上的文件名的前缀。无论查找几个文件都不会在匹配内容前输出文件名  </span><br><span class="line">--label = LABEL：显示实际来自标准输入的输入作为来自文件LABEL的输入。这是特别在实现zgrep等工具时非常有用，例如gzip -cd foo.gz | grep --label = foo -H的东西。看到 也是-H选项。  </span><br><span class="line">-n：输出匹配内容的同时输出其所在行号。  </span><br><span class="line">-T：初始标签确保实际行内容的第一个字符位于制表位上，以便对齐标签看起来很正常。在匹配信息和其前的附加信息之间加入tab以使格式整齐。</span><br></pre></td></tr></table></figure>
+<h3 id="上下文线控制选项："><a href="#上下文线控制选项：" class="headerlink" title="上下文线控制选项："></a>上下文线控制选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-A num：匹配到搜索到的行以及该行下面的num行  </span><br><span class="line">-B num：匹配到搜索到的行以及该行上面的num行  </span><br><span class="line">-C num：匹配到搜索到的行以及上下各num行</span><br></pre></td></tr></table></figure>
+<h3 id="文件和目录选择选项："><a href="#文件和目录选择选项：" class="headerlink" title="文件和目录选择选项："></a>文件和目录选择选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-a： 处理二进制文件，就像它是文本;这相当于--binary-files = text选项。不忽略二进制的数据。    </span><br><span class="line"> --binary-files = TYPE：如果文件的前几个字节指示文件包含二进制数据，则假定该文件为类型TYPE。默认情况下，TYPE是二进制的，grep通常输出一行消息二进制文件匹配，或者如果没有匹配则没有消息。如果TYPE不匹配，grep假定二进制文件不匹配;这相当于-I选项。如果TYPE是文本，则grep处理a二进制文件，如果它是文本;这相当于-a选项。警告：grep --binary-files = text可能会输出二进制的垃圾，如果输出是一个终端和如果可能有讨厌的副作用终端驱动程序将其中的一些解释为命令。</span><br><span class="line"></span><br><span class="line">-D：如果输入文件是设备，FIFO或套接字，请使用ACTION处理。默认情况下，读取ACTION，这意味着设备被读取，就像它们是普通文件一样。如果跳过ACTION，设备为 默默地跳过。  </span><br><span class="line"></span><br><span class="line">-d:  如果输入文件是目录，请使用ACTION处理它。默认情况下，ACTION是读的，这意味着目录被读取，就像它们是普通文件一样。如果跳过ACTION，目录将静默跳过。如果ACTION是recurse，grep将递归读取每个目录下的所有文件;这是相当于-r选项。  </span><br><span class="line"></span><br><span class="line">--exclude=GLOB：跳过基本名称与GLOB匹配的文件（使用通配符匹配）。文件名glob可以使用*，？和[...]作为通配符，和\引用通配符或反斜杠字符。搜索其文件名和GLOB通配符相匹配的文件的内容来查找匹配使用方法:grep -H --exclude=c* &quot;old&quot; ./*  c*是通配文件名的通配符./* 指定需要先通配文件名的文件的范围,必须要给*,不然就匹配不出内容,(如果不给*,带上-r选项也可以匹配)  </span><br><span class="line"></span><br><span class="line">--exclude-from = FILE：在文件中编写通配方案,grep将不会到匹配方案中文件名的文件去查找匹配内容  </span><br><span class="line"></span><br><span class="line">--exclude-dir = DIR：匹配一个目录下的很多内容同时还要让一些子目录不接受匹配,就使用此选项。  </span><br><span class="line"></span><br><span class="line"> --include = GLOB：仅搜索其基本名称与GLOB匹配的文件（使用--exclude下所述的通配符匹配）。  </span><br><span class="line"></span><br><span class="line">-R ,-r :以递归方式读取每个目录下的所有文件; 这相当于-d recurse选项。</span><br></pre></td></tr></table></figure>
+<h3 id="其他选项："><a href="#其他选项：" class="headerlink" title="其他选项："></a>其他选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--line-buffered： 在输出上使用行缓冲。这可能会导致性能损失。  </span><br><span class="line">--mmap：启用mmap系统调用代替read系统调用  </span><br><span class="line">-U：将文件视为二进制。  </span><br><span class="line">-z：将输入视为一组行，每一行由一个零字节（ASCII NUL字符）而不是a终止新队。与-Z或--null选项一样，此选项可以与排序-z等命令一起使用来处理任意文件名。</span><br></pre></td></tr></table></figure>
+<h2 id="选项简述"><a href="#选项简述" class="headerlink" title="选项简述"></a>选项简述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">-a   --text   #不要忽略二进制的数据。 将 binary 文件以 text 文件的方式搜寻数据 </span><br><span class="line">-A&lt;显示行数&gt;   --after-context=&lt;显示行数&gt;   #除了显示符合范本样式的那一列之外，并显示该行之后的内容。   </span><br><span class="line">-b   --byte-offset   #在显示符合样式的那一行之前，标示出该行第一个字符的编号。   </span><br><span class="line">-B&lt;显示行数&gt;   --before-context=&lt;显示行数&gt;   #除了显示符合样式的那一行之外，并显示该行之前的内容。   </span><br><span class="line">-c    --count   #计算符合样式的行数。   </span><br><span class="line">-C&lt;显示行数&gt;    --context=&lt;显示行数&gt;或-&lt;显示行数&gt;   #除了显示符合样式的那一行之外，并显示该行之前后的内容。   </span><br><span class="line">-d &lt;动作&gt;      --directories=&lt;动作&gt;   #当指定要查找的是目录而非文件时，必须使用这项参数，否则grep指令将回报信息并停止动作。   </span><br><span class="line">-e&lt;范本样式&gt;  --regexp=&lt;范本样式&gt;   #指定字符串做为查找文件内容的样式。   </span><br><span class="line">-E      --extended-regexp   #将样式为延伸的普通表示法来使用。   </span><br><span class="line">-f&lt;规则文件&gt;  --file=&lt;规则文件&gt;   #指定规则文件，其内容含有一个或多个规则样式，让grep查找符合规则条件的文件内容，格式为每行一个规则样式。   </span><br><span class="line">-F   --fixed-regexp   #将样式视为固定字符串的列表。   </span><br><span class="line">-G   --basic-regexp   #将样式视为普通的表示法来使用。   </span><br><span class="line">-h   --no-filename   #在显示符合样式的那一行之前，不标示该行所属的文件名称。   </span><br><span class="line">-H   --with-filename   #在显示符合样式的那一行之前，表示该行所属的文件名称。   </span><br><span class="line">-i    --ignore-case   #忽略字符大小写的差别。   </span><br><span class="line">-l    --file-with-matches   #列出文件内容符合指定的样式的文件名称。   </span><br><span class="line">-L   --files-without-match   #列出文件内容不符合指定的样式的文件名称。   </span><br><span class="line">-n   --line-number   #在显示符合样式的那一行之前，标示出该行的列数编号。   </span><br><span class="line">-q   --quiet或--silent   #不显示任何信息。   </span><br><span class="line">-r   --recursive   #此参数的效果和指定“-d recurse”参数相同。   </span><br><span class="line">-s   --no-messages   #不显示错误信息。   </span><br><span class="line">-v   --revert-match   #显示不包含匹配文本的所有行。   </span><br><span class="line">-V   --version   #显示版本信息。   </span><br><span class="line">-w   --word-regexp   #只显示全字符合的列。   </span><br><span class="line">-x    --line-regexp   #只显示全列符合的列。   </span><br><span class="line">-y   #此参数的效果和指定“-i”参数相同。</span><br><span class="line">--color=auto ：可以将找到的关键词部分加上颜色的显示</span><br></pre></td></tr></table></figure>
+<h2 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h2><h3 id="常用用法"><a href="#常用用法" class="headerlink" title="常用用法"></a>常用用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">grep -i pattern files ：不区分大小写地搜索。默认情况区分大小写，</span><br><span class="line">grep -l pattern files ：只列出匹配的文件名，</span><br><span class="line">grep -L pattern files ：列出不匹配的文件名，</span><br><span class="line">grep -w pattern files ：只匹配整个单词，而不是字符串的一部分（如匹配‘magic’，而不是‘magical’），</span><br><span class="line">grep -C number pattern files ：匹配的上下文分别显示[number]行，</span><br><span class="line">grep pattern1 | pattern2 files ：显示匹配 pattern1 或 pattern2 的行，</span><br><span class="line">grep pattern1 files | grep pattern2 ：显示既匹配 pattern1 又匹配 pattern2 的行。</span><br><span class="line"></span><br><span class="line">这里还有些用于搜索的特殊符号：</span><br><span class="line">&lt; 和 &gt; 分别标注单词的开始与结尾。</span><br><span class="line">例如：</span><br><span class="line">grep man * 会匹配 ‘Batman’、‘manic’、‘man’等，</span><br><span class="line">grep \&apos;&lt;man\&apos; * 匹配‘manic’和‘man’，但不是‘Batman’，</span><br><span class="line">grep \&apos;&lt;man&gt;\&apos; 只匹配‘man’，而不是‘Batman’或‘manic’等其他的字符串。</span><br><span class="line">\&apos;^\&apos;：指匹配的字符串在行首，</span><br><span class="line">\&apos;$\&apos;：指匹配的字符串在行尾，</span><br><span class="line">如果您不习惯命令行参数，可以试试图形界面的‘grep’，如 reXgrep 。这个软件提供 AND、OR、NOT 等语法，还有漂亮的按钮 :-) 。如果您只是需要更清楚的输出，不妨试试 fungrep 。</span><br><span class="line"></span><br><span class="line">.grep 搜索字符串</span><br><span class="line">命令格式:</span><br><span class="line">grep string filename</span><br><span class="line">寻找字串的方法很多，比如说我想找所有以M开头的行.此时必须引进pattern的观念.</span><br><span class="line">说明：</span><br><span class="line">^M 以M开头的行，^表示开始的意思</span><br><span class="line">M$ 以M结尾的行，$表示结束的意思</span><br><span class="line">^[0-9] 以数字开始的行，[]内可列举字母</span><br><span class="line">^[124ab] 以1,2,4,a,或b开头的行</span><br><span class="line">^b.503 句点表示任一字母</span><br><span class="line">* 星号表示0个以上的字母(可以没有)</span><br><span class="line">+ 加号表示1个以上的字母</span><br><span class="line">. 斜线可以去掉特殊意义</span><br><span class="line">&lt;eg&gt; cat passwd | grep ^b 列出大学部有申请帐号者名单</span><br><span class="line">cat passwd | grep ^s 列出交换学生申请帐号者名单</span><br><span class="line">cat passwd | grep \&apos;^b.503\&apos; 列出电机系各年级...</span><br><span class="line">grep \&apos;^.\&apos; myfile.txt 列出所有以句点开头的行</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>查找指定进程个数<br>[root@loaclhost ~]# ps -ef|grep -c java<br>[root@loaclhost ~]# ps -ef|grep java -c</p>
+</li>
+<li><p>从文件中读取关键词进行搜索，默认是显示的是行<br>命令1：cat test.txt | grep -f test2.txt<br>命令2（显示行号）：cat test.txt | grep -nf test2.txt<br>作用：输出test.txt文件中含有从test2.txt文件中读取出的关键词的内容行，可用于按指定关键词（放到一个文件中）搜索日志文件。</p>
+</li>
+<li><p>将多个文件之间相同的行输出来<br>默认不加参数指定过滤关键字，外加多个文件，只是将多个文件里面有匹配的行输出<br>[root@loaclhost ~]# grep  “IPADDR” ifcfg-eth0  ifcfg-lo     </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ifcfg-eth0:IPADDR=192.168.1.108</span><br><span class="line"></span><br><span class="line">ifcfg-lo:IPADDR=127.0.0.1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将多个文件之间相同的行输出出来<br>[root@loaclhost ~]# grep -f 文件1 文件2<br>[root@loaclhost ~]# grep -f ifcfg-eth0  ifcfg-lo<br><code>ONBOOT=yes</code></p>
+</li>
+<li><p>只显示被模式匹配到的字符串，而不是整个行<br>命令：grep -o “you” ab.log<br>加上正则表达式，这样才是正确的用法，不用输出一整行，只是输出一小段<br>[root@loaclhost ~]# grep -o “root:.*0” /etc/passwd<br><code>root:x:0:0</code><br>[root@loaclhost ~]#  grep -o “root” -b   /etc/passwd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0:root</span><br><span class="line"></span><br><span class="line">11:root</span><br><span class="line"></span><br><span class="line">17:root</span><br><span class="line"></span><br><span class="line">414:root</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从文件中查找关键词，忽略大小写，默认情况区分大小写<br>命令1：grep ‘linux’ test.txt<br>命令2（从多个文件中查找）：grep ‘linux’ test.txt test2.txt<br>命令3（忽略大小写）：grep -i  ‘linux’ test.txt<br>命令：find . -name “.log” | grep -i error | grep -vi “info”</p>
+</li>
+<li><p>grep不显示本身<br>命令：ps aux|grep [s]sh<br>不包含grep ssh这条命令:<br>ps aux | grep ssh | grep -v “grep”<br>将/etc/passwd，将没有出现 root 和nologin的行取出来:<br>grep -v root /etc/passwd | grep -v nologin  </p>
+</li>
+</ul>
+<ul>
+<li><p>递归查找子目录 -r<br>查找当前目录及其子目录下面包含匹配字符的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># grep ‘ab’ * #在当前目录搜索带&apos;ab&apos;行的文件</span><br><span class="line"># grep -r ‘ab’ * #在当前目录及其子目录下搜索&apos;ab&apos;行的文件</span><br><span class="line"># grep -l -r ‘ab’ * #在当前目录及其子目录下搜索&apos;ab&apos;行的文件，但是不显示匹配的行，只显示匹配的文件</span><br><span class="line"># grep -nr BLOG* . # 查找子目录，匹配后输出行号，这里的点表示当前目录</span><br><span class="line"># grep -lr BLOG* . #查找子目录，匹配后只输出文件名</span><br><span class="line">查询不包含某个目录</span><br><span class="line">#grep -R --exclude-dir=node_modules &apos;some pattern&apos; /path/to/search</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出关键字所在行的前几行与后几行也一起显示<br><code>-A -B -C</code><br>很多时候，我们并关心匹配行而是关心匹配行的上下文。这时候-A -B -C就有用了<br>-A n 后n行，A记忆为(After)<br>-B n 前n行，B记忆为(Before)<br>-C n 前n行，后n行，C记忆为(Center)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@locaslhost ~]# dmesg | grep -n -A3 -B2 --color=auto &apos;6586&apos;</span><br><span class="line">148-[11918697.806055] ACPI Exception: AE_AML_BUFFER_LIMIT, Evaluating _PMM (20130517/power_meter-339)</span><br><span class="line">149-[11918757.806573] ACPI Error: SMBus/IPMI/GenericSerialBus write requires Buffer of length 66, found length 32 (20130517/exfield-299)</span><br><span class="line">150:[11918757.806586] ACPI Error: Method parse/execution failed [\_SB_.PMI0._PMM] (Node ffff8808fcc56578), AE_AML_BUFFER_LIMIT (20130517/psparse-536)</span><br><span class="line">151-[11918757.806601] ACPI Exception: AE_AML_BUFFER_LIMIT, Evaluating _PMM (20130517/power_meter-339)</span><br><span class="line">152-[11918817.808022] ACPI Error: SMBus/IPMI/GenericSerialBus write requires Buffer of length 66, found length 32 (20130517/exfield-299)</span><br><span class="line">153-[11918817.808033] ACPI Error: Method parse/execution failed [\_SB_.PMI0._PMM] (Node ffff8808fcc56578), AE_AML_BUFFER_LIMIT (20130517/psparse-536)</span><br><span class="line">--</span><br><span class="line"></span><br><span class="line"># 如上所示，你会发现关键字 6586 所在的前两行及 后三行也都被显示出来！</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>–line-buffered 打开buffering 模式<br>有一个文件是动态的，它不断地添加信息到文件的尾部，而你想要输出包含某些信息的行。即持续的grep一个动态的流</p>
+</li>
+<li><p>e与E区别<br>grep想同时过滤多个条件或操作<br>错误写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># netstat -an|grep &quot;ESTABLISHED|WAIT&quot;      #默认grep不支持多条件匹配</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>正确写法：<br>加上-E 多条件用””包起来，然后多条件之间用|管道符分开<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># netstat -an|grep -E &quot;ESTABLISHED|WAIT&quot;    </span><br><span class="line"></span><br><span class="line">tcp        0     52 192.168.1.108:22            192.168.1.104:54127         ESTABLISHED</span><br></pre></td></tr></table></figure></p>
+<p>而-e呢不用””包起来，-e 指定一个匹配条件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># ps -aux|grep -e udevd -e master|awk &#123;&apos;print $(NF-1)&apos;&#125;|sort|uniq  </span><br><span class="line"></span><br><span class="line">/sbin/udevd</span><br><span class="line"></span><br><span class="line">/usr/bin/salt-master</span><br></pre></td></tr></table></figure></p>
+<p>grep -E ‘123|abc’ filename  // 找出文件（filename）中包含123或者包含abc的行<br>egrep ‘123|abc’ filename    // 用egrep同样可以实现<br>awk ‘/123|abc/‘ filename   // awk 的实现方式<br>与操作<br>grep pattern1 files | grep pattern2 ：显示既匹配 pattern1 又匹配 pattern2 的行。  </p>
+<ul>
+<li>-m的使用<br>只匹配到了第三行就退出<br><code># grep -m 3 &quot;abc&quot; test2.txt</code> </li>
+</ul>
+<h3 id="与正则表达式结合"><a href="#与正则表达式结合" class="headerlink" title="与正则表达式结合"></a>与正则表达式结合</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">grep的规则表达式:</span><br><span class="line">\     反义字符：如&quot;\&quot;\&quot;&quot;表示匹配&quot;&quot;</span><br><span class="line">[ - ] 匹配一个范围，[0-9a-zA-Z]匹配所有数字和字母</span><br><span class="line">* 所有字符，长度可为0</span><br><span class="line">+ 前面的字符出现了一次或者多次</span><br><span class="line">^  #匹配行的开始 如：&apos;^grep&apos;匹配所有以grep开头的行。    </span><br><span class="line">$  #匹配行的结束 如：&apos;grep$&apos;匹配所有以grep结尾的行。    </span><br><span class="line">.  #匹配一个非换行符的字符 如：&apos;gr.p&apos;匹配gr后接一个任意字符，然后是p。    </span><br><span class="line">*  #匹配零个或多个先前字符 如：&apos;*grep&apos;匹配所有一个或多个空格后紧跟grep的行。    </span><br><span class="line">.*   #一起用代表任意字符。   </span><br><span class="line">[]   #匹配一个指定范围内的字符，如&apos;[Gg]rep&apos;匹配Grep和grep。    </span><br><span class="line">[^]  #匹配一个不在指定范围内的字符，如：&apos;[^A-FH-Z]rep&apos;匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。    </span><br><span class="line">\(..\)  #标记匹配字符，如&apos;\(love\)&apos;，love被标记为1。    </span><br><span class="line">\&lt;      #到匹配正则表达式的行开始，如:&apos;\&lt;grep&apos;匹配包含以grep开头的单词的行。    </span><br><span class="line">\&gt;      #到匹配正则表达式的行结束，如&apos;grep\&gt;&apos;匹配包含以grep结尾的单词的行。    </span><br><span class="line">x\&#123;m\&#125;  #重复字符x，m次，如：&apos;0\&#123;5\&#125;&apos;匹配包含5个o的行。    </span><br><span class="line">x\&#123;m,\&#125;  #重复字符x,至少m次，如：&apos;o\&#123;5,\&#125;&apos;匹配至少有5个o的行。    </span><br><span class="line">x\&#123;m,n\&#125;  #重复字符x，至少m次，不多于n次，如：&apos;o\&#123;5,10\&#125;&apos;匹配5--10个o的行。   </span><br><span class="line">\w    #匹配文字和数字字符，也就是[A-Za-z0-9]，如：&apos;G\w*p&apos;匹配以G后跟零个或多个文字或数字字符，然后是p。   </span><br><span class="line">\W    #\w的反置形式，匹配一个或多个非单词字符，如点号句号等。   </span><br><span class="line">\b    #单词锁定符，如: &apos;\bgrep\b&apos;只匹配grep。  </span><br><span class="line"></span><br><span class="line">POSIX字符:</span><br><span class="line">[:alnum:]    #文字数字字符   </span><br><span class="line">[:alpha:]    #文字字符   </span><br><span class="line">[:digit:]    #数字字符   </span><br><span class="line">[:graph:]    #非空字符（非空格、控制字符）   </span><br><span class="line">[:lower:]    #小写字符   </span><br><span class="line">[:cntrl:]    #控制字符   </span><br><span class="line">[:print:]    #非空字符（包括空格）   </span><br><span class="line">[:punct:]    #标点符号   </span><br><span class="line">[:space:]    #所有空白字符（新行，空格，制表符）   </span><br><span class="line">[:upper:]    #大写字符   </span><br><span class="line">[:xdigit:]   #十六进制数字（0-9，a-f，A-F）</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>通过管道过滤ls -l输出的内容，只显示以a开头的行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">首与行尾字节 ^ $，^ 符号，在字符类符号(括号[])之内与之外是不同的！ 在 [] 内代表『反向选择』，在 [] 之外则代表定位在行首的意义！</span><br><span class="line"></span><br><span class="line">$ ls -l | grep \&apos;^a\&apos;</span><br><span class="line">$ ls -l | grep  ^a</span><br><span class="line">$ ls -l | grep  ^[^a]      #输出非a开头的行，反向选择</span><br><span class="line">$ grep -n &apos;^$&apos; express.txt      #找出空白行，因为只有行首跟行尾 (^$)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示所有以d开头的文件中包含test的行。<br><code>$ grep \&#39;test\&#39; d*</code></p>
+</li>
+<li><p>输出以hat结尾的行内容<br><code>$ cat test.txt |grep hat$</code></p>
+</li>
+<li><p>显示在aa，bb，cc文件中匹配test的行。<br><code>$ grep \&#39;test\&#39; aa bb cc</code></p>
+</li>
+<li><p>显示所有包含每个字符串至少有5个连续小写字符的字符串的行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ grep \&apos;[a-z]&#123;5&#125;\&apos; aa</span><br><span class="line">$ grep -n &apos;[0-9]&apos; regular_express.txt  　　#取得有数字的那一行</span><br><span class="line">$ grep -n &apos;^[a-z]&apos; regular_express.txt 　　 #只输出开头是小写字母的那一行</span><br><span class="line">$ grep -n &apos;^[^a-zA-Z]&apos; regular_express.txt   #不输出开头是英文的</span><br><span class="line">$ grep -n &apos;\.$&apos; regular_express.txt   　　　　 #只输出行尾结束为小数点 (.) 的那一行</span><br><span class="line">注意：小数点具有其他意义，所以必须要使用转义字符(\)来加以解除其特殊意义！</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>显示包含ed或者at字符的内容行<br>命令：cat test.txt |grep -E “ed|at”</p>
+</li>
+<li><p>显示当前目录下面以.txt 结尾的文件中的所有包含每个字符串至少有7个连续小写字符的字符串的行<br>命令：grep ‘[a-z]{7}‘ *.txt    </p>
+</li>
+<li><p>查询IP地址、邮箱、手机号<br>也就是说-o，只显示匹配行中匹配正则表达式的那部分，-P，作为Perl正则匹配<br>命令（IP）：grep -oP “([0-9]{1,3}.){3}[0-9]{1,3}” file.txt<br>命令（邮箱）：grep -oP “[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+” file.txt<br>手机号码是1[3|4|5|8]后面接9位数字:<br>命令（手机号）：grep -E “\&lt;1[3|4|5|8][0-9]{9}>“  file.txt</p>
+</li>
+<li><p>任意一个字节 . 与重复字节 *</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">. (小数点)：代表『一定有一个任意字节』的意思；</span><br><span class="line">* (星号)：代表『重复前一个字符， 0 到无穷多次』的意思，为组合形态</span><br><span class="line"></span><br><span class="line">$ grep -n &apos;[0-9][0-9]*&apos; regular_express.txt     #找出『任意数字』的行</span><br><span class="line"></span><br><span class="line">$ grep -n &apos;g.*g&apos; regular_express.txt       #找出以g行首与行尾的行，当中的字符可有可无</span><br><span class="line"></span><br><span class="line">这个 .* 的 RE 表示任意字符是很常见的.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>限定连续 RE 字符范围 {}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">利用 . 与 RE 字符及 * 来配置 0 个到无限多个重复字节</span><br><span class="line"></span><br><span class="line">打算找出两个到五个 o 的连续字串，该如何作？这时候就得要使用到限定范围的字符 &#123;&#125; 了。 但因为 &#123; 与 &#125; 的符号在 shell 是有特殊意义的，因此， 我们必须要使用字符   \ 来让他失去特殊意义才行。 </span><br><span class="line">$ grep -n &apos;o\&#123;2\&#125;&apos; regular_express.txt</span><br><span class="line">$ grep -n &apos;go\&#123;2,5\&#125;g&apos; regular_express.txt  #要找出 g 后面接 2 到 5 个 o ，然后再接一个 g 的字串</span><br><span class="line">$ grep -n &apos;go\&#123;2,\&#125;g&apos; regular_express.txt    #想要的是 2 个 o 以上的 goooo....g 呢？除了可以是 gooo*g</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果你喜欢这篇文章，可以请我喝一杯 Coffee ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Air Pan Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+          <div id="wechat" style="display: inline-block">
+            <img id="wechat_qr" src="/images/wechat.jpg" alt="Air Pan WeChat Pay">
+            <p>WeChat Pay</p>
+          </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-envira"></i> Linux</a>
+          
+        </div>
+      
+
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/20/Linux/05.Ftp_Sftp/" rel="next" title="Linux Ftp">
+                <i class="fa fa-chevron-left"></i> Linux Ftp
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/05/Linux/03.Sed/" rel="prev" title="Linux Sed">
+                Linux Sed <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            
+              <a href="/">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Air Pan">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">Air Pan</p>
+              <div class="site-description motion-element" itemprop="description">Waiting....</div>
+          </div>
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/airpan" title="GitHub &rarr; https://github.com/airpan" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://gitee.com/airpan" title="Gitee &rarr; https://gitee.com/airpan" rel="noopener" target="_blank"><i class="fa fa-fw fa-gitlab"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://www.jianshu.com/u/2c0666cdfa70" title="简书 &rarr; https://www.jianshu.com/u/2c0666cdfa70" rel="noopener" target="_blank"><i class="fa fa-fw fa-heartbeat"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://dev.tencent.com/u/AIRPAN" title="Coding &rarr; https://dev.tencent.com/u/AIRPAN" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-paper-plane"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://nanaandlee.github.io/" title="https://nanaandlee.github.io/" rel="noopener" target="_blank">Lee 的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://x1aolin.com/" title="https://x1aolin.com/" rel="noopener" target="_blank">筱林博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://my.oschina.net/AIRPAN" title="https://my.oschina.net/AIRPAN" rel="noopener" target="_blank">开源中国</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dev.tencent.com/u/AIRPAN" title="https://dev.tencent.com/u/AIRPAN" rel="noopener" target="_blank">个人WiKi资料库</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dev.tencent.com/u/AIRPAN/" title="https://dev.tencent.com/u/AIRPAN/" rel="noopener" target="_blank">AIRPAN | 引航</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#grep-选项"><span class="nav-text">grep 选项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grep的常用选项："><span class="nav-text">grep的常用选项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配控制选项："><span class="nav-text">匹配控制选项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般输出控制选项："><span class="nav-text">一般输出控制选项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出线前缀控制："><span class="nav-text">输出线前缀控制：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上下文线控制选项："><span class="nav-text">上下文线控制选项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件和目录选择选项："><span class="nav-text">文件和目录选择选项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他选项："><span class="nav-text">其他选项：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选项简述"><span class="nav-text">选项简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用实例"><span class="nav-text">使用实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用用法"><span class="nav-text">常用用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与正则表达式结合"><span class="nav-text">与正则表达式结合</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+  
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">©2018 by Airpan</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<div>
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>  Sometimes your whole life boils down to one insame move.
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/09/2019 13:14:21");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+<!-- 不蒜字统计 -->
+<div>
+	<i class="fa fa-user-md"></i>
+	<span id="busuanzi_container_site_uv">
+	  访问人数：<span id="busuanzi_value_site_uv"></span>
+	</span>&nbsp;|&nbsp;
+
+	<i class="fa fa-eye"></i>
+	<span id="busuanzi_container_site_pv">
+	  总访问量：<span id="busuanzi_value_site_pv"></span>
+	</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+<script type="text/javascript" src="/js/src/photoswipe.min.js?v="></script>
+<script type="text/javascript" src="/js/src/photoswipe-ui-default.min.js?v="></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '835cf524d73e8602c520',
+    clientSecret: '307941fbf8990de665422d89bb3195c62b5fc783',
+    repo: 'airpan.github.io',
+    owner: 'airpan',
+    admin: ['airpan'],
+    id: md5(location.pathname),
+    
+      language: window.navigator.language || window.navigator.userLanguage,
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+<style>
+.pdfobject-container {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+}
+</style>
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '500px'
+        });
+      });
+    },
+  });
+}
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<style>
+  .copy-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+    
+    user-select: none;
+    outline: 0;
+  }
+
+  .highlight-wrap .copy-btn {
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+    padding: 2px 6px;
+    position: absolute;
+    
+      right: 4px;
+      top: 8px;
+    
+  }
+
+  .highlight-wrap:hover .copy-btn,
+  .highlight-wrap .copy-btn:focus {
+    opacity: 1;
+  }
+
+  .highlight-wrap {
+    position: relative;
+  }
+</style>
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('Copied');
+        else $(this).text('Copy failed');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('Copy');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+</body>
+</html>

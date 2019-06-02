@@ -155,18 +155,18 @@
   </script>
 
 
-  <meta name="description" content="「约束、键」「索引」「视图」">
-<meta name="keywords" content="MySQL">
+  <meta name="description" content="「linux」">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL 语法「二」">
-<meta property="og:url" content="http://yoursite.com/2018/11/12/MySQL/02.MySQL/index.html">
+<meta property="og:title" content="Linux 常用命令">
+<meta property="og:url" content="http://yoursite.com/2018/10/04/Linux/01.Linux常用命令/index.html">
 <meta property="og:site_name" content="AIR PAN">
-<meta property="og:description" content="「约束、键」「索引」「视图」">
+<meta property="og:description" content="「linux」">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-24T07:45:23.538Z">
+<meta property="og:updated_time" content="2019-06-02T15:21:08.549Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL 语法「二」">
-<meta name="twitter:description" content="「约束、键」「索引」「视图」">
+<meta name="twitter:title" content="Linux 常用命令">
+<meta name="twitter:description" content="「linux」">
 
 
 
@@ -175,7 +175,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/12/MySQL/02.MySQL/">
+  <link rel="canonical" href="http://yoursite.com/2018/10/04/Linux/01.Linux常用命令/">
 
 
 
@@ -196,7 +196,7 @@
     })();
 </script>
 
-  <title>MySQL 语法「二」 | AIR PAN</title>
+  <title>Linux 常用命令 | AIR PAN</title>
   
 
 
@@ -464,7 +464,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/12/MySQL/02.MySQL/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/Linux/01.Linux常用命令/">
 
     <span hidden itemprop="author" itemscope itemtype="https://schema.org/Person">
       <meta itemprop="name" content="Air Pan">
@@ -481,7 +481,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">MySQL 语法「二」
+          <h2 class="post-title" itemprop="name headline">Linux 常用命令
 
               
             
@@ -507,7 +507,7 @@
                 
               
 
-              <time title="Created: 2018-11-12 18:11:07" itemprop="dateCreated datePublished" datetime="2018-11-12T18:11:07+08:00">2018-11-12</time>
+              <time title="Created: 2018-10-04 18:11:07" itemprop="dateCreated datePublished" datetime="2018-10-04T18:11:07+08:00">2018-10-04</time>
             
 
             
@@ -524,7 +524,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-24 15:45:23" itemprop="dateModified" datetime="2019-05-24T15:45:23+08:00">2019-05-24</time>
+                <time title="Modified: 2019-06-02 23:21:08" itemprop="dateModified" datetime="2019-06-02T23:21:08+08:00">2019-06-02</time>
               
             
           </span>
@@ -541,7 +541,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -569,7 +569,7 @@
           
 
           
-            <div class="post-description">「约束、键」「索引」「视图」</div>
+            <div class="post-description">「linux」</div>
           
 
         </div>
@@ -585,52 +585,131 @@
       
 
       
-        <h1 id="MySQL-语法「二」"><a href="#MySQL-语法「二」" class="headerlink" title="MySQL 语法「二」"></a>MySQL 语法「二」</h1><ul>
-<li>约束、键  </li>
-<li>索引</li>
-<li>视图</li>
-</ul>
-<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><ul>
-<li><p>常用约束：主键约束、唯一键约束、外键约束、非空约束等<br>主键 primary key ： 一个或多个字段的组合。只能有一个主键<br>唯一键 unique key：字段的数据必须不同于已经存在的其他行上的数据，但可以为空。可以有多个唯一键<br>外键：foreign key。 一个表中的外键字段中所有能插入的数据取值范围，取决于引用的另一个表上主键字段上的已经存在的数据集合<br>检查条件约束：check，自定义的逻辑表达式  </p>
+        <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h3 id="设置变量的三种方法"><a href="#设置变量的三种方法" class="headerlink" title="设置变量的三种方法"></a>设置变量的三种方法</h3><ul>
+<li><p>在/etc/profile文件中添加变量【对所有用户生效（永久的）】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/profile</span><br><span class="line">export  PATH=/home/kylin : $PATH    </span><br><span class="line"># source /etc/profile</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>非空约束<br>添加非空约束：<br>alter table testtb modify name varchar(100) not null;<br>删除非空约束：<br>alter table testtb modify name varchar(100) null;</p>
+<li><p>在用户目录下的.bash_profile文件中增加变量【对单一用户生效（永久的）】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ vi /home/guok/.bash.profile</span><br><span class="line">添加如下内容：</span><br><span class="line">export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib</span><br><span class="line">$ source /home/guok/.bash_profile</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>自动增长<br>添加自动增长：<br>alter table testtb modify id int auto_increment;<br>alter table testtb change id id int auto_increment;<br>删除自动增长：<br>alter table testtb change id id int;<br>alter table testtb modify id int;</p>
-</li>
-<li><p>主键约束<br>添加主键约束：<br>alter table testtb add primary key(id);<br>alter table testtb add constraint primary key(id);<br>删除主键约束：<br>alter table testtb drop primary key;<br>注意：如果对应的主键上存在自动增长，则不能直接删除主键，需先删除自动增长后，在删除主键。</p>
-</li>
-<li><p>唯一性约束<br>添加唯一性约束：<br>alter  table testtb add unique key(uid);<br>alter table testtb add unique key uni_test(test);<br>删除唯一键约束：<br>alter table testtb drop index uni_test;</p>
-</li>
-<li><p>外键约束<br>添加外键约束：<br>alter table testtb add column tid int defalut 0 not null;<br>alter table testtb and constraint testtb_tid_kd foreign key(tid) references testtb2(id);<br>删除外键约束：<br>alter table test4 drop foreign key test_tid_fk;</p>
-</li>
-<li><p>查看约束<br>select * from information_schema.key_column_usage where table_name=’test1’;</p>
+<li><p>直接运行export命令定义变量【只对当前shell（BASH）有效（临时的）】<br>在shell的命令行下直接使用[export 变量名=变量值]</p>
 </li>
 </ul>
-<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><ul>
-<li><p>索引管理<br>单纯的值index<br>添加一个单纯的索引：<br>① alter table testtb add index ind_name(name);<br>②create index ind_name on testtb(name);<br>create index ind_name on testtb(name(20);<br>create index ind_name on testtb(name(20) desc);</p>
+<h3 id="PATH声明，其格式为："><a href="#PATH声明，其格式为：" class="headerlink" title="PATH声明，其格式为："></a>PATH声明，其格式为：</h3><pre><code>PATH=$PATH:&lt;PATH 1&gt;:&lt;PATH 2&gt;:&lt;PATH 3&gt;:------:&lt;PATH N&gt;
+你可以自己加上指定的路径，中间用冒号隔开。环境变量更改后，在用户下次登陆时生效。
+如果想立刻生效，则可执行下面的语句：$source .bash_profile
+需要注意的是，最好不要把当前路径”./”放到PATH里，这样可能会受到意想不到的攻击。
+完成后，可以通过$ echo $PATH查看当前的搜索路径。这样定制后，就可以避免频繁的启动位于shell搜索的路径之外的程序了。
+</code></pre><h3 id="常用的环境变量"><a href="#常用的环境变量" class="headerlink" title="常用的环境变量"></a>常用的环境变量</h3><p>　　PATH      决定了shell将到哪些目录中寻找命令或程序<br>　　HOME      当前用户主目录<br>　　HISTSIZE　历史记录数<br>　　LOGNAME   当前用户的登录名<br>　　HOSTNAME　指主机的名称<br>　　SHELL 　　当前用户Shell类型<br>　　LANGUGE 　语言相关的环境变量，多语言可以修改此环境变量<br>　　MAIL　　　当前用户的邮件存放目录<br>　　PS1　　　基本提示符，对于root用户是#，对于普通用户是$</p>
+<h3 id="常用的环境变量相关命令"><a href="#常用的环境变量相关命令" class="headerlink" title="常用的环境变量相关命令"></a>常用的环境变量相关命令</h3><ul>
+<li>显示环境变量HOME</li>
+<li><p>设置一个新的环境变量hello<br>fs@ubuntu:~$ export HELLO=”Hello”<br>fs@ubuntu:~$ echo $HELLO </p>
 </li>
-<li><p>联合索引<br>create index ind_id_name on test1(id,name);<br>create index ind_id_name on testtb1(id,name(20));</p>
+<li><p>使用env命令显示所有的环境变量</p>
 </li>
-<li><p>重建索引<br>repair table table_name quick;</p>
+<li><p>使用set命令显示所有本地定义的Shell变量　<br>fs@ubuntu:~$ set  </p>
 </li>
-<li><p>删除索引<br>alter table test2 drop index uu_ttt;</p>
+<li><p>使用unset命令来清除环境变量<br>set可以设置某个环境变量的值。清除环境变量的值用unset命令。如果未指定值，则该变量值将被设为NULL。<br>fs@ubuntu:~$ unset $TEST \删除环境变量TEST  
+　  </p>
 </li>
-<li><p>查看索引<br>show index from testtb;<br>show index form testtb key_name like ‘ind%’;</p>
+<li>使用readonly命令设置只读变量<br>如果使用了readonly命令的话，变量就不可以被修改或清除了。<br>fs@ubuntu:~$ export TEST=”Test” \增加一个环境变量TEST<br>fs@ubuntu:~$ readonly TEST \将环境变量TEST设为只读<br>fs@ubuntu:~$ unset TEST \此变量无法删除<br>bash: unset: TEST: cannot unset: readonly variable<br>fs@ubuntu:~$ TEST=”NEW” \此变量不可更改<br>bash: TEST: readonly variable  </li>
+</ul>
+<h2 id="RPM"><a href="#RPM" class="headerlink" title="RPM"></a>RPM</h2><h3 id="rpm的一般格式："><a href="#rpm的一般格式：" class="headerlink" title="rpm的一般格式："></a>rpm的一般格式：</h3><p>rpm [选项] [rpm软件包] </p>
+<ul>
+<li><p>初始化rpm 数据库（可以省略）<br>rpm –initdb<br>rpm –rebuilddb   注：这个要花好长时间。<br>注：有时rpm系统出了问题，不能安装和查询，大多是这里出了问题</p>
+</li>
+<li><p>RPM软件包管理的查询功能：<br>rpm -q [select-options] [query-options] </p>
+</li>
+<li><p>查询系统已安装的软件<br>语法：rpm -q 软件名<br>例：rpm -q mplayer<br>查看系统中所有已经安装的包，要加 -a 参数<br>rpm -qa  </p>
+</li>
+<li><p>查询一个已经安装的文件属于哪个软件包<br>语法： rpm -qf  文件名<br>注： 文件名所在的绝对路径要指出<br>例：rpm -qf  /usr/lib/libacl.la</p>
+</li>
+<li><p>查询已安装软件都安装到何处<br>语法：rpm   -ql  软件包名<br>例：rpm -ql  mplayer</p>
+</li>
+<li><p>查询一个已安装包的信息<br>语法:  rpm  -qi  软件包名<br>例： rpm   -qi  mplayer</p>
+</li>
+<li><p>查看一下已安装软件的配置文件<br>语法： rpm  -qc  软件名</p>
+</li>
+<li><p>查看一个已安装软件的文档安装位置<br>语法： rpm  -qd   软件名</p>
+</li>
+<li><p>查看一下已安装软件所依赖的软件包及文件<br>rpm   -qR   软件名</p>
 </li>
 </ul>
-<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><ul>
-<li><p>创建视图<br>select create_view_priv,,select_priv from mysql.user where user=’root’ and host=’%’;<br>create_view_priv 的值为Y，表示当前用户拥有创建视图的权利。<br>create view testvi as select <em> from classes where classid &lt;=3;<br>视图是一种虚表，不能与存在的表重名:<br>create or replace view testvi as select </em> from classes where classid &lt;=4  如果不存在testvi则创建，存在则覆盖。</p>
+<h2 id="进程管理PS、TOP"><a href="#进程管理PS、TOP" class="headerlink" title="进程管理PS、TOP"></a>进程管理PS、TOP</h2><h3 id="进程的属性："><a href="#进程的属性：" class="headerlink" title="进程的属性："></a>进程的属性：</h3><p>进程ID（PID）    、父进程和父进程ID（PPID）、启动进程的用户ID（UID）和所归属的组ID（GID）、进程状态：R  S  Z 、进程执行优先级、进程连接的终端名、进程资源占用：内存、CPU占用量</p>
+<h3 id="PS-TOP-管理进程"><a href="#PS-TOP-管理进程" class="headerlink" title="PS  TOP  管理进程"></a>PS  TOP  管理进程</h3><ul>
+<li><p>PS  静态 当前的状态<br>参数说明：<br>l  ：长格式输出<br>u  ：按用户名和启动时间顺序显示<br>f    :树形格式显示<br>a    ：显示所有用户的所以进程<br>r     :运行中的进程<br>e     ：显示所有进程，包括没有控制终端的进程<br>x    : 显示没有控制终端的进程</p>
 </li>
-<li><p>视图使用自己的字段名称<br>create view testvi(a,b,c) select * from classes;<br>create view testvi(classname,stunum) as select class,num from classes</p>
+<li><p>PS -aux 输出的解释<br>USER        进程的属主；<br>PID            进程的ID<br>PPID            父进程<br>%CPU        占用的CPU百分比<br>%MEM        占用的内存百分比<br>NI            进程的NICE值<br>VSZ            占用虚拟内存大小<br>RSS            实际使用内存大小<br>TTY            进程启动的终端ID<br>STAT        进程状态        R   S  T  Z    N    L  s<br>START        启动进程的时间<br>TIME        进程消耗CPU的时间</p>
 </li>
-<li><p>从多个表中查询出数据创建视图<br>create or replace view testvi as select s.name,s.age,c.class from students  s.classes c where s.classid=c.classid;</p>
+<li><p>COMMAND    命令的名称和参数<br>PS  -AUX        BSD格式显示<br>PS  -ef         标准格式显示</p>
 </li>
-<li><p>删除视图<br>drop view testvi;<br>如果视图testvi存在，则删除<br>drop view if exists testvi;</p>
+<li><p>TOP  动态查看进程<br>统计信息区前5行是系统整体的统计信息。<br>图 。。。。<br>系统信息解释：<br>任务队列信息（第一行）：当前时间        系统运行时间        当前登陆用户数        系统负载，即任务队列平均长度，三个数值分别为1分钟、5分钟、15分钟前到现在的平均值。<br>进程和CPU的信息（第二、三行）：进程总数        正在运行的进程数    睡眠的进程数    停止的进程数        僵尸进程数    系统用户进程使用CPU百分比    内核中的进程占用CPU百分比（sy）    用户进程空间内改变过优先级的进程占用CPU百分比（ni）    空闲CPU百分比（id）<br>内存信息（第四五行）：物理内存总量        空闲内存总量        使用的物理内存总量        用作内核缓存的内存量（和free    -k 一个意思）    交换区总量    使用的交换区总量    空闲交换区总量<br>总的可以利用内存    </p>
 </li>
-<li><p>查看视图<br>select <em> from information_schema.views where table_schema=’U_DB_NAME’;<br>像查表一样使用：<br>select </em> from testvi;</p>
+<li><p>TOP快捷键<br>默认3s 刷新一次、空格  立即刷新<br>q  退出<br>M  按内存排序<br>P   按CPU排序</p>
 </li>
-<li>修改视图<br>alter view testvi as select name,age from students;</li>
 </ul>
+<h2 id="YUM"><a href="#YUM" class="headerlink" title="YUM"></a>YUM</h2><ul>
+<li>配置yum源的配置文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[base-yum]</span><br><span class="line">name=rhel7-source</span><br><span class="line">baseurl=file:///mnt</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=0</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>清空yum 缓存        yum  clean    all<br>生成列表            yum     list<br>安装                yum    install    -y<br>检测升级            yum  check-update<br>升级                yum        update<br>软件包查询        yum        list<br>软件包信息        yum        info</p>
+<ul>
+<li>源码包安装：<br>编译 make -j 4  使用4个进程同编译<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--prefix  指定安装的位置</span><br><span class="line">--user   指定运行的用户</span><br><span class="line">--group 。  制定运行的组</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="du、df"><a href="#du、df" class="headerlink" title="du、df"></a>du、df</h2><p>du 统计文件大小相加<br>df  统计数据块使用情况</p>
+<p>[root@bsso yayu]# du -h –max-depth=1 work/testing<br>27M     work/testing/logs<br>35M     work/testing</p>
+<ul>
+<li>查看linux文件目录的大小和文件夹包含的文件数<br>统计总数大小<br>du -sh xmldb/</li>
+</ul>
+<p>统计当前目录大小 并安大小 排序<br>du -sm <em> | sort -n<br>du -sk </em> | sort -n</p>
+<p>看一个的大小<br>du -sk * | grep guojf </p>
+<h2 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h2><ul>
+<li>which   可执行文件位置 </li>
+<li><p>whereis  可执行文件的位置及相关文件</p>
+</li>
+<li><p>find   目录结构中搜索文件。<br>格式：    find        路径        选项        </p>
+</li>
+</ul>
+<p>选项：    -name        -perm        -user    -mtime        -n        +n<br>-type    查找某一类型。    b    c    p    d    f    l<br>例：find    /etc/        -name    “host*”<br>find    .    -perm    755<br>find     /home/kylin    -user    kylin<br>find    /home/kylin    -group    kylin<br>find    /root    -mtime    -5<br>find     /root    -mtime    +3</p>
+<h2 id="计划任务"><a href="#计划任务" class="headerlink" title="计划任务"></a>计划任务</h2><p>计划任务：在某个时段自动执行某个任务。</p>
+<h3 id="at-只能执行一次"><a href="#at-只能执行一次" class="headerlink" title="at    只能执行一次"></a>at    只能执行一次</h3><p>systemctl        status    atd<br>ctrl    +D 结束</p>
+<p>at    -l    查看计划任务    任务编号    、执行时间    、执行者<br>at    20:00   2017-4-12<br>at    now     +10min    在10分钟后执行<br>删除at 计划任务：atrm    +     计划任务的编号</p>
+<h3 id="周期行计划任务：cron-主程序-、"><a href="#周期行计划任务：cron-主程序-、" class="headerlink" title="周期行计划任务：cron  主程序        、"></a>周期行计划任务：cron  主程序        、</h3><ul>
+<li><p>Crond 服务：<br>1.系统级别    2.用户级别的计划任务</p>
+</li>
+<li><p>主文件：    /etc/crontab<br>针对用户级别的计划任务：<br>对于root用户：<br>命令：crontab        -e        创建一个计划任务<br> crontab          -l         显示<br> crontab        -r          删除计划任务</p>
+</li>
+</ul>
+<p>crontab    -e    # 写法<br>分    时     日    月    星    谁做后面的事情        命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">每月 9,18,22 这几天的凌晨1点1分，执行一个备份脚本</span><br><span class="line">1 1 9,18,22	*	*	/root/backup.sh</span><br><span class="line">每月 9-22号这几天的凌晨1点1分，执行一个备份脚本</span><br><span class="line">1  1  9-22  *    *   /root/backup.sh</span><br><span class="line">每5分钟，执行一次</span><br><span class="line">*/5	*	*	*	* 	/root/backup.sh</span><br></pre></td></tr></table></figure></p>
+<p>anacron    ：解决cront  错过时间后，不执行cron计划任务的问题。<br>anacron的作用：机器重启后，侦测在关机的这一段时间期间，有没有cron每有执行的计划任务， 如果有，开机后，anacron会立即执行没有执行的任务。</p>
+<h2 id="Curl"><a href="#Curl" class="headerlink" title="Curl"></a>Curl</h2><p>curl模拟Http 的get 或 post请求</p>
+<h3 id="查看网页源码"><a href="#查看网页源码" class="headerlink" title="查看网页源码"></a>查看网页源码</h3><p>$ curl <a href="http://www.sina.com" target="_blank" rel="noopener">www.sina.com</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//IETF//DTD HTML 2.0//EN&quot;&gt;</span><br><span class="line">　　&lt;html&gt;&lt;head&gt;</span><br><span class="line">　　&lt;title&gt;301 Moved Permanently&lt;/title&gt;</span><br><span class="line">　　&lt;/head&gt;&lt;body&gt;</span><br><span class="line">　　&lt;h1&gt;Moved Permanently&lt;/h1&gt;</span><br><span class="line">　　&lt;p&gt;The document has moved &lt;a href=&quot;http://www.sina.com.cn/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line">　　&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>保存下来，可以使用-o参数<br>$ curl -o [文件名] <a href="http://www.sina.com" target="_blank" rel="noopener">www.sina.com</a></li>
+</ul>
+<h3 id="自动跳转"><a href="#自动跳转" class="headerlink" title="自动跳转"></a>自动跳转</h3><p>有的网址是自动跳转的。使用-L参数，curl就会跳转到新的网址。<br>$ curl -L <a href="http://www.sina.com" target="_blank" rel="noopener">www.sina.com</a></p>
+<h3 id="显示头信息"><a href="#显示头信息" class="headerlink" title="显示头信息"></a>显示头信息</h3><p>-i参数可以显示http response的头信息，连同网页代码一起。<br>$ curl -i <a href="http://www.sina.com" target="_blank" rel="noopener">www.sina.com</a></p>
+<p>-I参数则是只显示http response的头信息。 </p>
+<h3 id="显示通信过程"><a href="#显示通信过程" class="headerlink" title="显示通信过程"></a>显示通信过程</h3><p>-v参数可以显示一次http通信的整个过程，包括端口连接和http request头信息。<br>$ curl -v <a href="http://www.sina.com" target="_blank" rel="noopener">www.sina.com</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">　* About to connect() to www.sina.com port 80 (#0)</span><br><span class="line">　　* Trying 61.172.201.195... connected</span><br><span class="line">　　* Connected to www.sina.com (61.172.201.195) port 80 (#0)</span><br><span class="line">　　&gt; GET / HTTP/1.1</span><br><span class="line">　　&gt; User-Agent: curl/7.21.3 (i686-pc-linux-gnu) libcurl/7.21.3 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18</span><br><span class="line">　　&gt; Host: www.sina.com</span><br><span class="line">　　&gt; Accept: */*</span><br><span class="line">　　&gt; </span><br><span class="line">　　* HTTP 1.0, assume close after body</span><br><span class="line">　　&lt; HTTP/1.0 301 Moved Permanently</span><br><span class="line">　　&lt; Date: Sun, 04 Sep 2011 00:42:39 GMT</span><br><span class="line">　　&lt; Server: Apache/2.0.54 (Unix)</span><br><span class="line">　　&lt; Location: http://www.sina.com.cn/</span><br><span class="line">　　&lt; Cache-Control: max-age=3600</span><br><span class="line">　　&lt; Expires: Sun, 04 Sep 2011 01:42:39 GMT</span><br><span class="line">　　&lt; Vary: Accept-Encoding</span><br><span class="line">　　&lt; Content-Length: 231</span><br><span class="line">　　&lt; Content-Type: text/html; charset=iso-8859-1</span><br><span class="line">　　&lt; X-Cache: MISS from sh201-19.sina.com.cn</span><br><span class="line">　　&lt; Connection: close</span><br><span class="line">　　&lt; </span><br><span class="line">　　&lt;!DOCTYPE HTML PUBLIC &quot;-//IETF//DTD HTML 2.0//EN&quot;&gt;</span><br><span class="line">　　&lt;html&gt;&lt;head&gt;</span><br><span class="line">　　&lt;title&gt;301 Moved Permanently&lt;/title&gt;</span><br><span class="line">　　&lt;/head&gt;&lt;body&gt;</span><br><span class="line">　　&lt;h1&gt;Moved Permanently&lt;/h1&gt;</span><br><span class="line">　　&lt;p&gt;The document has moved &lt;a href=&quot;http://www.sina.com.cn/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line">　　&lt;/body&gt;&lt;/html&gt;</span><br><span class="line">　　* Closing connection #0</span><br></pre></td></tr></table></figure></p>
+<p>如果你觉得上面的信息还不够，那么下面的命令可以查看更详细的通信过程。<br>$ curl –trace output.txt <a href="http://www.sina.com" target="_blank" rel="noopener">www.sina.com</a><br>或者 $ curl –trace-ascii output.txt <a href="http://www.sina.com" target="_blank" rel="noopener">www.sina.com</a></p>
+<h3 id="发送表单信息"><a href="#发送表单信息" class="headerlink" title="发送表单信息"></a>发送表单信息</h3><p>发送表单信息有GET和POST两种方法。GET方法相对简单，只要把数据附在网址后面就行。<br>$ curl example.com/form.cgi?data=xxx</p>
+<p>POST方法必须把数据和网址分开，curl就要用到–data参数。<br>　<br>　$ curl -X POST –data “data=xxx” example.com/form.cgi</p>
+<p>如果你的数据没有经过表单编码，还可以让curl为你编码，参数是–data-urlencode。<br>　<br>　$ curl -X POST–data-urlencode “date=April 1” example.com/form.cgi</p>
+<h3 id="HTTP动词"><a href="#HTTP动词" class="headerlink" title="HTTP动词"></a>HTTP动词</h3><p>curl默认的HTTP动词是GET，使用-X参数可以支持其他动词。<br>　<br>　$ curl -X POST <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a></p>
+<p>　$ curl -X DELETE <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a></p>
+<h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>假定文件上传的表单是下面这样：<br>　<br>　<form method="POST" enctype="multipart/form-data" action="upload.cgi"><br>　　　　<input type="file" name="upload"><br>　　　　<input type="submit" name="press" value="OK"><br>　　</form></p>
+<p>你可以用curl这样上传文件：<br>　<br>　$ curl –form upload=@localfilename –form press=OK [URL]</p>
+<h3 id="Referer字段"><a href="#Referer字段" class="headerlink" title="Referer字段"></a>Referer字段</h3><p>有时你需要在http request头信息中，提供一个referer字段，表示你是从哪里跳转过来的。<br>　<br>　$ curl –referer <a href="http://www.example.com" target="_blank" rel="noopener">http://www.example.com</a> <a href="http://www.example.com" target="_blank" rel="noopener">http://www.example.com</a></p>
+<p>　九、User Agent字段<br>这个字段是用来表示客户端的设备信息。服务器有时会根据这个字段，针对不同设备，返回不同格式的网页，比如手机版和桌面版。<br>iPhone4的User Agent是<br>　<br>　Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_0 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Version/4.0.5 Mobile/8A293 Safari/6531.22.7</p>
+<p>curl可以这样模拟：<br>　<br>　$ curl –user-agent “[User Agent]” [URL]</p>
+<p>十、cookie<br>使用–cookie参数，可以让curl发送cookie。<br>　　<br>$ curl –cookie “name=xxx” <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a></p>
+<p>至于具体的cookie的值，可以从http response头信息的Set-Cookie字段中得到。<br>-c cookie-file可以保存服务器返回的cookie到文件，-b cookie-file可以使用这个文件作为cookie信息，进行后续的请求。<br>　<br>　$ curl -c cookies <a href="http://example.com" target="_blank" rel="noopener">http://example.com</a><br>　$ curl -b cookies <a href="http://example.com" target="_blank" rel="noopener">http://example.com</a></p>
+<p>十一、增加头信息<br>有时需要在http request之中，自行增加一个头信息。–header参数就可以起到这个作用。<br>　　<br>$ curl –header “Content-Type:application/json” <a href="http://example.com" target="_blank" rel="noopener">http://example.com</a></p>
+<p>十二、HTTP认证<br>有些网域需要HTTP认证，这时curl需要用到–user参数。<br>　<br>　$ curl –user name:password example.com　</p>
+<p>十三、get请求<br>curl “<a href="http://www.baidu.com&quot;" target="_blank" rel="noopener">http://www.baidu.com&quot;</a> 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com&quot;" target="_blank" rel="noopener">http://www.baidu.com&quot;</a> 显示全部信息<br>curl -l “<a href="http://www.baidu.com&quot;" target="_blank" rel="noopener">http://www.baidu.com&quot;</a> 只显示头部信息<br>curl -v “<a href="http://www.baidu.com&quot;" target="_blank" rel="noopener">http://www.baidu.com&quot;</a> 显示get请求全过程解析<br>wget “<a href="http://www.baidu.com&quot;也可以" target="_blank" rel="noopener">http://www.baidu.com&quot;也可以</a><br>十四、post请求<br>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com&quot;" target="_blank" rel="noopener">http://www.baidu.com&quot;</a></p>
+<p>通过脚本发送post请求，顺便附带文本数据，比如通过”浏览”选择本地的card.txt并上传发送post请求：<br>curl  -F “<a href="mailto:blob=@card.txt" target="_blank" rel="noopener">blob=@card.txt</a>;type=text/plain”  “<a href="http://172.16.102.208:8089/wiapi/score?leaderboard_id=7778a8143f111272&amp;score=40&amp;app_key=8d49f16fe034b98b&amp;_test_user=test01&quot;" target="_blank" rel="noopener">http://172.16.102.208:8089/wiapi/score?leaderboard_id=7778a8143f111272&amp;score=40&amp;app_key=8d49f16fe034b98b&amp;_test_user=test01&quot;</a>  </p>
+<p>其中-F 为带文件的形式发送post请求， blob为文本框中的name元素对应的属性值。</p>
 
       
     </div>
@@ -683,7 +762,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-envira"></i> MySQL</a>
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-envira"></i> Linux</a>
           
         </div>
       
@@ -697,8 +776,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/08/MySQL/01.MySQL/" rel="next" title="MySQL 语法「一」">
-                <i class="fa fa-chevron-left"></i> MySQL 语法「一」
+              <a href="/2018/10/03/Hexo/02.hexo/" rel="next" title="next主题配置">
+                <i class="fa fa-chevron-left"></i> next主题配置
               </a>
             
           </div>
@@ -707,8 +786,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/14/MySQL/03.MySQL/" rel="prev" title="MySQL 语法「三」">
-                MySQL 语法「三」 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/20/Linux/05.Ftp_Sftp/" rel="prev" title="Linux Ftp">
+                Linux Ftp <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -968,7 +1047,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-语法「二」"><span class="nav-text">MySQL 语法「二」</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#约束"><span class="nav-text">约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引"><span class="nav-text">索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图"><span class="nav-text">视图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-text">环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置变量的三种方法"><span class="nav-text">设置变量的三种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PATH声明，其格式为："><span class="nav-text">PATH声明，其格式为：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的环境变量"><span class="nav-text">常用的环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的环境变量相关命令"><span class="nav-text">常用的环境变量相关命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPM"><span class="nav-text">RPM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rpm的一般格式："><span class="nav-text">rpm的一般格式：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程管理PS、TOP"><span class="nav-text">进程管理PS、TOP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的属性："><span class="nav-text">进程的属性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PS-TOP-管理进程"><span class="nav-text">PS  TOP  管理进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YUM"><span class="nav-text">YUM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#du、df"><span class="nav-text">du、df</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件查找"><span class="nav-text">文件查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计划任务"><span class="nav-text">计划任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#at-只能执行一次"><span class="nav-text">at    只能执行一次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#周期行计划任务：cron-主程序-、"><span class="nav-text">周期行计划任务：cron  主程序        、</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Curl"><span class="nav-text">Curl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看网页源码"><span class="nav-text">查看网页源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动跳转"><span class="nav-text">自动跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示头信息"><span class="nav-text">显示头信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示通信过程"><span class="nav-text">显示通信过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送表单信息"><span class="nav-text">发送表单信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP动词"><span class="nav-text">HTTP动词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件上传"><span class="nav-text">文件上传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Referer字段"><span class="nav-text">Referer字段</span></a></li></ol></li></ol></div>
             
 
           </div>

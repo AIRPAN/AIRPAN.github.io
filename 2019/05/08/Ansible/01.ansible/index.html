@@ -155,18 +155,18 @@
   </script>
 
 
-  <meta name="description" content="「约束、键」「索引」「视图」">
-<meta name="keywords" content="MySQL">
+  <meta name="description" content="「Ansible简介」「命令」「选项」「参数」">
+<meta name="keywords" content="Ansible">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL 语法「二」">
-<meta property="og:url" content="http://yoursite.com/2018/11/12/MySQL/02.MySQL/index.html">
+<meta property="og:title" content="Ansible 基础 「一」">
+<meta property="og:url" content="http://yoursite.com/2019/05/08/Ansible/01.ansible/index.html">
 <meta property="og:site_name" content="AIR PAN">
-<meta property="og:description" content="「约束、键」「索引」「视图」">
+<meta property="og:description" content="「Ansible简介」「命令」「选项」「参数」">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-24T07:45:23.538Z">
+<meta property="og:updated_time" content="2019-06-02T12:44:51.841Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL 语法「二」">
-<meta name="twitter:description" content="「约束、键」「索引」「视图」">
+<meta name="twitter:title" content="Ansible 基础 「一」">
+<meta name="twitter:description" content="「Ansible简介」「命令」「选项」「参数」">
 
 
 
@@ -175,7 +175,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/12/MySQL/02.MySQL/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/08/Ansible/01.ansible/">
 
 
 
@@ -196,7 +196,7 @@
     })();
 </script>
 
-  <title>MySQL 语法「二」 | AIR PAN</title>
+  <title>Ansible 基础 「一」 | AIR PAN</title>
   
 
 
@@ -464,7 +464,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/12/MySQL/02.MySQL/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/Ansible/01.ansible/">
 
     <span hidden itemprop="author" itemscope itemtype="https://schema.org/Person">
       <meta itemprop="name" content="Air Pan">
@@ -481,7 +481,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">MySQL 语法「二」
+          <h2 class="post-title" itemprop="name headline">Ansible 基础 「一」
 
               
             
@@ -507,7 +507,7 @@
                 
               
 
-              <time title="Created: 2018-11-12 18:11:07" itemprop="dateCreated datePublished" datetime="2018-11-12T18:11:07+08:00">2018-11-12</time>
+              <time title="Created: 2019-05-08 18:11:07" itemprop="dateCreated datePublished" datetime="2019-05-08T18:11:07+08:00">2019-05-08</time>
             
 
             
@@ -524,7 +524,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-24 15:45:23" itemprop="dateModified" datetime="2019-05-24T15:45:23+08:00">2019-05-24</time>
+                <time title="Modified: 2019-06-02 20:44:51" itemprop="dateModified" datetime="2019-06-02T20:44:51+08:00">2019-06-02</time>
               
             
           </span>
@@ -541,7 +541,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Ansible/" itemprop="url" rel="index"><span itemprop="name">Ansible</span></a></span>
 
                 
                 
@@ -569,7 +569,7 @@
           
 
           
-            <div class="post-description">「约束、键」「索引」「视图」</div>
+            <div class="post-description">「Ansible简介」「命令」「选项」「参数」</div>
           
 
         </div>
@@ -585,52 +585,68 @@
       
 
       
-        <h1 id="MySQL-语法「二」"><a href="#MySQL-语法「二」" class="headerlink" title="MySQL 语法「二」"></a>MySQL 语法「二」</h1><ul>
-<li>约束、键  </li>
-<li>索引</li>
-<li>视图</li>
+        <h1 id="ansible-简介"><a href="#ansible-简介" class="headerlink" title="ansible 简介"></a>ansible 简介</h1><h2 id="ansible-系统架构"><a href="#ansible-系统架构" class="headerlink" title="ansible 系统架构"></a>ansible 系统架构</h2><h3 id="ansible简介"><a href="#ansible简介" class="headerlink" title="ansible简介"></a>ansible简介</h3><p>ansible是新出现的自动化运维工具，ansible是一个配置管理和应用部署工具,基于Python开发，集合了众多运维工具（puppet、cfengine、chef、func、fabric.SaltStack   ）的优点，实现了批量系统配置、批量程序部署、批量运行命令等功能。ansible是基于模块工作的，本身没有批量部署的能力。真正具有批量部署的是ansible所运行的模块，ansible只是提供一种框架,根据官方提供的信息，当前使用ansible的用户有:<br>美国国家航空航天局（NASA /ˈnæsə/）<br>evernote(印象笔记),rackspace(全球三大云计算中心之一),atlassian,twitter(全球互联网上访问量最大的十个网站之一)等</p>
+<h3 id="ansible在生产环境当中的应用"><a href="#ansible在生产环境当中的应用" class="headerlink" title="ansible在生产环境当中的应用"></a>ansible在生产环境当中的应用</h3><p>自动化部署应用<br>自动化管理配置<br>自动化持续交付<br>自动化(aws)云服务器管理</p>
+<h3 id="ansible的优点"><a href="#ansible的优点" class="headerlink" title="ansible的优点"></a>ansible的优点</h3><ul>
+<li>ansible糅合了众多老牌运维工具的优点，基本上pubbet和saltstack能实现的功能全部能实现</li>
+<li>轻量级，无需在客户端安装agent，更新时，只需在操作机上进行一次更新即可；</li>
+<li>ansible是一个工具，ansible不需要启动服务，仅仅只是一个工具，可以轻松的实现分布式扩展</li>
+<li>批量任务执行可以写成脚本，而且不用分发到远程就可以执行</li>
+<li>ansible是一致性，高可靠性，安全性设计的轻量级自动化工具</li>
+<li>使用python编写，维护更简单，ruby语法过于复杂；</li>
 </ul>
-<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><ul>
-<li><p>常用约束：主键约束、唯一键约束、外键约束、非空约束等<br>主键 primary key ： 一个或多个字段的组合。只能有一个主键<br>唯一键 unique key：字段的数据必须不同于已经存在的其他行上的数据，但可以为空。可以有多个唯一键<br>外键：foreign key。 一个表中的外键字段中所有能插入的数据取值范围，取决于引用的另一个表上主键字段上的已经存在的数据集合<br>检查条件约束：check，自定义的逻辑表达式  </p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>no agents：不需要在被管控主机上安装任何客户端；</li>
+<li>no server：无服务器端，使用时直接运行命令即可；</li>
+<li>modules in any languages：基于模块工作，可使用任意语言开发模块；</li>
+<li>yaml，not code：使用yaml语言定制剧本playbook；</li>
+<li>ssh by default：基于SSH工作；</li>
+<li>strong multi-tier solution：可实现多级指挥。</li>
+</ul>
+<h3 id="ansible的基本架构"><a href="#ansible的基本架构" class="headerlink" title="ansible的基本架构"></a>ansible的基本架构</h3><ul>
+<li>连接插件(connectior plugins) 用于连接主机 用来连接被管理端</li>
+<li>核心模块(core modules) 连接主机实现操作， 它依赖于具体的模块来做具体的事情</li>
+<li>自定义模块(custom modules) 根据自己的需求编写具体的模块</li>
+<li>插件(plugins) 完成模块功能的补充</li>
+<li>playbooks(剧本) ansible的配置文件,将多个任务定义在剧本中，由ansible自动执行</li>
+<li>host inventory（主机清单）定义ansible需要操作主机的范围</li>
+<li>最重要的一点是 ansible是模块化的 它所有的操作都依赖于模块<br>比如我需要创建一个文件 那么我就需要调用file模块 我需要copy文件，那么我就需要copy模块<br>我需要测试机器的存活率，那么就需要ping模块，例如：ansible all -m ping</li>
+</ul>
+<h2 id="ansible安装"><a href="#ansible安装" class="headerlink" title="ansible安装"></a>ansible安装</h2><p>ansible只是一个进程  不需要添加数据库也不需要启动和运行守护进程它只是一个进程你可以轻松使用它安装在任何一点主机上面（除了windows）ansible管理机不能安装到windows上面<br>版本的选择 因为2.0有非常大的改进  一般都会使用2.0以上的版本<br>控制机的要求  因为ansible是python写的  所以需要在安装了python2.6或者2.7以上的python版本才可以安装<br>管理节点的要求  需要安装ssh python版本在2.5以上</p>
+<h3 id="安装有3个方式"><a href="#安装有3个方式" class="headerlink" title="安装有3个方式"></a>安装有3个方式</h3><ul>
+<li><p>yum -y install ansible<br>wget -O /etc/yum.repos.d/epel.repo <a href="http://mirrors.aliyun.com/repo/epel-6.repo（下载yum源）" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/epel-6.repo（下载yum源）</a></p>
 </li>
-<li><p>非空约束<br>添加非空约束：<br>alter table testtb modify name varchar(100) not null;<br>删除非空约束：<br>alter table testtb modify name varchar(100) null;</p>
+<li><p>pip install ansible</p>
 </li>
-<li><p>自动增长<br>添加自动增长：<br>alter table testtb modify id int auto_increment;<br>alter table testtb change id id int auto_increment;<br>删除自动增长：<br>alter table testtb change id id int;<br>alter table testtb modify id int;</p>
-</li>
-<li><p>主键约束<br>添加主键约束：<br>alter table testtb add primary key(id);<br>alter table testtb add constraint primary key(id);<br>删除主键约束：<br>alter table testtb drop primary key;<br>注意：如果对应的主键上存在自动增长，则不能直接删除主键，需先删除自动增长后，在删除主键。</p>
-</li>
-<li><p>唯一性约束<br>添加唯一性约束：<br>alter  table testtb add unique key(uid);<br>alter table testtb add unique key uni_test(test);<br>删除唯一键约束：<br>alter table testtb drop index uni_test;</p>
-</li>
-<li><p>外键约束<br>添加外键约束：<br>alter table testtb add column tid int defalut 0 not null;<br>alter table testtb and constraint testtb_tid_kd foreign key(tid) references testtb2(id);<br>删除外键约束：<br>alter table test4 drop foreign key test_tid_fk;</p>
-</li>
-<li><p>查看约束<br>select * from information_schema.key_column_usage where table_name=’test1’;</p>
+<li><p>从github下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git：//github.com/ansible/ansible.git --recursive</span><br><span class="line">$ cd ./ansible</span><br><span class="line">$ make rpm</span><br><span class="line">$ sudo rpm -Uvh ./rpm-build/ansible-*.noarch.rpm</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><ul>
-<li><p>索引管理<br>单纯的值index<br>添加一个单纯的索引：<br>① alter table testtb add index ind_name(name);<br>②create index ind_name on testtb(name);<br>create index ind_name on testtb(name(20);<br>create index ind_name on testtb(name(20) desc);</p>
+<h3 id="任务执行模式"><a href="#任务执行模式" class="headerlink" title="任务执行模式"></a>任务执行模式</h3><p>ansible系统由控制主机对被管节点的操作方式有两种ad_hoc和playbook</p>
+<ul>
+<li><p>ad_hoc单命令模式 可以对多台主机执行单个命令<br>ansible all -a “/bin/echo hello”</p>
 </li>
-<li><p>联合索引<br>create index ind_id_name on test1(id,name);<br>create index ind_id_name on testtb1(id,name(20));</p>
-</li>
-<li><p>重建索引<br>repair table table_name quick;</p>
-</li>
-<li><p>删除索引<br>alter table test2 drop index uu_ttt;</p>
-</li>
-<li><p>查看索引<br>show index from testtb;<br>show index form testtb key_name like ‘ind%’;</p>
+<li><p>playbook通过多个tasks的集合完成一类功能如web的安装部署，数据库服务器的批量备份等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">- hosts: webservers</span><br><span class="line">  vars:</span><br><span class="line">    http_port: 80</span><br><span class="line">    max_clients: 200</span><br><span class="line">  remote_user: root</span><br><span class="line">  tasks:</span><br><span class="line">  - name: ensure apache is at the latest version</span><br><span class="line">    yum: name=httpd state=latest</span><br><span class="line">  - name: write the apache config file</span><br><span class="line">    template: src=/srv/httpd.j2 dest=/etc/httpd.conf</span><br><span class="line">    notify:</span><br><span class="line">    - restart apache</span><br><span class="line">  - name: ensure apache is running (and enable it at boot)</span><br><span class="line">    service: name=httpd state=started enabled=yes</span><br><span class="line">  handlers:</span><br><span class="line">    - name: restart apache</span><br><span class="line">      service: name=httpd state=restarted</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><ul>
-<li><p>创建视图<br>select create_view_priv,,select_priv from mysql.user where user=’root’ and host=’%’;<br>create_view_priv 的值为Y，表示当前用户拥有创建视图的权利。<br>create view testvi as select <em> from classes where classid &lt;=3;<br>视图是一种虚表，不能与存在的表重名:<br>create or replace view testvi as select </em> from classes where classid &lt;=4  如果不存在testvi则创建，存在则覆盖。</p>
+<h2 id="ansible的七个指令："><a href="#ansible的七个指令：" class="headerlink" title="ansible的七个指令："></a>ansible的七个指令：</h2><p>ansible、ansible-doc、ansible-galaxy、ansible-lint、ansible-playbook、ansible-pull、ansible-vault 。这里我们只查看usage部分，详细部分可以通过 “指令 -h”  的方式获取。</p>
+<h3 id="ansible"><a href="#ansible" class="headerlink" title="ansible"></a>ansible</h3><p>[root@localhost ~]# ansible -h<br>Usage: ansible <host-pattern> [options]<br>ansible是指令核心部分，其主要用于执行ad-hoc命令，即单条命令。默认后面需要跟主机和选项部分，默认不指定模块时，使用的是command模块。<br>如：<br>[root@VM_0_2_centos ~]# ansible 127.0.0.1 -a “date”<br>127.0.0.1 | CHANGED | rc=0 &gt;&gt;<br>Sun Jun  2 18:32:30 CST 2019</host-pattern></p>
+<p>默认使用的模块是可以在ansible.cfg 中进行修改的。<br>ansible命令下的参数部分解释如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">参数：</span><br><span class="line"> -a ‘Arguments‘, --args=‘Arguments‘ 命令行参数</span><br><span class="line"> -m NAME, --module-name=NAME 指定执行的模块，默认使用 command 模块</span><br><span class="line">-i PATH, --inventory=PATH 指定库存主机文件的路径,默认为/etc/ansible/hosts. </span><br><span class="line">-u Username， --user=Username 执行用户，使用这个远程用户名而不是当前用户 </span><br><span class="line">-U --sud-user=SUDO_User sudo到哪个用户，默认为 root -k --ask-pass 登录密码，提示输入SSH密码而不是假设基于密钥的验证 </span><br><span class="line">-K --ask-sudo-pass 提示密码使用sudo -s --sudo sudo运行 </span><br><span class="line">-S --su 用 su 命令 </span><br><span class="line">-l --list 显示所支持的所有模块 </span><br><span class="line">-f --forks=NUM 并行任务数。NUM被指定为一个整数,默认是5。 </span><br><span class="line">#ansible testhosts -a &quot;/sbin/reboot&quot; -f 10 重启testhosts组的所有机器，每次重启10台</span><br><span class="line"></span><br><span class="line"> --private-key=PRIVATE_KEY_FILE 私钥路径，使用这个文件来验证连接</span><br><span class="line">-v --verbose 详细信息 </span><br><span class="line">-M MODULE_PATH, --module-path=MODULE_PATH 要执行的模块的路径，默认为/usr/share/ansible/ </span><br><span class="line">--list-hosts 只打印有哪些主机会执行这个 playbook 文件，不是实际执行该 playbook 文件 </span><br><span class="line">-o --one-line 压缩输出，摘要输出.尝试一切都在一行上输出。 </span><br><span class="line">-t Directory, --tree=Directory 将内容保存在该输出目录,结果保存在一个文件中在每台主机上。 </span><br><span class="line">-B 后台运行超时时间 -P 调查后台程序时间 -T Seconds, --timeout=Seconds 时间，单位秒s </span><br><span class="line">-P NUM, --poll=NUM 调查背景工作每隔数秒。需要- b </span><br><span class="line">-c Connection, --connection=Connection 连接类型使用。可能的选项是paramiko(SSH),SSH和地方。当地主要是用于crontab或启动。 </span><br><span class="line">--tags=TAGS 只执行指定标签的任务 例子:ansible-playbook test.yml --tags=copy 只执行标签为copy的那个任务 </span><br><span class="line">--list-hosts 只打印有哪些主机会执行这个 playbook 文件，不是实际执行该 playbook 文件</span><br><span class="line">--list-tasks 列出所有将被执行的任务 </span><br><span class="line">-C, --check 只是测试一下会改变什么内容，不会真正去执行;相反,试图预测一些可能发生的变化 </span><br><span class="line">--syntax-check 执行语法检查的剧本,但不执行它 </span><br><span class="line">-l SUBSET, --limit=SUBSET 进一步限制所选主机/组模式 --limit=192.168.0.15 只对这个ip执行 </span><br><span class="line">--skip-tags=SKIP_TAGS 只运行戏剧和任务不匹配这些值的标签 --skip-tags=copy_start </span><br><span class="line">-e EXTRA_VARS, --extra-vars=EXTRA_VARS 额外的变量设置为键=值或YAML / JSON </span><br><span class="line">#cat update.yml </span><br><span class="line">--- </span><br><span class="line">- hosts: &#123;&#123; hosts &#125;&#125; </span><br><span class="line">  remote_user: &#123;&#123; user &#125;&#125; </span><br><span class="line">  .............. </span><br><span class="line">  #ansible-playbook update.yml --extra-vars &quot;hosts=vipers user=admin&quot; 传递&#123;&#123;hosts&#125;&#125;、&#123;&#123;user&#125;&#125;变量,hosts可以是 ip或组名 </span><br><span class="line">-l,--limit 对指定的 主机/组 执行任务 --limit=192.168.0.10，192.168.0.11 或 -l 192.168.0.10，192.168.0.11 只对这个2个ip执行任务</span><br></pre></td></tr></table></figure></p>
+<h3 id="ansible-doc"><a href="#ansible-doc" class="headerlink" title="ansible-doc"></a>ansible-doc</h3><p>[root@VM_0_2_centos ~]# ansible-doc -h<br>Usage: ansible-doc [-l|-F|-s] [options] [-t <plugin type> ] [plugin]</plugin></p>
+<ul>
+<li><p>列出所有已安装的模块<br>[root@VM_0_2_centos ~]# ansible-doc -l</p>
 </li>
-<li><p>视图使用自己的字段名称<br>create view testvi(a,b,c) select * from classes;<br>create view testvi(classname,stunum) as select class,num from classes</p>
+<li><p>查看具体某模块的用法，这里查看command模块<br>[root@VM_0_2_centos ~]# ansible-doc -s command</p>
 </li>
-<li><p>从多个表中查询出数据创建视图<br>create or replace view testvi as select s.name,s.age,c.class from students  s.classes c where s.classid=c.classid;</p>
-</li>
-<li><p>删除视图<br>drop view testvi;<br>如果视图testvi存在，则删除<br>drop view if exists testvi;</p>
-</li>
-<li><p>查看视图<br>select <em> from information_schema.views where table_schema=’U_DB_NAME’;<br>像查表一样使用：<br>select </em> from testvi;</p>
-</li>
-<li>修改视图<br>alter view testvi as select name,age from students;</li>
 </ul>
+<h3 id="ansible-galaxy"><a href="#ansible-galaxy" class="headerlink" title="ansible-galaxy"></a>ansible-galaxy</h3><p>ansible-galaxy 指令用于方便的从<a href="https://galaxy.ansible.com/" target="_blank" rel="noopener">https://galaxy.ansible.com/</a> 站点下载第三方扩展模块，我们可以形象的理解其类似于centos下的yum、python下的pip或easy_install 。<br>如下示例：<br>[root@localhost ~]# ansible-galaxy install aeriscloud.docker<br>downloading role ‘docker‘ owned by aeriscloud- downloading role from <a href="https://github.com/AerisCloud/ansible-docker/archive/v1.0.0.tar.gz-" target="_blank" rel="noopener">https://github.com/AerisCloud/ansible-docker/archive/v1.0.0.tar.gz-</a> extracting aeriscloud.docker to /etc/ansible/roles/aeriscloud.docker- aeriscloud.docker was installed successfully</p>
+<p>这个安装了一个aeriscloud.docker组件，前面aeriscloud是galaxy上创建该模块的用户名，后面对应的是其模块。在实际应用中也可以指定txt或yml 文件进行多个组件的下载安装。这部分可以参看<a href="https://link.jianshu.com/?t=http://docs.ansible.com/galaxy.html" target="_blank" rel="noopener">官方文档</a>。</p>
+<h3 id="ansible-lint"><a href="#ansible-lint" class="headerlink" title="ansible-lint"></a>ansible-lint</h3><p>ansible-lint是对playbook的语法进行检查的一个工具。<br>用法:ansible-lint playbook.yml 。</p>
+<h3 id="ansible-playbook"><a href="#ansible-playbook" class="headerlink" title="ansible-playbook"></a>ansible-playbook</h3><p>该指令是使用最多的指令，其通过读取playbook 文件后，执行相应的动作，这个后面会做为一个重点来讲。</p>
+<h3 id="ansible-pull"><a href="#ansible-pull" class="headerlink" title="ansible-pull"></a>ansible-pull</h3><p>该指令使用需要谈到ansible的另一种模式－－－pull 模式，这和我们平常经常用的push模式刚好相反<br>其适用于以下场景：你有数量巨大的机器需要配置，即使使用非常高的线程还是要花费很多时间；你要在一个没有网络连接的机器上运行Anisble，比如在启动之后安装。这部分也会单独做一节来讲。</p>
+<h3 id="ansible-vault"><a href="#ansible-vault" class="headerlink" title="ansible-vault"></a>ansible-vault</h3><p>ansible-vault主要应用于配置文件中含有敏感信息，又不希望他能被人看到，vault可以帮你加密/解密这个配置文件，属高级用法。<br>主要对于playbooks里比如涉及到配置密码或其他变量时，可以通过该指令加密，这样我们通过cat看到的会是一个密码串类的文件，编辑的时候需要输入事先设定的密码才能打开。这种playbook文件在执行时，需要加上 –ask-vault-pass参数，同样需要输入密码后才能正常执行。具体该部分可以参查<a href="https://link.jianshu.com/?t=http://www.ansible.com/blog/2014/02/19/ansible-vault" target="_blank" rel="noopener">官方博客</a>。</p>
+<h2 id="ansible配置文件-ansible-cfg"><a href="#ansible配置文件-ansible-cfg" class="headerlink" title="ansible配置文件 ansible.cfg"></a>ansible配置文件 ansible.cfg</h2><p>查看配置文件设置<br><a href="http://docs.ansible.com/ansible/intro_configuration.html#poll-interval" target="_blank" rel="noopener">http://docs.ansible.com/ansible/intro_configuration.html#poll-interval</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">* inventory–这个参数表示资源清单inventory文件配置，资源清单就是一些ansible需要链接管理的主机列表。安装完ansible之后默认所在的inventory列表配置如下：  </span><br><span class="line"></span><br><span class="line">inventory = /etc/ansible/hosts    </span><br><span class="line"></span><br><span class="line">* library–Ansible的操作动作，无论是本地或远程，都使用一小段代码来执行。这小段代码成为模块，这个library参数就是只想存放在Ansible模块的目录。Ansible支持多个目录方式，只要用冒号（：）隔开就可以，同时也会检查当前执行playbook位置下的./library位置。默认的配置如下：</span><br><span class="line"></span><br><span class="line">library = /usr/share/ansible  </span><br><span class="line"></span><br><span class="line">* forks–设置默认情况下Ansible最多能有多少个进程同时工作，默认设置最多5个进程并行处理。具体需要设置多少个，可以根据控制主机的性能和被管理节点的数量来确定。默认参数配置如下： forks=20 你没有优化的优化的情况下执行比较慢</span><br><span class="line"></span><br><span class="line">forks = 5</span><br><span class="line"></span><br><span class="line">* sudo_user–这个设置默认执行命令的用户，在playbook中重新设置这个参数。默认参数配置如下：</span><br><span class="line"></span><br><span class="line">sudo_user = root  </span><br><span class="line"></span><br><span class="line">* remote_port–这个是指定链接被管节点的管理端口，默认22。除非设置了特殊的SSH端口，不然这个参数一般是不需要修改的。默认配置如下：</span><br><span class="line"></span><br><span class="line">remote_port = 22</span><br><span class="line"></span><br><span class="line">* host_key_checking–这个设置是否检查SSH主机的秘钥。可以设置为True或者False。默认配置如下：</span><br><span class="line"></span><br><span class="line">host_key_checking = false  </span><br><span class="line"></span><br><span class="line">* timeout–这是设置SSH链接的超时间隔，单位是秒。默认配置实例如下：</span><br><span class="line"></span><br><span class="line">timeout = 60</span><br><span class="line"></span><br><span class="line">* log_path–Ansible系统默认是不记录日志的，如果想把Ansible系统的输出记录到日志文件中，需要设置log\_path来指定一个存储Ansible日志的文件。配置实例如下：</span><br><span class="line"></span><br><span class="line">log_path = /var/log/ansible.log  </span><br><span class="line">poll_interval 异步执行任务的时候多久检查一次任务装填</span><br><span class="line">poll_interval = 15</span><br><span class="line"></span><br><span class="line">选择远程的工具   默认情况下就是smart(智能)模式  自动选择连接方式</span><br><span class="line">只有当你需要优化执行速度的时候才需要修改这个选项</span><br><span class="line">transport = smart </span><br><span class="line"></span><br><span class="line">module_set_locale  设置本地的环境变量  </span><br><span class="line">inventory      = /etc/ansible/hosts     这个是默认库文件位置,脚本,或者存放可通信主机的目录  </span><br><span class="line">#library        = /usr/share/my_modules/   Ansible默认搜寻模块的位置  </span><br><span class="line">remote_tmp     = $HOME/.ansible/tmp   Ansible 通过远程传输模块到远程主机,然后远程执行,执行后在清理现场.在有些场景下,你也许想使用默认路径希望像更换补丁一样使用  </span><br><span class="line">pattern        = *    如果没有提供“hosts”节点,这是playbook要通信的默认主机组.默认值是对所有主机通信  </span><br><span class="line">forks          = 5    在与主机通信时的默认并行进程数 ，默认是5d  </span><br><span class="line">poll_interval  = 15    当具体的poll interval 没有定义时,多少时间回查一下这些任务的状态, 默认值是5秒  </span><br><span class="line">sudo_user      = root   sudo使用的默认用户 ，默认是root  </span><br><span class="line">#ask_sudo_pass = True   用来控制Ansible playbook 在执行sudo之前是否询问sudo密码.默认为no  </span><br><span class="line">#ask_pass      = True    控制Ansible playbook 是否会自动默认弹出密码  </span><br><span class="line">transport      = smart   通信机制.默认 值为’smart’。如果本地系统支持   ControlPersist技术的话,将会使用(基于OpenSSH)‘ssh’,如果不支持讲使用‘paramiko’.其他传输选项包括‘local’, ‘chroot’,’jail’等等  </span><br><span class="line">#remote_port    = 22    远程SSH端口。 默认是22  </span><br><span class="line">module_lang    = C   模块和系统之间通信的计算机语言，默认是C语言  </span><br><span class="line">gathering = implicit   控制默认facts收集（远程系统变量）. 默认值为’implicit’, 每一次play,facts都会被收集</span><br><span class="line">#roles_path    = /etc/ansible/roles   roles 路径指的是’roles/’下的额外目录,用于playbook搜索Ansible roles</span><br><span class="line">#host_key_checking = False    检查主机密钥</span><br><span class="line">sudo_exe = sudo     如果在其他远程主机上使用另一种方式执sudu操作.可以使用该参数进行更换</span><br><span class="line">#what flags to pass to sudo   传递sudo之外的参数</span><br><span class="line">#sudo_flags = -H</span><br><span class="line"></span><br><span class="line">#SSH timeout    SSH超时时间</span><br><span class="line">timeout = 10</span><br><span class="line">#remote_user = root   使用/usr/bin/ansible-playbook链接的默认用户名，如果不指定，会使用当前登录的用户名</span><br><span class="line">#log_path = /var/log/ansible.log     日志文件存放路径</span><br><span class="line">#module_name = command     ansible命令执行默认的模块</span><br><span class="line">#executable = /bin/sh     在sudo环境下产生一个shell交互接口. 用户只在/bin/bash的或者sudo限制的一些场景中需要修改</span><br><span class="line">#jinja2_extensions = jinja2.ext.do,jinja2.ext.i18n      允许开启Jinja2拓展模块</span><br><span class="line">#private_key_file = /root/.ssh/id_rsa        私钥文件存储位置</span><br><span class="line">ansible_managed = Ansible managed: &#123;file&#125; modified on %Y-%m-%d %H:%M:%S by &#123;uid&#125; on &#123;host&#125;   这个设置可以告知用户,Ansible修改了一个文件,并且手动写入的内容可能已经被覆盖.</span><br><span class="line">#display_skipped_hosts = True     显示任何跳过任务的状态 ，默认是显示</span><br><span class="line">#error_on_undefined_vars = False      如果所引用的变量名称错误的话, 将会导致ansible在执行步骤上失败</span><br><span class="line">#system_warnings = True    允许禁用系统运行ansible相关的潜在问题警告</span><br><span class="line">#deprecation_warnings = True     允许在ansible-playbook输出结果中禁用“不建议使用”警告</span><br><span class="line">#command_warnings = False    当shell和命令行模块被默认模块简化的时,Ansible 将默认发出警告</span><br><span class="line">#nocows = 1    默认ansible可以调用一些cowsay的特性   开启/禁用：0/1</span><br><span class="line">#nocolor = 1  输出带上颜色区别， 开启/关闭：0/1</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -683,7 +699,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-envira"></i> MySQL</a>
+            <a href="/tags/Ansible/" rel="tag"><i class="fa fa-envira"></i> Ansible</a>
           
         </div>
       
@@ -697,8 +713,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/08/MySQL/01.MySQL/" rel="next" title="MySQL 语法「一」">
-                <i class="fa fa-chevron-left"></i> MySQL 语法「一」
+              <a href="/2019/05/01/Python/02.Oop/01.Python的面向对象/" rel="next" title="Python 的面向对象">
+                <i class="fa fa-chevron-left"></i> Python 的面向对象
               </a>
             
           </div>
@@ -707,8 +723,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/14/MySQL/03.MySQL/" rel="prev" title="MySQL 语法「三」">
-                MySQL 语法「三」 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/10/Python/03.High-level/01.Python的模块和包/" rel="prev" title="Python 的模块和包">
+                Python 的模块和包 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -968,7 +984,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-语法「二」"><span class="nav-text">MySQL 语法「二」</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#约束"><span class="nav-text">约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引"><span class="nav-text">索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图"><span class="nav-text">视图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ansible-简介"><span class="nav-text">ansible 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ansible-系统架构"><span class="nav-text">ansible 系统架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible简介"><span class="nav-text">ansible简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible在生产环境当中的应用"><span class="nav-text">ansible在生产环境当中的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible的优点"><span class="nav-text">ansible的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible的基本架构"><span class="nav-text">ansible的基本架构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ansible安装"><span class="nav-text">ansible安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装有3个方式"><span class="nav-text">安装有3个方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务执行模式"><span class="nav-text">任务执行模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ansible的七个指令："><span class="nav-text">ansible的七个指令：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible"><span class="nav-text">ansible</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible-doc"><span class="nav-text">ansible-doc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible-galaxy"><span class="nav-text">ansible-galaxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible-lint"><span class="nav-text">ansible-lint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible-playbook"><span class="nav-text">ansible-playbook</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible-pull"><span class="nav-text">ansible-pull</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ansible-vault"><span class="nav-text">ansible-vault</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ansible配置文件-ansible-cfg"><span class="nav-text">ansible配置文件 ansible.cfg</span></a></li></ol></li></ol></div>
             
 
           </div>

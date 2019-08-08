@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>MySQL 语法「二」 | AIR PAN | NOTE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#0000">
+    
+    
+    <meta name="keywords" content="MySQL">
+    <meta name="description" content="「约束、键」「索引」「视图」">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 语法「二」">
+<meta property="og:url" content="http://yoursite.com/2018/11/12/MySQL/02.MySQL/index.html">
+<meta property="og:site_name" content="AIR PAN">
+<meta property="og:description" content="「约束、键」「索引」「视图」">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-21T01:21:36.746Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL 语法「二」">
+<meta name="twitter:description" content="「约束、键」「索引」「视图」">
+    
+        <link rel="alternate" type="application/atom+xml" title="AIR PAN" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-dedent"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">DuKe</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-th-list"></i>
+                Archinves
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-folder"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-bookmark"></i>
+                Books
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://web.geekji.cn/" target="_blank">
+                <i class="icon icon-lg icon-paperclip"></i>
+                Share
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about">
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/airpan" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-indent"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MySQL 语法「二」</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MySQL 语法「二」</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-12T10:11:07.000Z" itemprop="datePublished" class="page-time">
+  2018-11-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/MySQL/">MySQL</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MySQL-语法「二」"><span class="post-toc-number">1.</span> <span class="post-toc-text">MySQL 语法「二」</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#约束"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">约束</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#索引"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">索引</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#视图"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">视图</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-MySQL/02.MySQL" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MySQL 语法「二」</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-11-12 18:11:07" datetime="2018-11-12T10:11:07.000Z" itemprop="datePublished">2018-11-12</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/MySQL/">MySQL</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="MySQL-语法「二」"><a href="#MySQL-语法「二」" class="headerlink" title="MySQL 语法「二」"></a>MySQL 语法「二」</h1><ul>
+<li>约束、键  </li>
+<li>索引</li>
+<li>视图</li>
+</ul>
+<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><ul>
+<li><p>常用约束：主键约束、唯一键约束、外键约束、非空约束等<br>主键 primary key ： 一个或多个字段的组合。只能有一个主键<br>唯一键 unique key：字段的数据必须不同于已经存在的其他行上的数据，但可以为空。可以有多个唯一键<br>外键：foreign key。 一个表中的外键字段中所有能插入的数据取值范围，取决于引用的另一个表上主键字段上的已经存在的数据集合<br>检查条件约束：check，自定义的逻辑表达式  </p>
+</li>
+<li><p>非空约束<br>添加非空约束：<br>alter table testtb modify name varchar(100) not null;<br>删除非空约束：<br>alter table testtb modify name varchar(100) null;</p>
+</li>
+<li><p>自动增长<br>添加自动增长：<br>alter table testtb modify id int auto_increment;<br>alter table testtb change id id int auto_increment;<br>删除自动增长：<br>alter table testtb change id id int;<br>alter table testtb modify id int;</p>
+</li>
+<li><p>主键约束<br>添加主键约束：<br>alter table testtb add primary key(id);<br>alter table testtb add constraint primary key(id);<br>删除主键约束：<br>alter table testtb drop primary key;<br>注意：如果对应的主键上存在自动增长，则不能直接删除主键，需先删除自动增长后，在删除主键。</p>
+</li>
+<li><p>唯一性约束<br>添加唯一性约束：<br>alter  table testtb add unique key(uid);<br>alter table testtb add unique key uni_test(test);<br>删除唯一键约束：<br>alter table testtb drop index uni_test;</p>
+</li>
+<li><p>外键约束<br>添加外键约束：<br>alter table testtb add column tid int defalut 0 not null;<br>alter table testtb and constraint testtb_tid_kd foreign key(tid) references testtb2(id);<br>删除外键约束：<br>alter table test4 drop foreign key test_tid_fk;</p>
+</li>
+<li><p>查看约束<br>select * from information_schema.key_column_usage where table_name=’test1’;</p>
+</li>
+</ul>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><ul>
+<li><p>索引管理<br>单纯的值index<br>添加一个单纯的索引：<br>① alter table testtb add index ind_name(name);<br>②create index ind_name on testtb(name);<br>create index ind_name on testtb(name(20);<br>create index ind_name on testtb(name(20) desc);</p>
+</li>
+<li><p>联合索引<br>create index ind_id_name on test1(id,name);<br>create index ind_id_name on testtb1(id,name(20));</p>
+</li>
+<li><p>重建索引<br>repair table table_name quick;</p>
+</li>
+<li><p>删除索引<br>alter table test2 drop index uu_ttt;</p>
+</li>
+<li><p>查看索引<br>show index from testtb;<br>show index form testtb key_name like ‘ind%’;</p>
+</li>
+</ul>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><ul>
+<li><p>创建视图<br>select create_view_priv,,select_priv from mysql.user where user=’root’ and host=’%’;<br>create_view_priv 的值为Y，表示当前用户拥有创建视图的权利。<br>create view testvi as select <em> from classes where classid <=3;<br>视图是一种虚表，不能与存在的表重名:<br>create or replace view testvi as select </=3;<br></em> from classes where classid <=4 如果不存在testvi则创建，存在则覆盖。< p>
+</=4></p></li>
+<li><p>视图使用自己的字段名称<br>create view testvi(a,b,c) select * from classes;<br>create view testvi(classname,stunum) as select class,num from classes</p>
+</li>
+<li><p>从多个表中查询出数据创建视图<br>create or replace view testvi as select s.name,s.age,c.class from students  s.classes c where s.classid=c.classid;</p>
+</li>
+<li><p>删除视图<br>drop view testvi;<br>如果视图testvi存在，则删除<br>drop view if exists testvi;</p>
+</li>
+<li><p>查看视图<br>select <em> from information_schema.views where table_schema=’U_DB_NAME’;<br>像查表一样使用：<br>select </em> from testvi;</p>
+</li>
+<li>修改视图<br>alter view testvi as select name,age from students;</li>
+</ul>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-21T01:21:36.746Z" itemprop="dateUpdated">2019-07-21 09:21:36</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/11/12/MySQL/02.MySQL/" target="_blank" rel="external">http://yoursite.com/2018/11/12/MySQL/02.MySQL/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="DuKe">
+            DuKe
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/11/12/MySQL/02.MySQL/&title=《MySQL 语法「二」》 — AIR PAN&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/11/12/MySQL/02.MySQL/&title=《MySQL 语法「二」》 — AIR PAN&source=Waiting...." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/12/MySQL/02.MySQL/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL 语法「二」》 — AIR PAN&url=http://yoursite.com/2018/11/12/MySQL/02.MySQL/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/12/MySQL/02.MySQL/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/11/14/MySQL/03.MySQL/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">MySQL 语法「三」</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/11/08/MySQL/01.MySQL/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MySQL 语法「一」</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>DuKe &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/11/12/MySQL/02.MySQL/&title=《MySQL 语法「二」》 — AIR PAN&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/11/12/MySQL/02.MySQL/&title=《MySQL 语法「二」》 — AIR PAN&source=Waiting...." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/12/MySQL/02.MySQL/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL 语法「二」》 — AIR PAN&url=http://yoursite.com/2018/11/12/MySQL/02.MySQL/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/12/MySQL/02.MySQL/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3aQY7jMAwEwPz/09nrAgt7u0XPAJbKp2DiyKoE4FAkP5/4+v51Xf0luf/+s/drPnBhYGC8lvG9va7u+XeF9inJu8neMDAwzmFcPTjZ6H1gTe6frICBgYFxdU8edpNg2n59GBgYGO1y+Ubz5A8DAwNj7RCblMYmAfSXzuIYGBgvZORV999//SP9DQwMjFcxvuXVFv2fTRYvd4WBgbE1Y96AzI+dzwZcDAyM0xhtEW0tLCajG+2gGAYGxjmMUTm+LMDdv14r+WFgYJzAWBuzyB/ZlvLXEk0MDIxdGWuhdq00dr9a+9kH/mNgYGC8hHF/pGzTwXaQYu3A/FnbCgYGxkaM5DiaUNuvpg3QxVkcAwPj5YzJ6MOkzTk/yl7OjGBgYGzHyG9qj7steDK0gYGBsTcjTwdbXt4qaPcQxWYMDIyNGHlUzse82mrYWkOi/pUwMDBey2hTwLUAPQ/xi8MWGBgYGzHaJdoEbhKOo6dgYGBszWhD6uR1UmjLU8///CYYGBhbM3JAXgJ7KtEs2gMYGBgHMJJmZNuqbFPAvAyHgYFxJmNeCEsOq5NBsbqbgYGB8VrG5EiZp3rtnFo7roGBgbE3Yy1QthMc7afa4h0GBsYJjDbI/nQiuLgHDAyMAxhtoMwfvDYctniUxcDAwBhs5antXq6DgYGBEZfV2mJZAotCOQYGxgGMfIR0rWSWbzd5FwMD4zRGm6g91bactDZH/Q0MDIw3Mf4AWuwsuuxdW7gAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

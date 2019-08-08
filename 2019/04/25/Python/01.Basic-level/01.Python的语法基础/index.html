@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Python 的语法基础 | AIR PAN | NOTE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#0000">
+    
+    
+    <meta name="keywords" content="Python">
+    <meta name="description" content="「语法基础」「数据类型」「字符串格式化」「表达式、运算符」">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 的语法基础">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/index.html">
+<meta property="og:site_name" content="AIR PAN">
+<meta property="og:description" content="「语法基础」「数据类型」「字符串格式化」「表达式、运算符」">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-21T01:21:36.772Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 的语法基础">
+<meta name="twitter:description" content="「语法基础」「数据类型」「字符串格式化」「表达式、运算符」">
+    
+        <link rel="alternate" type="application/atom+xml" title="AIR PAN" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-dedent"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">DuKe</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-th-list"></i>
+                Archinves
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-folder"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-bookmark"></i>
+                Books
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://web.geekji.cn/" target="_blank">
+                <i class="icon icon-lg icon-paperclip"></i>
+                Share
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about">
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/airpan" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-indent"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Python 的语法基础</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Python 的语法基础</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-25T10:11:07.000Z" itemprop="datePublished" class="page-time">
+  2019-04-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Python/">Python</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Python的语法基础"><span class="post-toc-number">1.</span> <span class="post-toc-text">Python的语法基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础语法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">基础语法</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Python的数据类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">Python的数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Number类型"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Number类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#String类型"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">String类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串的声明："><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">字符串的声明：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串相关操作"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">字符串相关操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#str-的内置函数"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">str 的内置函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#string模块相关内容"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">string模块相关内容</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#List类型-列表"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">List类型 (列表)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列表的定义和访问："><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">列表的定义和访问：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列表的序列操作"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">列表的序列操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列表的遍历"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">列表的遍历</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列表内涵：-list-content"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text">列表内涵： list content</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#序列函数"><span class="post-toc-number">2.3.5.</span> <span class="post-toc-text">序列函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列表专用函数"><span class="post-toc-number">2.3.6.</span> <span class="post-toc-text">列表专用函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#tuple类型-元组"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">tuple类型(元组)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#元组的创建和特征"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">元组的创建和特征</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#序列操作"><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text">序列操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#元组的遍历"><span class="post-toc-number">2.4.3.</span> <span class="post-toc-text">- 元组的遍历</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#元组的函数"><span class="post-toc-number">2.4.4.</span> <span class="post-toc-text">元组的函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#元组的方法"><span class="post-toc-number">2.4.5.</span> <span class="post-toc-text">元组的方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dictionary类型-字典"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">Dictionary类型(字典)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字典的创建和特征"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">字典的创建和特征</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字典的基本操作"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">字典的基本操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#序列操作-1"><span class="post-toc-number">2.5.3.</span> <span class="post-toc-text">序列操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#遍历操作"><span class="post-toc-number">2.5.4.</span> <span class="post-toc-text">遍历操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字典内涵"><span class="post-toc-number">2.5.5.</span> <span class="post-toc-text">字典内涵</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字典函数"><span class="post-toc-number">2.5.6.</span> <span class="post-toc-text">字典函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字典方法"><span class="post-toc-number">2.5.7.</span> <span class="post-toc-text">字典方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Set类型（集合）"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">Set类型（集合）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集合的创建和特征"><span class="post-toc-number">2.6.1.</span> <span class="post-toc-text">集合的创建和特征</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集合序列操作"><span class="post-toc-number">2.6.2.</span> <span class="post-toc-text">集合序列操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集合遍历操作"><span class="post-toc-number">2.6.3.</span> <span class="post-toc-text">集合遍历操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集合内涵"><span class="post-toc-number">2.6.4.</span> <span class="post-toc-text">集合内涵</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集合函数"><span class="post-toc-number">2.6.5.</span> <span class="post-toc-text">集合函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集合方法"><span class="post-toc-number">2.6.6.</span> <span class="post-toc-text">集合方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#冰冻集合-固定集合-frozen"><span class="post-toc-number">2.6.7.</span> <span class="post-toc-text">冰冻集合/固定集合 frozen</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型转换"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">数据类型转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自动类型转换"><span class="post-toc-number">2.7.1.</span> <span class="post-toc-text">自动类型转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#强制类型转换"><span class="post-toc-number">2.7.2.</span> <span class="post-toc-text">强制类型转换</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符串格式化"><span class="post-toc-number">3.</span> <span class="post-toc-text">字符串格式化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#利用百分号格式化"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">利用百分号格式化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#利用format格式化"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">利用format格式化</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#表达式、运算符"><span class="post-toc-number">4.</span> <span class="post-toc-text">表达式、运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#表达式"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">表达式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运算符的分类"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">运算符的分类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#算数运算"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">算数运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#比较运算"><span class="post-toc-number">4.2.2.</span> <span class="post-toc-text">比较运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#赋值运算"><span class="post-toc-number">4.2.3.</span> <span class="post-toc-text">赋值运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#逻辑运算"><span class="post-toc-number">4.2.4.</span> <span class="post-toc-text">逻辑运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#位运算"><span class="post-toc-number">4.2.5.</span> <span class="post-toc-text">位运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#成员运算"><span class="post-toc-number">4.2.6.</span> <span class="post-toc-text">成员运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#身份运算"><span class="post-toc-number">4.2.7.</span> <span class="post-toc-text">身份运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检测数据归属"><span class="post-toc-number">4.2.8.</span> <span class="post-toc-text">检测数据归属</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运算优先级问题"><span class="post-toc-number">4.2.9.</span> <span class="post-toc-text">运算优先级问题</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Python/01.Basic-level/01.Python的语法基础" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Python 的语法基础</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-25 18:11:07" datetime="2019-04-25T10:11:07.000Z" itemprop="datePublished">2019-04-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Python/">Python</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Python的语法基础"><a href="#Python的语法基础" class="headerlink" title="Python的语法基础"></a>Python的语法基础</h1><ul>
+<li>基础语法</li>
+</ul>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><ul>
+<li><p>编码<br>默认情况下，Python 3 源码文件以 UTF-8 编码，所有字符串都是 unicode 字符串。 </p>
+</li>
+<li><p>查看数据类型<br>用法：type(变量名)</p>
+</li>
+<li><p>获取变量在内存中的id标识<br>用法：id(变量名)  </p>
+</li>
+</ul>
+<ul>
+<li><p>系统中保留关键字：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import keyword     </span><br><span class="line">print (keyword.kwlist)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>多行语句<br>Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠()来实现多行语句     </p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">total = item_one + \</span><br><span class="line">        item_two + \</span><br><span class="line">        item_three</span><br><span class="line">        </span><br><span class="line"># 在 [], {}, 或 () 中的多行语句，不需要使用反斜杠(\)</span><br><span class="line">total = ['item_one', 'item_two', 'item_three',</span><br><span class="line">        'item_four', 'item_five']</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>等待用户输入：input()</p>
+</li>
+<li>同一行显示多条语句  <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Python可以在同一行中使用多条语句，语句之间使用分号(;)分割</span><br><span class="line"> </span><br><span class="line">import sys; x = 'runoob'; sys.stdout.write(x + '\n')</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<h1 id="Python的数据类型"><a href="#Python的数据类型" class="headerlink" title="Python的数据类型"></a>Python的数据类型</h1><p>Python中可以自定义数据类型,可以具有无限种数据类型<br>系统默认提供6个标准数据类型：</p>
+<ul>
+<li>Number类型(数字) </li>
+<li>String类型（字符串） </li>
+<li>List类型 (列表) </li>
+<li>tuple类型(元组) </li>
+<li>Dictionary类型(字典) </li>
+<li>Set类型（集合）</li>
+</ul>
+<h2 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h2><p>Number类型主要包含数学相关的数据：一共分为4种小类型：  </p>
+<ul>
+<li><p>整型<br>整型就是整数。包括正整数负整数和0<br>二进制（0b开头）<br>变量 = 0b10101<br>八进制（0o开头）<br>变量 = 0o777<br>十进制（不需要）<br>变量  = 250<br>十六进制（0x开头）<br>变量 = 0xabcd  </p>
+</li>
+<li><p>浮点型<br>浮点型就是小数。<br>使用小数表示浮点数 float1 = 3.141592653<br>科学计数法表示浮点数<br>float2 = 314e-2 # 314*10的-2次方  </p>
+</li>
+<li><p>复数<br>什么是复数。 复数由实数和虚数两部分组成<br>表达式: 163 + 2j<br>使用复数功能结构: com2 = complex(15,3)  </p>
+</li>
+<li><p>布尔类类型<br>布尔值就是表示确定或者否定的数据类型，只有2个值：True和False 在python当中没有真正的布尔类型，而是使用数字0来表示False，数字1表示True，所以bool是Number类型</p>
+</li>
+</ul>
+<h2 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h2><p>字符串就是文字类型 </p>
+<h3 id="字符串的声明："><a href="#字符串的声明：" class="headerlink" title="字符串的声明："></a>字符串的声明：</h3><ul>
+<li><p>单引号声明字符串<br>  变量 = ‘值’</p>
+</li>
+<li><p>双引号声明字符串<br>  变量 = “值”  </p>
+</li>
+<li><p>三引号声明变量<br>  变量 = ‘’’值’’’<br>  变量 = “””值”””<br>  三引号声明字符串的方式适合大数据的字符串、多行数据  </p>
+</li>
+</ul>
+<h3 id="字符串相关操作"><a href="#字符串相关操作" class="headerlink" title="字符串相关操作"></a>字符串相关操作</h3><ul>
+<li><p>常用<br>字符串连接符号: +<br>字符复制操作: *<br>[] 通过指定位置（索引）来获取指定位置的字符<br>[:] 取片操作（不包含结束位置）<br>注意事项：<br>单引号中不可以直接使用单引号<br>双引号中不可以直接使用双引号<br>三引号中可以随意使用单双引号   </p>
+</li>
+<li><p>字符串的转义操作：<br>(在行尾时) 续行符<br>\  反斜杠符号<br>\’  单引号<br>\”  双引号<br>\a  响铃<br>\b  退格(Backspace)<br>\e  转义<br>\000    空<br>\n  换行<br>\v  纵向制表符<br>\t  横向制表符<br>\r  回车<br>\f  换页<br>\oyy    八进制数，yy代表的字符，例如：\o12代表换行<br>\xyy    十六进制数，yy代表的字符，例如：\x0a代表换行<br>\other  其它的字符以普通格式输出 </p>
+</li>
+<li><p>r 防止转义:<br>print(r’hello\nrunoob’)    </p>
+</li>
+</ul>
+<h3 id="str-的内置函数"><a href="#str-的内置函数" class="headerlink" title="str 的内置函数"></a>str 的内置函数</h3><ul>
+<li><p>capitalize()  首字母大写<br>格式： str.capitalize()<br>返回值：首字母大写的字符串，仅把整个字符串的第一个字符大写  </p>
+</li>
+<li><p>upper()  将所有英文字符变为大写<br>格式：str.upper()<br>返回值：返回所有英文字符大写的字符串 </p>
+</li>
+<li><p>lower()   将所有英文字符变为小写<br>格式：str.lower()<br>返回值：返回所有英文字符小写的字符串  </p>
+</li>
+<li><p>swapcase()  大小写互相转换<br>格式：str.swapcase()<br>返回值：转换之后的字符串  </p>
+</li>
+<li><p>title()  按照标题格式进行大小写转换（每个单词首字母大写)<br>格式：str.title()<br>返回值：返回所有英文单词首字母大写的字符串  </p>
+</li>
+<li><p>len()  计算字符串的字符个数,以后也可以用于计算元组列表等序列<br>格式: len(str)<br>返回值:整型  </p>
+</li>
+<li><p>count()  计算一个字符串中出现指定字符串的次数<br>格式：str.count(‘查找的字符串’[,开始位置])<br>返回值:返回整型</p>
+</li>
+<li><p>find()  查找字符串中是否具有指定的字符串,查找不到返回-1<br>格式：str.find(查找的字符串[，开始位置])<br>返回值:第一次出现的位置</p>
+</li>
+<li><p>index()  查找字符串中是否具有指定的字符串，查找不到直接报错<br>格式：str.index(查找的字符串[，开始位置])<br>返回值:第一次出现的位置  </p>
+</li>
+<li><p>startswith()  检测字符串是否以指定的字符串开头<br>格式： str.startswith(‘查找的字符串’[，开始位置])<br>返回值：布尔值 </p>
+</li>
+<li><p>endswith()  检测字符串是否以指定的字符串结尾<br>格式： str.endswith(‘查找的字符串’[，开始位置])<br>返回值：布尔值  </p>
+</li>
+<li><p>isupper()  检测字符串中字母是否都是大写字母<br>格式：str.isupper()<br>返回值：布尔值  </p>
+</li>
+<li><p>islower()  检测字符串中的字母是否都是小写字母<br>格式：str.islower()<br>返回值：布尔值  </p>
+</li>
+<li><p>isalnum()  检测一个字符串是否都是有数字或者是否都是有字母组成<br>格式：str.isalnum()<br>返回值:布尔值<br>注意：空字符串返回False  </p>
+</li>
+<li><p>isalpha()  检测字符串是否都是有字母类型构成，汉字作为字母处理<br>格式：str.isalpha()<br>返回值：布尔值<br>注意：空字符串返回False</p>
+</li>
+<li><p>isdigit()  检测字符串是否由纯数字字符组成<br>格式：str.isdigit()<br>返回值：布尔值<br>注意：空字符串返回False  </p>
+</li>
+<li><p>isspace()  检测字符串是否完全由空白字符组成<br>格式：str.isspace()<br>返回值：布尔值<br>注意：回车，换行，缩进，空格都可以当作空白字符，空字符串是False</p>
+</li>
+<li><p>istitle()  检测字符串是否符合title()的结果，每个单词首字母大写<br>格式：str.istitle()<br>返回值：布尔值  </p>
+</li>
+<li><p>isnumeric()  检测字符串是否有纯数字构成<br>格式：str.isnumeric()<br>返回值：布尔值  </p>
+</li>
+<li><p>isdecimal()  检测字符串是否完全由十进制字符组成<br>格式：str.isdecimal()<br>返回值：布尔值  </p>
+</li>
+<li><p>split()  使用指定的字符将字符串卷拆解成多个字符串<br>格式： str.split(‘用于拆解的字符串’)<br>返回值：列表类型  </p>
+</li>
+<li><p>splitlines()  使用\n，\r或者\r\n切割字符串<br>格式：str.splitlines()<br>返回值：列表类型  </p>
+</li>
+<li><p>join()  使用指定的字符串将序列中的内容组成新的字符串<br>格式：连接字符串.join(序列)<br>返回值：组成的新的字符串  </p>
+</li>
+<li><p>zfill()  0填充操作<br>格式： str.zfill(长度)<br>返回值：填充0的字符串<br>注意：填充结果原有内容靠右对齐，前面位数不足使用0来补充，常用于数字类型字符串。  </p>
+</li>
+<li><p>center() 将字符串进行居中操作，并且在空白处进行填充<br>格式： str.center(未来字符宽度,空白填充字符)<br>返回值：新的字符串  </p>
+</li>
+<li><p>ljust（） 将字符串进行左对齐操作，并且在空白处进行填充<br>格式： str.ljust(未来字符宽度,空白填充字符)<br>返回值：新的字符串  </p>
+</li>
+<li><p>rjust() 将字符串进行右对齐操作，并且在空白处进行填充<br>格式： str.rjust(未来字符宽度,空白填充字符)<br>返回值：新的字符串   </p>
+</li>
+<li><p>lstrip() 去掉字符串左侧的空白<br>格式： str.lstrip()<br>返回值：字符串  </p>
+</li>
+<li><p>rstrip()去掉字符串右侧的空白<br>格式： str.rstrip()<br>返回值：字符串  </p>
+</li>
+<li><p>strip()去掉字符串两侧的空白<br>格式： str.strip()<br>返回值：字符串  </p>
+</li>
+<li><p>replace() 字符串替换操作<br>格式： str.replace(被替换的字符串,替换字符串)<br>返回值：替换之后的字符串、  </p>
+</li>
+<li><p>maketrans() 制作一个字符串映射表，为了给translate函数使用<br>格式:str.maketrans（’被替换的字符串’,’替换字符串’）<br>返回值：字典类型，被替换字符串组成键，替换字符串组成值<br>注意： 两个参数的字符串个数必须一一对应，这里的str不是值字符串，而是真正的str，也可以写空字符串代替str（字符串都是str制作的）  </p>
+</li>
+<li><p>translate() 进行字符串翻译操作，类似转换<br>格式：str.translate(映射表)<br>返回值:新的字符串<br>注意:translate用于多字符替换，replace用于长字符串替换  </p>
+</li>
+</ul>
+<h3 id="string模块相关内容"><a href="#string模块相关内容" class="headerlink" title="string模块相关内容"></a>string模块相关内容</h3><ul>
+<li><p>获取所有的空白字符:<br>print (string.whitespace)  </p>
+</li>
+<li><p>获取ascii码的所有字母表（包含大写和小写）:<br>print(string.ascii_letters)  </p>
+</li>
+<li><p>获取ascii码中的所有大写字母:<br>print(string.ascii_uppercase)  </p>
+</li>
+<li><p>获取ascii码中所有的小写字母:<br>print(string.ascii_lowercase)  </p>
+</li>
+<li><p>获取ascii码中所有10进制数字字符:<br>print(string.digits)  </p>
+</li>
+<li><p>获取八进制所有数字字符:<br>print(string.octdigits)  </p>
+</li>
+<li><p>获取十六进制的所有数字字符<br>print(string.hexdigits)  </p>
+</li>
+<li><p>打印所有可见字符<br>print(string.printable)  </p>
+</li>
+<li><p>打印所有标点符号<br>print(string.punctuation)  </p>
+</li>
+</ul>
+<h2 id="List类型-列表"><a href="#List类型-列表" class="headerlink" title="List类型 (列表)"></a>List类型 (列表)</h2><h3 id="列表的定义和访问："><a href="#列表的定义和访问：" class="headerlink" title="列表的定义和访问："></a>列表的定义和访问：</h3><ul>
+<li><p>列表的定义<br>变量 = [值,值,值….]<br>列表的标志符号是[]   </p>
+</li>
+<li><p>列表的访问操作<br>列表变量：[索引位置]<br>添加列表操作：不可以使用索引方式添加<br>修改列表操作：列表变量[索引位置] = 新值<br>删除列表操作：del 列表变量[索引位置] </p>
+</li>
+</ul>
+<h3 id="列表的序列操作"><a href="#列表的序列操作" class="headerlink" title="列表的序列操作"></a>列表的序列操作</h3><ul>
+<li><p>索引操作<br>格式： 列表变量[索引]  </p>
+</li>
+<li><p>分片操作<br>列表[:]<br>表示获取列表的所有数据<br>列表[开始索引：]<br>表示丛开始索引位置截取到列表的最后<br>列表[:结束索引]<br>表示从列表的开头截取到结束索引位置之前，不包含结束位置<br>列表[开始索引:结束索引]<br>表示从列表的开始索引位置截取到结束索引位置之前，不包含结束位置<br>列表[开始索引:结束索引:跳步值]<br>表示从开始索引位置到结束索引位置之间，不包含索引位置，并且获取数据时索引每次+跳步值来获取，默认跳步值为1  </p>
+</li>
+<li><p>序列相加<br>格式：列表 = 列表1 + 列表2</p>
+</li>
+<li><p>列表相乘<br>格式： 列表 = 列表1 * 整数<br>结果：将列表重复N分组成新的列表<br>注意： 数字必须为整数    </p>
+</li>
+<li><p>成员资格运算<br>格式1：数据  in 列表<br>作用：检测数据是否在列表当中<br>返回值：布尔值<br>格式2：数据  not in 列表<br>作用：检测数据是不是不在列表当中<br>返回值：布尔值</p>
+</li>
+<li><p>最大、最小、长度计算</p>
+</li>
+</ul>
+<h3 id="列表的遍历"><a href="#列表的遍历" class="headerlink" title="列表的遍历"></a>列表的遍历</h3><ul>
+<li><p>for i in 列表: </p>
+</li>
+<li><p>while i < length:</p>
+</li>
+<li><p>双层列表循环<br>列表 = [[值1,值2],[值1,值2]，[值1,值2]…]<br>for i,j in 列表:</p>
+</li>
+</ul>
+<h3 id="列表内涵：-list-content"><a href="#列表内涵：-list-content" class="headerlink" title="列表内涵： list content"></a>列表内涵： list content</h3><ul>
+<li><p>简单的列表内涵：<br>格式：[[变量 for [变量 in 列表]<br>作用：遍历列表中的数据并且组成新的列表，如果需要改变原有数据，在最开始i处修改<br>结果：新的列表  </p>
+</li>
+<li><p>带有判断的列表内涵<br>格式 [变量 for 变量 in 列表 判断条件]<br>作用：遍历列表中的数据，根据判断条件取出符合条件的数据组成新的列表<br>结果:新的列表  </p>
+</li>
+<li><p>多循环带判断的列表内涵<br>格式：[[变量1+变量2 for 变量1 in 列表1 for 变量2 in 列表2 判断条件]<br>作用：将列表1中和列表2中每个数据进行操作，但是必须在符合判断条件的前提下进行。<br>结果：新的列表  </p>
+</li>
+</ul>
+<h3 id="序列函数"><a href="#序列函数" class="headerlink" title="序列函数"></a>序列函数</h3><ul>
+<li><p>len() 获取列表的数据长度<br>格式：len(列表)<br>返回值：整型  </p>
+</li>
+<li><p>max() 获取列表中的最大值<br>格式：max(列表)<br>返回值：列表中的最大值  </p>
+</li>
+<li><p>min() 获取列表的最小值<br>格式：min(列表)<br>返回值：列表中的最小值  </p>
+</li>
+<li><p>list() 将其他序列类型转化为列表<br>格式：list(序列)<br>返回值：列表  </p>
+</li>
+</ul>
+<h3 id="列表专用函数"><a href="#列表专用函数" class="headerlink" title="列表专用函数"></a>列表专用函数</h3><ul>
+<li><p>append() 在列表的最后追加新数据<br>格式： 列表.append(数据)<br>返回值：无<br>注意：该操作直接改变原有列表  </p>
+</li>
+<li><p>insert() 在列表指定的位置插入数据<br>格式：列表.insert（索引,数据）<br>返回值：无<br>注意：该操作直接改变原有列表  </p>
+</li>
+<li><p>pop() 在列表中移除一个元素<br>格式：列表.pop()<br>返回值:移除掉的元素<br>注意：移除列表最后的元素  </p>
+</li>
+<li><p>格式：列表.pop(索引)<br>返回值：:移除掉的元素<br>注意：移除列表中指定索引的元素  </p>
+</li>
+<li><p>remove() 在列表中移除指定的值的元素<br>格式:列表.remove(值)<br>返回值：无<br>注意：该操作直接改变原有列表  </p>
+</li>
+<li><p>clear() 清空列表<br>格式：列表.clear()<br>返回值：无<br>注意：该操作直接改变原有列表  </p>
+</li>
+<li><p>reverse() 列表反转<br>格式：列表.reverse（）<br>返回值：无<br>注意：该操作直接改变原有列表  </p>
+</li>
+<li><p>extend() 在原有列表最后追加新的序列<br>格式:列表.extend(序列类型)<br>返回值：    无<br>注意：该操作直接改变原有列表  </p>
+</li>
+<li><p>count() 计算指定值在列表中出现的次数<br>格式: 列表.count(值)<br>返回值：整数  </p>
+</li>
+<li><p>copy() 复制原有列表<br>格式: 列表.copy()<br>返回值：新的列表 </p>
+</li>
+</ul>
+<h2 id="tuple类型-元组"><a href="#tuple类型-元组" class="headerlink" title="tuple类型(元组)"></a>tuple类型(元组)</h2><h3 id="元组的创建和特征"><a href="#元组的创建和特征" class="headerlink" title="元组的创建和特征"></a>元组的创建和特征</h3><ul>
+<li><p>元组的创建<br>创建空元组:变量 = ()<br>创建单个数据的元组: 变量 = (值,)   或  变量 = 值,<br>创建多个数据的元组: 变量 = (值,值，值…)  或者  变量 = 值,值，值…  </p>
+</li>
+<li><p>元组的特征<br>元组的关键符号是逗号而不是小括号。<br>元组不具备修改功能。<br>是一种特殊的列表。</p>
+</li>
+</ul>
+<h3 id="序列操作"><a href="#序列操作" class="headerlink" title="序列操作"></a>序列操作</h3><ul>
+<li><p>索引操作<br>元组[索引位置]  </p>
+</li>
+<li><p>分片操作<br>元组[:]<br>获取元素的所有数据<br>元组[开始索引:]<br>获取开始索引位置到最后的所有数据<br>元组[:结束索引]<br>获取元组开头到结束索引位置之前的所有数据（不包含结束位置）<br>元组[开始索引:结束索引]<br>获取元素开始索引位置到结束索引位置之间的所有数据（不包含结束位置）<br>元组[开始索引:结束索引:跳步值]<br>获取元素开始位置到结束索引之间的指定间隔的数据数据（不包含结束位置）  </p>
+</li>
+<li><p>相加操作<br>新元组 = 元组 + 元组  </p>
+</li>
+<li><p>相乘操作<br>新元组 = 元组 * 整数</p>
+</li>
+<li><p>成员检测<br>格式1:数据 in 元组<br>作用：检测数据是不是在元组当中<br>返回值：布尔值<br>格式2:数据 not in 元组<br>检测数据是否不在元组当中<br>返回值：布尔值</p>
+</li>
+</ul>
+<h3 id="元组的遍历"><a href="#元组的遍历" class="headerlink" title="- 元组的遍历"></a>- 元组的遍历</h3><ul>
+<li><p>for i in 元组：</p>
+</li>
+<li><p>双层元组循环<br>元组 = ((值1,值2),(值1,值2)，(值1,值2)…)<br>for i,j in 元组：</p>
+</li>
+</ul>
+<h3 id="元组的函数"><a href="#元组的函数" class="headerlink" title="元组的函数"></a>元组的函数</h3><ul>
+<li><p>len() 获取元组中数据的长度<br>格式： len(元组)<br>返回值：整数  </p>
+</li>
+<li><p>max() 返回元组中最大的值<br>格式：max(元组)  </p>
+</li>
+<li><p>min() 返回元组中的最小值<br>格式：min(元组)  </p>
+</li>
+<li><p>tuple() 将其他序列转化为元组类型<br>格式： tuple(任意序列)  </p>
+</li>
+</ul>
+<h3 id="元组的方法"><a href="#元组的方法" class="headerlink" title="元组的方法"></a>元组的方法</h3><ul>
+<li><p>count() 计算指定数据出现的次数<br>格式:元组.count(查找的数据)<br>返回值：整数  </p>
+</li>
+<li><p>index() 获取指定值在元组中的索引位置<br>格式：元组.index(查找的数据)<br>返回值：索引位置或者错误信息  </p>
+</li>
+<li><p>变量交换 （元组特殊用法）<br>a,b = b,a </p>
+</li>
+</ul>
+<h2 id="Dictionary类型-字典"><a href="#Dictionary类型-字典" class="headerlink" title="Dictionary类型(字典)"></a>Dictionary类型(字典)</h2><ul>
+<li><p>字典格式：<br>变量 = {键:值,键:值….}  </p>
+</li>
+<li><p>键就是标志或者说是目录,值就是真实的值  </p>
+</li>
+<li><p>字典的标志符号是{}   </p>
+</li>
+</ul>
+<h3 id="字典的创建和特征"><a href="#字典的创建和特征" class="headerlink" title="字典的创建和特征"></a>字典的创建和特征</h3><ul>
+<li><p>创建空字典<br>变量 = {} 或者 变量 = dict()</p>
+</li>
+<li><p>创建有数据的字典<br>变量 = {键:值,键:值,键:值…}<br>变量 = dict({键:值,键:值,键:值…})<br>变量 = dict(键=值,键=值,键=值…)<br>变量 = dict([(键,值),(键,值),（键,值）…])<br>变量 = dict(zip((键，键，键….),(值,值，值…)))</p>
+</li>
+<li><p>字典的特征<br>字典也是序列类型但是是无序序列，所以分片操作无法使用<br>字典中每个数据都由键和值两部分组成：<br>值：任意数据都可以当作值来使用<br>键：可以使用 int，float,str,tuple，冰冻集合，但是list，set，dict等不可以使用</p>
+</li>
+</ul>
+<h3 id="字典的基本操作"><a href="#字典的基本操作" class="headerlink" title="字典的基本操作"></a>字典的基本操作</h3><ul>
+<li><p>访问数据：<br>字典变量[键]</p>
+</li>
+<li><p>添加数据<br>字典变量[新键] = 值</p>
+</li>
+<li><p>修改数据<br>字典变量[键] = 新值</p>
+</li>
+<li><p>删除数据<br>del 字典变量[键]</p>
+</li>
+</ul>
+<h3 id="序列操作-1"><a href="#序列操作-1" class="headerlink" title="序列操作"></a>序列操作</h3><ul>
+<li><p>检测数据是否在字典的键中<br>格式：数据 in 字典</p>
+</li>
+<li><p>检测数据是否不再字典的键中<br>格式：数据 not in 字典</p>
+</li>
+</ul>
+<h3 id="遍历操作"><a href="#遍历操作" class="headerlink" title="遍历操作"></a>遍历操作</h3><ul>
+<li><p>键遍历操作: for k in 字典:</p>
+</li>
+<li><p>键值遍历: for k,v in 字典.items()：</p>
+</li>
+</ul>
+<h3 id="字典内涵"><a href="#字典内涵" class="headerlink" title="字典内涵"></a>字典内涵</h3><ul>
+<li><p>基本的字典内涵<br>变量= {key:value for key,value in 字典.items()}  </p>
+</li>
+<li><p>带有条件的字典内涵<br>变量 = {key:value for key,value in 字典.items() if 条件}  </p>
+</li>
+</ul>
+<h3 id="字典函数"><a href="#字典函数" class="headerlink" title="字典函数"></a>字典函数</h3><ul>
+<li><p>len() 计算字典的长度<br>格式： len(字典)<br>返回值:字典的长度</p>
+</li>
+<li><p>max() 获取字典中的最大值 （默认比较字典的键）<br>格式:max(字典)<br>返回值：最大的键</p>
+</li>
+<li><p>min() 获取字典中的最小值（默认比较字典的键）<br>格式：min(字典)<br>返回值:最小值</p>
+</li>
+<li><p>dict() 将其他序列转化为字典<br>详情请看字典的定义</p>
+</li>
+<li><p>str(字典) 返回字典的字符串格式</p>
+</li>
+</ul>
+<h3 id="字典方法"><a href="#字典方法" class="headerlink" title="字典方法"></a>字典方法</h3><ul>
+<li><p>clear() 清空字典<br>格式：字典.clear()<br>返回值：无  None<br>注意：直接改变原有字典  </p>
+</li>
+<li><p>items() 获取字典的键值对组成的元组格式<br>格式：字典.items()<br>返回值：将键值对变成元组的列表形式。<br>注意:返回的数据是内建的dict_items类型，专用于字典的转换中间类型  </p>
+</li>
+<li><p>keys() 获取字典中所有键组成的序列，常用语字典遍历<br>格式： 字典.keys()<br>返回值:返回所有键的组合<br>注意：类型为 dict_keysL类型，也是一种字典转换的中间类型  </p>
+</li>
+<li><p>values() 获取字典中所有值组成的序列，常用语字典遍历<br>格式： 字典.values()<br>返回值：所有值的组合<br>注意：类型为dict_values类型，也是一种字典转换的中间类型  </p>
+</li>
+<li><p>get（） 根据指定的键获取值<br>格式：字典.get(键,默认值)<br>返回值：字典键对应的数据<br>注意：如果键不存在与字典中，则返回默认值而不会报错  </p>
+</li>
+<li><p>pop() 根据键从字典中删除数据<br>格式:字典.pop(键)<br>返回值：删除的键对应的值<br>注意：pop在字典中使用必须有参数，因为字典无序序列，直接改变原有字典  </p>
+</li>
+<li><p>copy() 赋值一个字典<br>格式：字典.copy()<br>返回值：复制出来的新的字典  </p>
+</li>
+<li><p>setdefault() 设置字典中不存在的键的值<br>格式：字典.setdefault(键,默认值)<br>返回值：设置时的默认值<br>注意：如果设置时键已经存在于字典中，则不进行任何操作，直接改变原有字典  </p>
+</li>
+<li><p>fromkeys() 使用指定的序列作为键,使用一个值作为字典的所有值<br>格式:字典.fromkeys(序列,值)<br>返回值：由序列作为字典的键，由值作为所有键对应的值组成的字典  </p>
+</li>
+<li><p>update() 使用字典更新另外一个字典<br>格式：字典1.update(字典2)<br>返回值：无<br>注意:直接改变原有字典  </p>
+</li>
+</ul>
+<h2 id="Set类型（集合）"><a href="#Set类型（集合）" class="headerlink" title="Set类型（集合）"></a>Set类型（集合）</h2><h3 id="集合的创建和特征"><a href="#集合的创建和特征" class="headerlink" title="集合的创建和特征"></a>集合的创建和特征</h3><ul>
+<li><p>创建空集合<br>变量 = set()  </p>
+</li>
+<li><p>创建多个数据的集合<br>变量 = {值,值,值….}  </p>
+</li>
+<li><p>集合的特征<br>集合是一种无序的数据类型，无法通过索引和分片进行操作<br>集合是内部元素绝对唯一的数据，常常用于去掉重复数据<br>集合的数据，str，int，float,bool,tuple，冰冻集合。  </p>
+</li>
+</ul>
+<h3 id="集合序列操作"><a href="#集合序列操作" class="headerlink" title="集合序列操作"></a>集合序列操作</h3><ul>
+<li><p>检测数据是否在集合当中<br>格式：数据 in 集合</p>
+</li>
+<li><p>检测数据是否不在集合当中<br>格式：数据 not in 集合</p>
+</li>
+</ul>
+<h3 id="集合遍历操作"><a href="#集合遍历操作" class="headerlink" title="集合遍历操作"></a>集合遍历操作</h3><ul>
+<li><p>for i in 集合:</p>
+</li>
+<li><p>带有元组的集合遍历<br>集合 = {(值1,值2..),(值3,值4..)…}<br>for i,j in 集合:</p>
+</li>
+</ul>
+<h3 id="集合内涵"><a href="#集合内涵" class="headerlink" title="集合内涵"></a>集合内涵</h3><ul>
+<li><p>普通集合内涵<br>新集合 = {变量 for 变量 in 集合}  </p>
+</li>
+<li><p>带条件的集合内涵<br>新集合 = {变量 for 变量 in 集合 if 条件}  </p>
+</li>
+<li><p>多循环的集合内涵<br>新集合 = {变量1+变量2 for 变量1 in 集合1 for 变量2 in 集合2 if 条件}    </p>
+</li>
+</ul>
+<h3 id="集合函数"><a href="#集合函数" class="headerlink" title="集合函数"></a>集合函数</h3><ul>
+<li><p>len() 获取集合中元素的个数<br>格式:len(集合)<br>返回值：整数</p>
+</li>
+<li><p>max() 获取集合中最大的元素<br>格式:max(集合)<br>返回值：集合中最大的值</p>
+</li>
+<li><p>min() 获取集合中最小的元组<br>格式：min(集合)<br>返回值：集合中的最小值</p>
+</li>
+<li><p>set() 将其他序列转化为集合类型<br>格式：set(序列)<br>返回值：集合类型</p>
+</li>
+</ul>
+<h3 id="集合方法"><a href="#集合方法" class="headerlink" title="集合方法"></a>集合方法</h3><ul>
+<li><p>add() 向集合中添加数据<br>格式： 集合.add(数据)<br>返回值：无<br>注意：直接改变原有集合，已存在的数据无法添加</p>
+</li>
+<li><p>clear() 清空集合<br>格式：集合.clear()<br>返回值：无<br>注意：直接改变原有集合</p>
+</li>
+<li><p>copy() 集合复制<br>格式:集合.copy()<br>返回值:原集合所有数据组成的新的集合</p>
+</li>
+<li><p>remove() 移除指定的值<br>格式:集合.remove(值)<br>返回值：无<br>注意：直接改变原有集合，如果要删除的值不存在，就报错</p>
+</li>
+<li><p>discard()移除集合中指定的值<br>格式:集合.discard(值)<br>返回值：无<br>注意：直接改变原有集合，如果要删除的值不存在，就不作任何操作</p>
+</li>
+<li><p>pop() 随机移除一个元素<br>格式：集合.pop（）<br>返回值：被移除的元素<br>注意：随机移除元素，没啥规律</p>
+</li>
+<li><p>intersection() 计算两个值集合之间的交集<br>格式： 集合1.intersection(集合2)<br>返回值：新的集合</p>
+</li>
+<li><p>difference() 计算两个集合之间的差集<br>格式： 集合1.difference(集合2)<br>返回值:新的集合</p>
+</li>
+<li><p>union() 计算两个集合之间的并集操作<br>格式：集合1.union（集合2）<br>返回值：新的集合</p>
+</li>
+<li><p>issubset() 检测一个集合是否是另外一个集合的子集<br>格式：集合1.issubset(集合2)<br>返回值：布尔值</p>
+</li>
+<li><p>issuperset() 检测一个集合是否是另外一个和集合的超集<br>格式：集合1.issuperset(集合2)<br>返回值：布尔值</p>
+</li>
+<li><p>difference_update（） 计算集合1和集合2的差集并且将结果赋值给集合1<br>格式：集合1.difference_update(集合2)<br>返回值:无<br>注意：操作结果直接赋值给集合1</p>
+</li>
+<li><p>intersection_update() 计算集合1和集合2的交集并且将结果赋值给集合1<br>格式：集合1.intersection_update(集合2)<br>返回值：无<br>注意:操作结果直接赋值给集合1</p>
+</li>
+<li><p>update() 计算集合1和集合2的并集并且将并集结果赋值给集合1<br>格式：集合1.update(集合2)<br>返回值:无<br>注意:操作结果直接赋值给集合1</p>
+</li>
+</ul>
+<h3 id="冰冻集合-固定集合-frozen"><a href="#冰冻集合-固定集合-frozen" class="headerlink" title="冰冻集合/固定集合 frozen"></a>冰冻集合/固定集合 frozen</h3><ul>
+<li><p>冰冻集合就是不可以进行任何修改相关操作的集合</p>
+</li>
+<li><p>创建冰冻集合<br>创建空的冰冻集合: 变量 = frozenset()<br>创建具有数据的冰冻集合: 变量 = fronzenset(一个序列)  </p>
+</li>
+<li><p>操作方法和函数<br>冰冻集合的操作相关函数和方法同集合类型一样。<br>只是不可以使用修改集合相关的方法和函数。  </p>
+</li>
+<li><p>注意:<br>frozenset 和普通的集合一样没有什么本质区别，能够使用的函数数量不一样，仅此而已哦</p>
+</li>
+</ul>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><p>类型转换会向着更加精确的类型进行转换  </p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p>强制类型转换是根据程序需要，由程序员通过操作强制改变数据的类型。  </p>
+<ul>
+<li><p>int（) 强制将数据转化为整型<br>纯数字字符串转化为整型时，类型改变，值不变<br>只有纯整数字符串才可以转换，其他均不可以<br>浮点型可以转化为整型，去掉小数点后面的部分 </p>
+</li>
+<li><p>float() 强制将数据转化为浮点型<br>整数字符串和浮点数字符串均可以转化为浮点型<br>转化过程中类型改变，值不变<br>整型也可以用于浮点型转换     </p>
+</li>
+<li><p>complex（） 生成一个复数  </p>
+</li>
+<li><p>bool() 强制将数据转化为布尔值<br>能够转化为布尔值False的情况：<br>① 字符串 空字符串 ② 整型 0  ③浮点型 0.0 ④ 复数 0+0j ⑤ 布尔值 Flase ⑥ 列表 [] 空列表 ⑦ 元组 () 空元组 ⑧ 字典 {} 空字典 ⑨ 集合 set（）空集合  </p>
+</li>
+<li><p>str() 字符串类型转换<br>所有数据类型都可以转换为字符串，转换规则就是在原有数据基础上加了引号变成了字符串的格式。例如：[1，2，3] =<br>“[1，2，3]”  </p>
+</li>
+<li><p>list() 将其他数据转换为列表类型<br>能够进行list转换的数据类型：str 、set 、tuple 、 dict （iterable数据）</p>
+</li>
+<li><p>tuple() 将其他数据类型转换为元组类型<br>能够进行list转换的数据类型：str 、set 、tuple 、 dict （iterable数据）  </p>
+</li>
+<li><p>dict() 将其他数据转化为字典类型<br>字典类型转换可以转化的类型有三种：list 、tuple 、set<br>以上所有类型的每个数据必须由元组组成，并且每个元组必须有2个值<br>例子：<br>{(‘aa’,’AA’),(‘bb’,’BB’),(‘cc’,’CC’)}<br>[(‘aa’,’AA’),(‘bb’,’BB’),(‘cc’,’CC’)]<br>((‘aa’,’AA’),(‘bb’,’BB’),(‘cc’,’CC’))    </p>
+</li>
+<li><p>set() 集合类型转换<br>能够进行list转换的数据类型：str 、set 、tuple 、 dict （iterable数据） </p>
+</li>
+</ul>
+<h1 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h1><h2 id="利用百分号格式化"><a href="#利用百分号格式化" class="headerlink" title="利用百分号格式化"></a>利用百分号格式化</h2><ul>
+<li>%d 此处应该放入一个整数<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = "i am %d years old"</span><br><span class="line">print (s%18)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>%s 放入一个字符串 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = "i am %s"</span><br><span class="line">print ("i love %s"%"KI")</span><br><span class="line">print (s%"KIOVEN")</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>如果出现多个占位符，则相应内容需要用括号括起来</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = "i am %s,i am %d years old"</span><br><span class="line">print (s%("ouwen",18))</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<h2 id="利用format格式化"><a href="#利用format格式化" class="headerlink" title="利用format格式化"></a>利用format格式化</h2><ul>
+<li>以{}和： 代替%号，后面用format带参数完成<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = 'i love {}'.format("you")</span><br><span class="line">print (s)</span><br><span class="line"></span><br><span class="line">s = "i am {1} years old,i love {0} and {1} years old".format("tulingxueyuan",24)</span><br><span class="line">print (s)</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<h1 id="表达式、运算符"><a href="#表达式、运算符" class="headerlink" title="表达式、运算符"></a>表达式、运算符</h1><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>由变量、运算符、数字、数字分组符号（括号）等以能求得数值的有意义排列方法所得的组合。</p>
+<h2 id="运算符的分类"><a href="#运算符的分类" class="headerlink" title="运算符的分类"></a>运算符的分类</h2><ul>
+<li>算术运算  </li>
+<li>比较运算/关系运算  </li>
+<li>赋值运算  </li>
+<li>逻辑运算  </li>
+<li>位运算  </li>
+<li>成员运算  </li>
+<li>身份运算  </li>
+</ul>
+<h3 id="算数运算"><a href="#算数运算" class="headerlink" title="算数运算"></a>算数运算</h3><pre><code>+  -  *  /  %(取余)  //(地板除，取商)  **幂运算 
+</code></pre><p>注意：<br>    python中没有自增自减的 ++ 或者– 运算<br>    混合计算时，Python会把整型转换成为浮点数  </p>
+<h3 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h3><pre><code>==  ！=  >   <   >=  <= < code></=></code></pre><p>注意：在python中没有 === 和 ！==运算，只要类型不同就是不等于</p>
+<h3 id="赋值运算"><a href="#赋值运算" class="headerlink" title="赋值运算"></a>赋值运算</h3><pre><code>=   +=  -=  *=  /=  //= **=
+</code></pre><p>注意：a <em>= b 转换之后的表达式为 a = a </em> b 无论何种赋值运算都符合这个格式      </p>
+<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><p>逻辑运算是布尔值之间的运算<br>and 与运算：有假则假<br>or 或运算：有真则真<br>not 非运算:真变假，假变真</p>
+<h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3><p>位运算就是在二进制基础上进行的逻辑运算，将0视为False，将1视为True进行的运算     </p>
+<ul>
+<li>&   按位与运算</li>
+<li>|   按位或运算</li>
+<li><p>～   按位非运算<br>注意：按位非运算之后计算机会进行反码和补码的相关操作之后进行数据存储   </p>
+</li>
+<li><p>^   按位抑或运算:将数据转化为2进制数据然后进行每个位上的逻辑抑或运算<br>变量 = 值1 ^ 值2  </p>
+</li>
+<li><p>左移运算:将数据转化为二进制之后，将二进制数据的所有数据向左移动指定的位数<br>变量 = 值  <<  移动位数<br>特征：左移N位相当于乘以2的N次方，此方法速度远高于乘法   </p>
+</li>
+<li><p>右移运算<br>将数据转化为二进制之后，将二进制数据的所有数据向右移动指定的位数，如果数据移除右侧边界，则会被删除，实际上相当于采用了地板除！<br>变量 = 值 >>  移动位数<br>特征：右移N位相当于除以2的N次方，舍弃小数部分。此方法速度远高于除法 </p>
+</li>
+</ul>
+<h3 id="成员运算"><a href="#成员运算" class="headerlink" title="成员运算"></a>成员运算</h3><ul>
+<li><p>in 检测一个值在指定的序列类型里面<br>格式：  值 in 可迭代序列  </p>
+</li>
+<li><p>not in 检测一个值是否不再指定的序列里面<br>格式：  值 not in 可迭代序列</p>
+</li>
+</ul>
+<h3 id="身份运算"><a href="#身份运算" class="headerlink" title="身份运算"></a>身份运算</h3><ul>
+<li><p>is 检测值1是不是和值2在内存中是否是同一个值，类似id()功能<br>格式: 数据1 is 数据2  </p>
+</li>
+<li><p>is not 检测值1是不是和值2在内存中是否不是同一个值，类似id()功能<br>格式:   数据1 is not 数据2 </p>
+</li>
+</ul>
+<h3 id="检测数据归属"><a href="#检测数据归属" class="headerlink" title="检测数据归属"></a>检测数据归属</h3><ul>
+<li><p>type() 测试时可以使用，开发尽量避免使用<br>格式：type(变量)  </p>
+</li>
+<li><p>isinstance() 检测一个数据是否由指定的类型创建<br>格式：isinstance(变量，检测的类型)  </p>
+</li>
+</ul>
+<h3 id="运算优先级问题"><a href="#运算优先级问题" class="headerlink" title="运算优先级问题"></a>运算优先级问题</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">**  指数 (最高优先级)  </span><br><span class="line">~ + -   按位翻转, 一元加号和减号 (最后两个的方法名为 +@ 和 -@)  </span><br><span class="line">* / % //    乘，除，取模和取整除  </span><br><span class="line">+ - 加法减法  </span><br><span class="line">>> <<   右移，左移运算符  </span><br><span class="line">&   位 <span class="string">'AND'</span>  </span><br><span class="line">^ | 位运算符  </span><br><span class="line"><= <> >=   比较运算符  </=></span><br><span class="line">== !=    等于运算符  </span><br><span class="line">= %= /= //= -= += *= **=    赋值运算符   </span><br><span class="line"><span class="keyword">is</span> <span class="keyword">is</span> <span class="keyword">not</span>   身份运算符  </span><br><span class="line"><span class="keyword">in</span> <span class="keyword">not</span> <span class="keyword">in</span>   成员运算符  </span><br><span class="line"><span class="keyword">not</span> <span class="keyword">or</span> <span class="keyword">and</span>  逻辑运算符    </span><br><span class="line">注意：我们并不推荐死记硬背优先级，在实际使用中最好使用()解决优先级问题</span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-21T01:21:36.772Z" itemprop="dateUpdated">2019-07-21 09:21:36</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/25/Python/01.Basic-level/01.Python的语法基础/" target="_blank" rel="external">http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="DuKe">
+            DuKe
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/&title=《Python 的语法基础》 — AIR PAN&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/&title=《Python 的语法基础》 — AIR PAN&source=Waiting...." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python 的语法基础》 — AIR PAN&url=http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/04/27/Python/01.Basic-level/02.Python的流程控制/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Python 的流程控制</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/04/Html/01.Html/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">HTML 前端课程</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>DuKe &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/&title=《Python 的语法基础》 — AIR PAN&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/&title=《Python 的语法基础》 — AIR PAN&source=Waiting...." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python 的语法基础》 — AIR PAN&url=http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/25/Python/01.Basic-level/01.Python的语法基础/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aQW7jMBAEwPz/07vXAIbl7hkx8qF0MuKYZPFADZrz8xM//349v//y+vn629f/vJ7x3ew3P3h4eHiLpb8++bKuR8jZ7+Z6B76eEQ8PD+8crx3u+shOtikZbbMFeHh4eN/Ja8vr2Qspf1Hh4eHhfRsvGu4ywthvBx4eHt738PID+q6od5bHHsxa8PDw8GLebOhnPx+538PDw8Nb36onT/JKyFsBkhGKteHh4eEd4LWHcvJtW+DOQt5ic/Hw8PAO89pWqtlvN00J+asFDw8P7xwvaQ7YtwUki9vMWAcTeHh4eCPeXc0BeeDbBhDXRfOH1xUeHh7eQ7zZ0pMQNm8OaAv9Yufw8PDwRrxZ+Ztf8OewPPjAw8PDe4o3iw/yKfNtymPiYTyBh4eHdxOvLYXzYrq9GNvkrh/arfDw8PBu5c0GmpXU+0UPtxUPDw/vVl4eRuSDng5w8fDw8J7lJT9rv22bDDZztRd4eHh4eHteewGWXFPN2qfyZoUiyMDDw8M7xtscxO0Im7C4bjjAw8PD+xNe3gSQH9ybdqvVxRseHh7eMV4bLsyi2LYEnyFvyE7w8PDwAt7+Cn8fH+wjjA8lNR4eHt4BXh2SLkrqGbVta8DDw8M7zcvj1Dauba/N2g2qS2o8PDy8Ba9ddDLB5tUSXWu1Dx4eHt6tvPYQz4/1NnJtA+UIj4eHh3eA1wYNs3N4dpK3875dLR4eHt6tvNlrYBZYzGKItvSv+7nw8PDw1sFEe/jOYogck9fGKzAeHh7eqKtzduHUNgTMopD81YKHh4f3l7w8/9w3abUl+OoCDw8PD+9RXnLo31Uc5+APf8HDw8N7lNfGE/loecTQFu54eHh453htEJAHDW1AnLdbFZ0ReHh4eLfy2naodukJJimXDzYT4OHh4aW8/6ZG2k+Xy4JXAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

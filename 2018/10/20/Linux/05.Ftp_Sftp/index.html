@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Linux Ftp | AIR PAN | NOTE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#0000">
+    
+    
+    <meta name="keywords" content="Linux">
+    <meta name="description" content="「Ftp」「Sftp」">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux Ftp">
+<meta property="og:url" content="http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/index.html">
+<meta property="og:site_name" content="AIR PAN">
+<meta property="og:description" content="「Ftp」「Sftp」">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-21T01:21:36.746Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux Ftp">
+<meta name="twitter:description" content="「Ftp」「Sftp」">
+    
+        <link rel="alternate" type="application/atom+xml" title="AIR PAN" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-dedent"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">DuKe</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-th-list"></i>
+                Archinves
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-folder"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-bookmark"></i>
+                Books
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://web.geekji.cn/" target="_blank">
+                <i class="icon icon-lg icon-paperclip"></i>
+                Share
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about">
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/airpan" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-indent"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Linux Ftp</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Linux Ftp</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-20T10:11:07.000Z" itemprop="datePublished" class="page-time">
+  2018-10-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Linux-Ftp、Sftp"><span class="post-toc-number">1.</span> <span class="post-toc-text">Linux Ftp、Sftp</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ftp常见命令详解"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Ftp常见命令详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登录Ftp服务器"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">登录Ftp服务器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看Ftp服务器上的文件"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">查看Ftp服务器上的文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载文件"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">下载文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#上传文件"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">上传文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结束并退出Ftp"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">结束并退出Ftp</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其它Ftp命令"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">其它Ftp命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Sftp常见命令详解"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Sftp常见命令详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登录Sftp服务器"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">登录Sftp服务器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看Sftp-服务器上的文件"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">查看Sftp 服务器上的文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载文件-1"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">下载文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#上传文件-1"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">上传文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建目录"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">创建目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结束并退出Sftp"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">结束并退出Sftp</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他Sftp-命令"><span class="post-toc-number">1.2.7.</span> <span class="post-toc-text">其他Sftp 命令</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Linux/05.Ftp_Sftp" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Linux Ftp</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-20 18:11:07" datetime="2018-10-20T10:11:07.000Z" itemprop="datePublished">2018-10-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Linux-Ftp、Sftp"><a href="#Linux-Ftp、Sftp" class="headerlink" title="Linux Ftp、Sftp"></a>Linux Ftp、Sftp</h1><p>sftp命令可以通过ssh来上传和下载文件，是常用的文件传输工具，它的使用方式与ftp类似，但它使用ssh作为底层传输协议，所以安全性比ftp要好得多。</p>
+<h2 id="Ftp常见命令详解"><a href="#Ftp常见命令详解" class="headerlink" title="Ftp常见命令详解"></a>Ftp常见命令详解</h2><h3 id="登录Ftp服务器"><a href="#登录Ftp服务器" class="headerlink" title="登录Ftp服务器"></a>登录Ftp服务器</h3><p>格式：直接输入ftp加ip地址:ftp 192.168.10.xxx<br>格式：直接输入ftp，进入ftp服务后输入open加ip地址:open 192.168.10.xxx </p>
+<h3 id="查看Ftp服务器上的文件"><a href="#查看Ftp服务器上的文件" class="headerlink" title="查看Ftp服务器上的文件"></a>查看Ftp服务器上的文件</h3><p>（一般情况下用户都会被限制目录的访问权限，只可在当前目录下进行操作）<br>dir：显示服务器目录和文件列表<br>ls：显示服务器简易的文件列表<br>cd：进入服务器指定的目录</p>
+<p>dir命令可以使用通配符“”和“?”，比如，显示当前目录中所有扩展名为jpg的文件，可使用命令 dir .jpg。<br>cd命令中必须带目录名。比如 cd main 表示进入当前目录下的main子目录</p>
+<h3 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h3><p>上传和下载文件时应该使用正确的传输类型，FTP的传输类型分为ASCII码方式和二进制方式两种，<br>对.txt、.htm等文件应采用ASCII码方式传输，对.exe或图片、视频、音频等文件应采用二进制方式传输。在默认情况下，FTP为ASCII码传输方式。 </p>
+<p>type：查看当前的传输方式<br>ascii：设定传输方式为ASCII码方式<br>binary：设定传输方式为二进制方式  </p>
+<p>get：下载指定文件get filename [newname]<br>mget：下载多个文件mget filename [filename ….]（mget命令支持通配符“”和“?”，比如：mget .mp3 表示下载FTP服务器当前目录下的所有扩展名为mp3的文件。）</p>
+<h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><p>put：上传指定文件put filename [newname]<br>send：上传指定文件send filename [newname] </p>
+<p>这里的send和put方法用法都基本相同，但是上传速度send却要比put快很多</p>
+<h3 id="结束并退出Ftp"><a href="#结束并退出Ftp" class="headerlink" title="结束并退出Ftp"></a>结束并退出Ftp</h3><p>close：结束与服务器的FTP会话<br>quit：结束与服务器的FTP会话并退出FTP环境  </p>
+<h3 id="其它Ftp命令"><a href="#其它Ftp命令" class="headerlink" title="其它Ftp命令"></a>其它Ftp命令</h3><p>pwd：查看Ftp服务器上的当前工作目录<br>rename filename newfilename：重命名FTP服务器上的文件<br>deletefilename：删除FTP服务器上的文件<br>help[cmd]：显示FTP命令的帮助信息，cmd是命令名，如果不带参数，则显示所有FTP命令  </p>
+<h2 id="Sftp常见命令详解"><a href="#Sftp常见命令详解" class="headerlink" title="Sftp常见命令详解"></a>Sftp常见命令详解</h2><h3 id="登录Sftp服务器"><a href="#登录Sftp服务器" class="headerlink" title="登录Sftp服务器"></a>登录Sftp服务器</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">格式：sftp <host></host></span><br><span class="line">通过sftp连接<host>，端口为默认的22，用户为Linux当前登录用户。</host></span><br><span class="line"></span><br><span class="line">格式：sftp -oPort=<port> <host></host></port></span><br><span class="line">通过sftp连接<host>，指定端口<port>，用户为Linux当前登录用户。</port></host></span><br><span class="line"></span><br><span class="line">格式：sftp <user>@<host></host></user></span><br><span class="line">通过sftp连接<host>，端口为默认的22，指定用户<user>。</user></host></span><br><span class="line"></span><br><span class="line">格式：sftp -oPort=<port> <user>@<host></host></user></port></span><br><span class="line">通过sftp连接<host>，端口为<port>，用户为<user>。</user></port></host></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="查看Sftp-服务器上的文件"><a href="#查看Sftp-服务器上的文件" class="headerlink" title="查看Sftp 服务器上的文件"></a>查看Sftp 服务器上的文件</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">help/? 打印帮助信息   </span><br><span class="line">pwd 查看远程服务器当前目录   </span><br><span class="line">lpwd 查看本地系统的当前目录  </span><br><span class="line"></span><br><span class="line">cd <dir> 将远程服务器的当前目录更改为<dir>   </dir></dir></span><br><span class="line">lcd <dir> 将本地系统的当前目录更改为<dir>  </dir></dir></span><br><span class="line"></span><br><span class="line">ls 显示远程服务器上当前目录的文件名   </span><br><span class="line">ls -l 显示远程服务器上当前目录的文件详细列表；   </span><br><span class="line"></span><br><span class="line">ls <pattern> 显示远程服务器上符合指定模式<pattern>的文件名；  </pattern></pattern></span><br><span class="line">ls -l <pattern>  显示远程服务器上符合指定模式<pattern>的文件详细列表   </pattern></pattern></span><br><span class="line">lls 显示本地系统上当前目录的文件名,lls的其他参数与ls命令的类似</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="下载文件-1"><a href="#下载文件-1" class="headerlink" title="下载文件"></a>下载文件</h3><p>get <file> 下载指定文件<file><br>get <pattern> 下载符合指定模式<pattern>的文件</pattern></pattern></file></file></p>
+<h3 id="上传文件-1"><a href="#上传文件-1" class="headerlink" title="上传文件"></a>上传文件</h3><p>put <file> 上传指定文件<file>；<br>get <pattern> 上传符合指定模式<pattern>的文件。</pattern></pattern></file></file></p>
+<h3 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">progress 切换是否显示文件传输进度</span><br><span class="line">mkdir <dir> 在远程服务器上创建目录</dir></span><br><span class="line">lmkdir <dir> 在本地系统上创建目录</dir></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="结束并退出Sftp"><a href="#结束并退出Sftp" class="headerlink" title="结束并退出Sftp"></a>结束并退出Sftp</h3><p>exit/quit/bye 退出sftp</p>
+<h3 id="其他Sftp-命令"><a href="#其他Sftp-命令" class="headerlink" title="其他Sftp 命令"></a>其他Sftp 命令</h3><p>其他命令还有：chgrp, chmod, chown, ln, lumask, rename, rm, rmdir, symlink, version。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-21T01:21:36.746Z" itemprop="dateUpdated">2019-07-21 09:21:36</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/10/20/Linux/05.Ftp_Sftp/" target="_blank" rel="external">http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="DuKe">
+            DuKe
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/&title=《Linux Ftp》 — AIR PAN&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/&title=《Linux Ftp》 — AIR PAN&source=Waiting...." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux Ftp》 — AIR PAN&url=http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/11/04/Linux/02.Grep/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Linux Grep</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/04/Linux/01.Linux常用命令/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Linux 常用命令</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>DuKe &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/&title=《Linux Ftp》 — AIR PAN&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/&title=《Linux Ftp》 — AIR PAN&source=Waiting...." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux Ftp》 — AIR PAN&url=http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/10/20/Linux/05.Ftp_Sftp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3aS46DMBBF0ex/0/Q0Ugf7vjKJ5PL1CBEIPgxK9eH1wut6W3fnyTXj83dXPrZkyJCxLeMarvdr/h+Pfx0fj3l8bzJkyDiHcRfBxsGRb4sEa/LKbs/LkCFDBk7a0oDL75IhQ4aMdEO8oOWp55gnQ4YMGfwxtQJ1UoL+shaXIUPGhgzedf/98VfmGzJkyNiKcS2vWuLIB5loDzJkyGjNWB868iSPhG+eXH64V4YMGU0Z44KQF5C1tlptODqpwmXIkHEAg2w3rSjX23CTFpsMGTKOYaTt+FpK91SwntTiMmTIaMogJehTY8s0+Zv8pwwZMlozap9c/H5IGbT5ZMiQ0ZTBH8bPrCedpDEnQ4aMExjpYCC9hiedSymmDBkyWjN40kbOr//POHxPXpwMGTKOYdSCYBqCg7wVh34ZMmT0ZvBPS9NilY8B+DAg6M/JkCGjEYM8kjfo0wHACgZluDJkyNicwUtKHlLXA3dcKsuQIeN4Bk/jnmrVkYSyOGeQIUPGhgx+A3lkOsgkbTueYsqQIaMrgzfI1h/MkWmrToYMGb0ZaVMsDbhpu42PLoI8V4YMGZszrnClH2HUCuB0VCBDhozeDL7SkMp5tZq0uGTIkLEtgwTHlY8hvhFwbzNcGTJktGakgS/9hIJcz0P/h7tkyJAhAyRztTYcL3cnbBkyZMjAm6glfLwMliFDxskMXsTWmvjPBvfb1FCGDBlNGSulY5oskiQvHYLKkCGjNeMPJhLCeBPtBdkAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

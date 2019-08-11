@@ -47,39 +47,81 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" <% if((is_post() || page.layout === 'page') && theme.hideMenu){ %>class="hide"<% } %> >
+    <aside id="menu">
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
+        <i class="icon icon-lg icon-dedent"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(<%- url_for(theme.brand) %>)">
+    <div class="brand-wrap" style="background-image:url(/)">
       <div class="brand">
-        <a href="<%- url_for(theme.avatar_link) %>" class="avatar waves-effect waves-circle waves-light">
-          <img src="<%- url_for(theme.avatar) %>">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
-          <h5 class="nickname"><%- config.author %></h5>
-          <%- mail_to(theme.email, theme.email, {class: 'mail'}) %>
-        </hgroup>
+          <h5 class="nickname">DuKe</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
-        <%
-          var menuItem, isActive = function(item) {
-              var pageUrl = url_for(page.path)
-              return item.url === '/' ? pageUrl === url_for(item.url + 'index.html') : _.startsWith(pageUrl, url_for(item.url))
-          };
-          for (var i in theme.menu) {
-            menuItem = theme.menu[i];
-          %>
-            <li class="waves-block waves-effect<% if(isActive(menuItem)){ %> active<% } %>">
-              <a href="<%- url_for(menuItem.url) %>" <% if(menuItem.target){ %>target="_blank"<% } %> >
-                <i class="icon icon-lg icon-<%= i %>"></i>
-                <%=(menuItem.text || _.startCase(i)) %>
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
               </a>
             </li>
-        <% } %>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-th-list"></i>
+                Archinves
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect active">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-folder"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-bookmark"></i>
+                Books
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://web.geekji.cn/" target="_blank">
+                <i class="icon icon-lg icon-paperclip"></i>
+                Share
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about">
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/airpan" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
       </ul>
     </div>
   </div>
@@ -138,11 +180,11 @@
 
         
 
-            <a href="/tags/Prometheus/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Prometheus</a>
+            <a href="/tags/MySQL/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">MySQL</a>
 
         
 
-            <a href="/tags/MySQL/" style="-webkit-order:4;order:4" class="tags-list-item waves-effect waves-button waves-light">MySQL</a>
+            <a href="/tags/Prometheus/" style="-webkit-order:4;order:4" class="tags-list-item waves-effect waves-button waves-light">Prometheus</a>
 
         
 
@@ -154,11 +196,11 @@
 
         
 
-            <a href="/tags/Python/" style="-webkit-order:7;order:7" class="tags-list-item waves-effect waves-button waves-light">Python</a>
+            <a href="/tags/Ansible/" style="-webkit-order:7;order:7" class="tags-list-item waves-effect waves-button waves-light">Ansible</a>
 
         
 
-            <a href="/tags/Ansible/" style="-webkit-order:8;order:8" class="tags-list-item waves-effect waves-button waves-light">Ansible</a>
+            <a href="/tags/Python/" style="-webkit-order:8;order:8" class="tags-list-item waves-effect waves-button waves-light">Python</a>
 
         
     </nav>
@@ -401,7 +443,7 @@
                 <div class="waterfall-item">
   <article class="article-card archive-article">
     <div class="post-meta">
-      <time class="post-time" title="2018-10-01 18:11:07" datetime="2018-10-01T10:11:07.000Z" itemprop="datePublished">2018-10-01</time>
+      <time class="post-time" title="2018-10-04 18:11:07" datetime="2018-10-04T10:11:07.000Z" itemprop="datePublished">2018-10-04</time>
 
       
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
@@ -414,7 +456,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/10/01/Linux/01.Linux系统运维/">Linux 系统运维</a>
+      <a class="post-title-link" href="/2018/10/04/Linux/01.Linux常用命令/">Linux 常用命令</a>
     </h3>
   
 
@@ -435,7 +477,7 @@
                 <div class="waterfall-item">
   <article class="article-card archive-article">
     <div class="post-meta">
-      <time class="post-time" title="2018-10-04 18:11:07" datetime="2018-10-04T10:11:07.000Z" itemprop="datePublished">2018-10-04</time>
+      <time class="post-time" title="2018-10-01 18:11:07" datetime="2018-10-01T10:11:07.000Z" itemprop="datePublished">2018-10-01</time>
 
       
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
@@ -448,7 +490,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/10/04/Linux/01.Linux常用命令/">Linux 常用命令</a>
+      <a class="post-title-link" href="/2018/10/01/Linux/01.Linux系统运维/">Linux 系统运维</a>
     </h3>
   
 
@@ -492,47 +534,6 @@
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </div>
-    
-  </article>
-</div>
-
-            
-            </div>
-            
-
-            <h3 class="archive-separator" id="tag-Prometheus">Prometheus</h3>
-
-            <div class="waterfall">
-            
-
-                <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2019-05-01 18:11:07" datetime="2019-05-01T10:11:07.000Z" itemprop="datePublished">2019-05-01</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Prometheus/">Prometheus</a></li></ul>
-
-
-
-    </div>
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/05/01/Prometheus/01.pro/">Prometheus</a>
-    </h3>
-  
-
-
-
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Prometheus/">Prometheus</a></li></ul>
 
     </div>
     
@@ -686,6 +687,47 @@
             </div>
             
 
+            <h3 class="archive-separator" id="tag-Prometheus">Prometheus</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2019-05-01 18:11:07" datetime="2019-05-01T10:11:07.000Z" itemprop="datePublished">2019-05-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Prometheus/">Prometheus</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/05/01/Prometheus/01.pro/">Prometheus</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Prometheus/">Prometheus</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
             <h3 class="archive-separator" id="tag-Wordpress">Wordpress</h3>
 
             <div class="waterfall">
@@ -768,6 +810,47 @@
             </div>
             
 
+            <h3 class="archive-separator" id="tag-Ansible">Ansible</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2019-05-08 18:11:07" datetime="2019-05-08T10:11:07.000Z" itemprop="datePublished">2019-05-08</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Ansible/">Ansible</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/05/08/Ansible/01.ansible/">Ansible 基础 「一」</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ansible/">Ansible</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
             <h3 class="archive-separator" id="tag-Python">Python</h3>
 
             <div class="waterfall">
@@ -810,7 +893,7 @@
                 <div class="waterfall-item">
   <article class="article-card archive-article">
     <div class="post-meta">
-      <time class="post-time" title="2019-05-14 18:11:07" datetime="2019-05-14T10:11:07.000Z" itemprop="datePublished">2019-05-14</time>
+      <time class="post-time" title="2019-05-10 18:11:07" datetime="2019-05-10T10:11:07.000Z" itemprop="datePublished">2019-05-10</time>
 
       
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Python/">Python</a></li></ul>
@@ -823,7 +906,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/05/14/Python/03.High-level/02.Python的异常处理/">Python 的异常处理</a>
+      <a class="post-title-link" href="/2019/05/10/Python/03.High-level/01.Python的模块和包/">Python 的模块和包</a>
     </h3>
   
 
@@ -844,7 +927,7 @@
                 <div class="waterfall-item">
   <article class="article-card archive-article">
     <div class="post-meta">
-      <time class="post-time" title="2019-05-10 18:11:07" datetime="2019-05-10T10:11:07.000Z" itemprop="datePublished">2019-05-10</time>
+      <time class="post-time" title="2019-05-14 18:11:07" datetime="2019-05-14T10:11:07.000Z" itemprop="datePublished">2019-05-14</time>
 
       
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Python/">Python</a></li></ul>
@@ -857,7 +940,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/05/10/Python/03.High-level/01.Python的模块和包/">Python 的模块和包</a>
+      <a class="post-title-link" href="/2019/05/14/Python/03.High-level/02.Python的异常处理/">Python 的异常处理</a>
     </h3>
   
 
@@ -969,47 +1052,6 @@
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-  </article>
-</div>
-
-            
-            </div>
-            
-
-            <h3 class="archive-separator" id="tag-Ansible">Ansible</h3>
-
-            <div class="waterfall">
-            
-
-                <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2019-05-08 18:11:07" datetime="2019-05-08T10:11:07.000Z" itemprop="datePublished">2019-05-08</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Ansible/">Ansible</a></li></ul>
-
-
-
-    </div>
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/05/08/Ansible/01.ansible/">Ansible 基础 「一」</a>
-    </h3>
-  
-
-
-
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ansible/">Ansible</a></li></ul>
 
     </div>
     

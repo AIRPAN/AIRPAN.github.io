@@ -46,39 +46,81 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" <% if((is_post() || page.layout === 'page') && theme.hideMenu){ %>class="hide"<% } %> >
+    <aside id="menu">
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
+        <i class="icon icon-lg icon-dedent"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(<%- url_for(theme.brand) %>)">
+    <div class="brand-wrap" style="background-image:url(/)">
       <div class="brand">
-        <a href="<%- url_for(theme.avatar_link) %>" class="avatar waves-effect waves-circle waves-light">
-          <img src="<%- url_for(theme.avatar) %>">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
-          <h5 class="nickname"><%- config.author %></h5>
-          <%- mail_to(theme.email, theme.email, {class: 'mail'}) %>
-        </hgroup>
+          <h5 class="nickname">DuKe</h5>
+          <a href="mailto:undefined" class="mail">
+        </a></hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
-        <%
-          var menuItem, isActive = function(item) {
-              var pageUrl = url_for(page.path)
-              return item.url === '/' ? pageUrl === url_for(item.url + 'index.html') : _.startsWith(pageUrl, url_for(item.url))
-          };
-          for (var i in theme.menu) {
-            menuItem = theme.menu[i];
-          %>
-            <li class="waves-block waves-effect<% if(isActive(menuItem)){ %> active<% } %>">
-              <a href="<%- url_for(menuItem.url) %>" <% if(menuItem.target){ %>target="_blank"<% } %> >
-                <i class="icon icon-lg icon-<%= i %>"></i>
-                <%=(menuItem.text || _.startCase(i)) %>
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
               </a>
             </li>
-        <% } %>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-th-list"></i>
+                Archinves
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect active">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-folder"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-bookmark"></i>
+                Books
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://web.geekji.cn/" target="_blank">
+                <i class="icon icon-lg icon-paperclip"></i>
+                Share
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about">
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/airpan" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
       </ul>
     </div>
   </div>
@@ -125,15 +167,19 @@
             ">All</a>
         
 
-            <a href="/tags/Hexo/" style="-webkit-order:7;order:7" class="tags-list-item waves-effect waves-button waves-light">Hexo</a>
+            <a href="/tags/Hexo/" style="-webkit-order:6;order:6" class="tags-list-item waves-effect waves-button waves-light">Hexo</a>
 
         
 
-            <a href="/tags/HTML/" style="-webkit-order:8;order:8" class="tags-list-item waves-effect waves-button waves-light">HTML</a>
+            <a href="/tags/HTML/" style="-webkit-order:7;order:7" class="tags-list-item waves-effect waves-button waves-light">HTML</a>
 
         
 
-            <a href="/tags/Linux/" style="-webkit-order:0;order:0" class="tags-list-item waves-effect waves-button waves-light">Linux</a>
+            <a href="/tags/Linux/" style="-webkit-order:8;order:8" class="tags-list-item waves-effect waves-button waves-light">Linux</a>
+
+        
+
+            <a href="/tags/MySQL/" style="-webkit-order:0;order:0" class="tags-list-item waves-effect waves-button waves-light">MySQL</a>
 
         
 
@@ -141,23 +187,19 @@
 
         
 
-            <a href="/tags/MySQL/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">MySQL</a>
+            <a href="/tags/Wordpress/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">Wordpress</a>
 
         
 
-            <a href="/tags/Wordpress/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Wordpress</a>
+            <a href="/tags/Zabbix/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Zabbix</a>
 
         
 
-            <a href="/tags/Zabbix/" style="-webkit-order:4;order:4" class="tags-list-item waves-effect waves-button waves-light">Zabbix</a>
+            <a href="/tags/Ansible/" style="-webkit-order:4;order:4" class="tags-list-item waves-effect waves-button waves-light">Ansible</a>
 
         
 
             <a href="/tags/Python/" style="-webkit-order:5;order:5" class="tags-list-item waves-effect waves-button waves-light">Python</a>
-
-        
-
-            <a href="/tags/Ansible/" style="-webkit-order:6;order:6" class="tags-list-item waves-effect waves-button waves-light">Ansible</a>
 
         
     </nav>
